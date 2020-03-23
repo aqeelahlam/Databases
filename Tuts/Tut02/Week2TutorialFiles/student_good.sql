@@ -1,3 +1,5 @@
+-- Tutorial Week 2: Aqeel Ahlam
+
 set echo on
 
 create table student_good (
