@@ -1,0 +1,453 @@
+SQL> 
+SQL> DROP TABLE maintenance CASCADE CONSTRAINTS;
+
+Table MAINTENANCE dropped.
+
+SQL> 
+SQL> DROP TABLE owner CASCADE CONSTRAINTS;
+
+Table OWNER dropped.
+
+SQL> 
+SQL> DROP TABLE payment CASCADE CONSTRAINTS;
+
+Table PAYMENT dropped.
+
+SQL> 
+SQL> DROP TABLE property CASCADE CONSTRAINTS;
+
+Table PROPERTY dropped.
+
+SQL> 
+SQL> DROP TABLE rent CASCADE CONSTRAINTS;
+
+Table RENT dropped.
+
+SQL> 
+SQL> DROP TABLE tenant CASCADE CONSTRAINTS;
+
+Table TENANT dropped.
+
+SQL> 
+SQL> CREATE TABLE maintenance (
+  2      maint_no               NUMBER NOT NULL,
+  3      prop_no                NUMBER(7) NOT NULL,
+  4      rent_lease_startdate   DATE NOT NULL,
+  5      payment_no             NUMBER(7),
+  6      maint_datetime         DATE NOT NULL,
+  7      maint_desc             VARCHAR2(50) NOT NULL,
+  8      maint_cost             NUMBER(7, 2) NOT NULL
+  9  );
+
+Table MAINTENANCE created.
+
+SQL> 
+SQL> COMMENT ON COLUMN maintenance.maint_no IS
+  2      'Surrogate Key: Maintainence Number';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN maintenance.prop_no IS
+  2      'Property Number';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN maintenance.rent_lease_startdate IS
+  2      'Rent Lease Start Date';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN maintenance.payment_no IS
+  2      'Payment Number';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN maintenance.maint_datetime IS
+  2      'Maintenance Date & Time';
+old:COMMENT ON COLUMN maintenance.maint_datetime IS
+    'Maintenance Date & Time'
+new:COMMENT ON COLUMN maintenance.maint_datetime IS
+    'Maintenance Date '
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN maintenance.maint_desc IS
+  2      'Maintenance Description';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN maintenance.maint_cost IS
+  2      'Maintenance Cost ';
+
+Comment created.
+
+SQL> 
+SQL> CREATE UNIQUE INDEX maintenance__idx ON
+  2      maintenance (
+  3          payment_no
+  4      ASC );
+
+INDEX MAINTENANCE__IDX created.
+
+SQL> 
+SQL> ALTER TABLE maintenance ADD CONSTRAINT maintenance_pk PRIMARY KEY ( maint_no );
+
+Table MAINTENANCE altered.
+
+SQL> 
+SQL> ALTER TABLE maintenance
+  2      ADD CONSTRAINT nk_maintenance UNIQUE ( rent_lease_startdate,
+  3                                             prop_no,
+  4                                             payment_no,
+  5                                             maint_datetime );
+
+Table MAINTENANCE altered.
+
+SQL> 
+SQL> CREATE TABLE owner (
+  2      owner_no        NUMBER(7) NOT NULL,
+  3      owner_title     VARCHAR2(5) NOT NULL,
+  4      owner_gname     VARCHAR2(20) NOT NULL,
+  5      owner_fname     VARCHAR2(20) NOT NULL,
+  6      owner_address   VARCHAR2(50) NOT NULL
+  7  );
+
+Table OWNER created.
+
+SQL> 
+SQL> COMMENT ON COLUMN owner.owner_no IS
+  2      'Owner Number';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN owner.owner_title IS
+  2      'Owner Title';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN owner.owner_gname IS
+  2      'Owner Given Name';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN owner.owner_fname IS
+  2      'Owner Family Name';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN owner.owner_address IS
+  2      'Owner Address';
+
+Comment created.
+
+SQL> 
+SQL> ALTER TABLE owner ADD CONSTRAINT owner_pk PRIMARY KEY ( owner_no );
+
+Table OWNER altered.
+
+SQL> 
+SQL> CREATE TABLE payment (
+  2      payment_no             NUMBER(7) NOT NULL,
+  3      payment_date           DATE NOT NULL,
+  4      payment_type           VARCHAR2(20) NOT NULL,
+  5      payment_amount         NUMBER(7, 2) NOT NULL,
+  6      payment_paidby         VARCHAR2(50) NOT NULL,
+  7      rent_lease_startdate   DATE NOT NULL,
+  8      prop_no                NUMBER(7) NOT NULL
+  9  );
+
+Table PAYMENT created.
+
+SQL> 
+SQL> ALTER TABLE payment
+  2      ADD CONSTRAINT "DROP DOWN LIST PAYMENT_TYPE" CHECK ( payment_type IN (
+  3          'Bank Transfer',
+  4          'Cash',
+  5          'Credit/Debit Card'
+  6      ) );
+
+Table PAYMENT altered.
+
+SQL> 
+SQL> ALTER TABLE payment ADD CONSTRAINT "CHK PAYMENT AMOUNT" CHECK ( payment_amount >
+  2  0 );
+
+Table PAYMENT altered.
+
+SQL> 
+SQL> COMMENT ON COLUMN payment.payment_no IS
+  2      'Payment Number';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN payment.payment_date IS
+  2      'Payment Date';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN payment.payment_type IS
+  2      'Payment Type';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN payment.payment_amount IS
+  2      'Payment Amount';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN payment.payment_paidby IS
+  2      'Payment Paid By';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN payment.rent_lease_startdate IS
+  2      'Rent Lease Start Date';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN payment.prop_no IS
+  2      'Property Number';
+
+Comment created.
+
+SQL> 
+SQL> ALTER TABLE payment ADD CONSTRAINT payment_pk PRIMARY KEY ( payment_no );
+
+Table PAYMENT altered.
+
+SQL> 
+SQL> CREATE TABLE property (
+  2      prop_no        NUMBER(7) NOT NULL,
+  3      prop_address   VARCHAR2(50) NOT NULL,
+  4      prop_value     NUMBER(7, 2) NOT NULL,
+  5      owner_no       NUMBER(7) NOT NULL
+  6  );
+
+Table PROPERTY created.
+
+SQL> 
+SQL> COMMENT ON COLUMN property.prop_no IS
+  2      'Property Number';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN property.prop_address IS
+  2      'Property Address';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN property.prop_value IS
+  2      'Property Value';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN property.owner_no IS
+  2      'Owner Number';
+
+Comment created.
+
+SQL> 
+SQL> ALTER TABLE property ADD CONSTRAINT property_pk PRIMARY KEY ( prop_no );
+
+Table PROPERTY altered.
+
+SQL> 
+SQL> CREATE TABLE rent (
+  2      rent_lease_startdate   DATE NOT NULL,
+  3      rent_weekly_rate       NUMBER(7, 2) NOT NULL,
+  4      rent_bond              NUMBER(7, 2) NOT NULL,
+  5      rent_lease_period      CHAR(5) NOT NULL,
+  6      prop_no                NUMBER(7) NOT NULL,
+  7      tenant_no              NUMBER(7) NOT NULL
+  8  );
+
+Table RENT created.
+
+SQL> 
+SQL> ALTER TABLE rent ADD CONSTRAINT chk_weekly_rate CHECK ( rent_weekly_rate > 0 );
+
+Table RENT altered.
+
+SQL> 
+SQL> COMMENT ON COLUMN rent.rent_lease_startdate IS
+  2      'Rent Lease Start Date';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN rent.rent_weekly_rate IS
+  2      'Rent Weekly Rate';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN rent.rent_bond IS
+  2      'Rent Bond(deposit)';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN rent.rent_lease_period IS
+  2      'Rent Lease ';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN rent.prop_no IS
+  2      'Property Number';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN rent.tenant_no IS
+  2      'Tenant Number';
+
+Comment created.
+
+SQL> 
+SQL> ALTER TABLE rent ADD CONSTRAINT rent_pk PRIMARY KEY ( rent_lease_startdate,
+  2                                                        prop_no );
+
+Table RENT altered.
+
+SQL> 
+SQL> CREATE TABLE tenant (
+  2      tenant_no         NUMBER(7) NOT NULL,
+  3      tenant_title      VARCHAR2(5) NOT NULL,
+  4      tenant_gname      VARCHAR2(20) NOT NULL,
+  5      tenant_fname      VARCHAR2(20) NOT NULL,
+  6      tenant_street     VARCHAR2(50) NOT NULL,
+  7      tenant_city       VARCHAR2(50) NOT NULL,
+  8      tenant_state      VARCHAR2(50) NOT NULL,
+  9      tenant_postcode   CHAR(5) NOT NULL,
+ 10      tenant_phone      CHAR(12) NOT NULL
+ 11  );
+
+Table TENANT created.
+
+SQL> 
+SQL> COMMENT ON COLUMN tenant.tenant_no IS
+  2      'Tenant Number';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN tenant.tenant_title IS
+  2      'Tenant Title';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN tenant.tenant_gname IS
+  2      'Tenant Given Name';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN tenant.tenant_fname IS
+  2      'Tenant Family Name';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN tenant.tenant_street IS
+  2      'Tenant Street';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN tenant.tenant_city IS
+  2      'Tenant City';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN tenant.tenant_state IS
+  2      'Tenant State';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN tenant.tenant_postcode IS
+  2      'Tenant Postcode';
+
+Comment created.
+
+SQL> 
+SQL> COMMENT ON COLUMN tenant.tenant_phone IS
+  2      'Tenant Phone Number ';
+
+Comment created.
+
+SQL> 
+SQL> ALTER TABLE tenant ADD CONSTRAINT tenant_pk PRIMARY KEY ( tenant_no );
+
+Table TENANT altered.
+
+SQL> 
+SQL> ALTER TABLE maintenance
+  2      ADD CONSTRAINT damage_to_payment FOREIGN KEY ( payment_no )
+  3          REFERENCES payment ( payment_no );
+
+Table MAINTENANCE altered.
+
+SQL> 
+SQL> ALTER TABLE property
+  2      ADD CONSTRAINT owner_to_property FOREIGN KEY ( owner_no )
+  3          REFERENCES owner ( owner_no );
+
+Table PROPERTY altered.
+
+SQL> 
+SQL> ALTER TABLE rent
+  2      ADD CONSTRAINT property_to_rent FOREIGN KEY ( prop_no )
+  3          REFERENCES property ( prop_no );
+
+Table RENT altered.
+
+SQL> 
+SQL> ALTER TABLE maintenance
+  2      ADD CONSTRAINT rent_to_damage FOREIGN KEY ( rent_lease_startdate,
+  3                                                  prop_no )
+  4          REFERENCES rent ( rent_lease_startdate,
+  5                            prop_no );
+
+Table MAINTENANCE altered.
+
+SQL> 
+SQL> ALTER TABLE payment
+  2      ADD CONSTRAINT rent_to_payment FOREIGN KEY ( rent_lease_startdate,
+  3                                                   prop_no )
+  4          REFERENCES rent ( rent_lease_startdate,
+  5                            prop_no );
+
+Table PAYMENT altered.
+
+SQL> 
+SQL> ALTER TABLE rent
+  2      ADD CONSTRAINT tenant_to_rent FOREIGN KEY ( tenant_no )
+  3          REFERENCES tenant ( tenant_no );
+
+Table RENT altered.
+
+SQL> 
+SQL> spool off
