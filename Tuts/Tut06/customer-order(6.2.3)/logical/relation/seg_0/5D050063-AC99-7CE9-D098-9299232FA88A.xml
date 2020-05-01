@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="CUSTOMER_ORDERS" directorySegmentName="seg_0" id="5D050063-AC99-7CE9-D098-9299232FA88A">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 08:11:37 UTC</createdTime>
+<ownerDesignName>customer-order(6.2.3)</ownerDesignName>
+<engineerTo>
+<item key="45E97BB6-0216-B07F-2886-6BC4126C7520" value="true"/>
+</engineerTo>
+<sourcePk>81A718B7-7E09-9AE3-E265-70F1AEBE3988</sourcePk>
+<identifying>false</identifying>
+<nameOnSource>places</nameOnSource>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>4949B0D3-AC3C-97BE-0C1C-13C62964F89F</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>5D2DDD04-2542-235F-F183-2DFA5E542D7F</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

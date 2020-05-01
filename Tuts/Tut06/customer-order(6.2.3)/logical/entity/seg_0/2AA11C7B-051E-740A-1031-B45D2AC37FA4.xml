@@ -1,0 +1,79 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="2AA11C7B-051E-740A-1031-B45D2AC37FA4" name="ORDERLINE">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 08:01:09 UTC</createdTime>
+<ownerDesignName>customer-order(6.2.3)</ownerDesignName>
+<engineerTo>
+<item key="45E97BB6-0216-B07F-2886-6BC4126C7520" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="ol_qtyordered" id="358D7DA3-2751-7DF5-644A-BD1461E987CF">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 08:01:20 UTC</createdTime>
+<commentInRDBMS><![CDATA[Quantityt Ordered]]></commentInRDBMS>
+<ownerDesignName>customer-order(6.2.3)</ownerDesignName>
+<engineerTo>
+<item key="45E97BB6-0216-B07F-2886-6BC4126C7520" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="ol_lineprice" id="A9EE22AB-A166-B1C1-13C5-4BBCDE85FA72">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 08:01:22 UTC</createdTime>
+<commentInRDBMS><![CDATA[Line Price]]></commentInRDBMS>
+<ownerDesignName>customer-order(6.2.3)</ownerDesignName>
+<engineerTo>
+<item key="45E97BB6-0216-B07F-2886-6BC4126C7520" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,7,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="prod_no" id="4DEF25A7-02C4-65F4-31B6-8536C2D8E666">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 08:13:52 UTC</createdTime>
+<generatorID>5F8F195A-F1EC-8364-60B2-B1FBA37C7BE5</generatorID>
+<ownerDesignName>customer-order(6.2.3)</ownerDesignName>
+<engineerTo>
+<item key="45E97BB6-0216-B07F-2886-6BC4126C7520" value="true"/>
+</engineerTo>
+<referedAttribute>DCB75C27-9055-1E81-DFCD-93C3A5644B43</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="order_no" id="6DA8D444-1C8B-4FFA-055E-0ADF99E46C45">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 08:14:47 UTC</createdTime>
+<commentInRDBMS><![CDATA[Order Number]]></commentInRDBMS>
+<generatorID>3DCE1CBD-9BC6-2380-FA19-0B55BD1E7082</generatorID>
+<ownerDesignName>customer-order(6.2.3)</ownerDesignName>
+<engineerTo>
+<item key="45E97BB6-0216-B07F-2886-6BC4126C7520" value="true"/>
+</engineerTo>
+<referedAttribute>8115D397-9F55-A2B9-1960-AA4DFE86DDE9</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+</Entity>

@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="8FDDFDA2-9EB6-8AF7-F243-9903464B12C5" name="PRODUCT">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 08:03:04 UTC</createdTime>
+<ownerDesignName>customer-order(6.2.3)</ownerDesignName>
+<engineerTo>
+<item key="45E97BB6-0216-B07F-2886-6BC4126C7520" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="prod_no" id="DCB75C27-9055-1E81-DFCD-93C3A5644B43">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 08:03:14 UTC</createdTime>
+<ownerDesignName>customer-order(6.2.3)</ownerDesignName>
+<engineerTo>
+<item key="45E97BB6-0216-B07F-2886-6BC4126C7520" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="prod_desc" id="95C5FB6E-3D20-1EC5-FEE3-7FC3EAA47F22">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 08:03:14 UTC</createdTime>
+<commentInRDBMS><![CDATA[Product Description]]></commentInRDBMS>
+<ownerDesignName>customer-order(6.2.3)</ownerDesignName>
+<engineerTo>
+<item key="45E97BB6-0216-B07F-2886-6BC4126C7520" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="prod_unitprice" id="8873BDF2-7A45-2349-76DA-9256A9F4EC6D">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 08:03:15 UTC</createdTime>
+<ownerDesignName>customer-order(6.2.3)</ownerDesignName>
+<engineerTo>
+<item key="45E97BB6-0216-B07F-2886-6BC4126C7520" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,7,2</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="AC033766-EE0B-19F8-2DFD-0E626F5BC514" name="PRODUCT PK">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 08:03:34 UTC</createdTime>
+<ownerDesignName>customer-order(6.2.3)</ownerDesignName>
+<engineerTo>
+<item key="45E97BB6-0216-B07F-2886-6BC4126C7520" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>DCB75C27-9055-1E81-DFCD-93C3A5644B43</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
