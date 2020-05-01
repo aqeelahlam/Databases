@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="05BCB15A-4DF2-A532-6483-255BDCDC8190" name="OWNER">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 16:07:09 UTC</createdTime>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<engineerTo>
+<item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="owner_no" id="A04D127A-A05A-247D-3F1C-FB23105C69B7">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 16:07:19 UTC</createdTime>
+<commentInRDBMS><![CDATA[Owner Number]]></commentInRDBMS>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<engineerTo>
+<item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="owner_title" id="77292202-B3EC-83A9-3C15-DE1D2BCFBF5A">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 17:03:40 UTC</createdTime>
+<commentInRDBMS><![CDATA[Owner Title]]></commentInRDBMS>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<engineerTo>
+<item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5</dataTypeSize>
+<ownDataTypeParameters>5,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="owner_gname" id="BF3B3E97-7CF2-D9D5-1B46-108CCB54DCB1">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 17:03:41 UTC</createdTime>
+<commentInRDBMS><![CDATA[Owner Given Name]]></commentInRDBMS>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<engineerTo>
+<item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="owner_fname" id="A101AED3-50DD-CB58-7B3C-F9E49C35FE4F">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 17:03:41 UTC</createdTime>
+<commentInRDBMS><![CDATA[Owner Family Name]]></commentInRDBMS>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<engineerTo>
+<item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="owner_address" id="ED192ECA-7150-928A-F67F-02A03318015F">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 17:09:02 UTC</createdTime>
+<commentInRDBMS><![CDATA[Owner Address]]></commentInRDBMS>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<engineerTo>
+<item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="0ABB9D6C-4F89-E6B6-0466-D067D194EC95" name="OWNER PK">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 16:10:39 UTC</createdTime>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<engineerTo>
+<item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>A04D127A-A05A-247D-3F1C-FB23105C69B7</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,159 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="5EB6B211-BE2D-0AE3-3FDF-6D08FC2A9F6F" name="TENANT">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 16:31:25 UTC</createdTime>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<engineerTo>
+<item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="tenant_no" id="741C482F-2759-4A8C-600D-29B2DA80A857">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 16:31:41 UTC</createdTime>
+<commentInRDBMS><![CDATA[Tenant Number]]></commentInRDBMS>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<engineerTo>
+<item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tenant_title" id="78F7E29E-8DF3-4A99-89BB-5DA131ED218F">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 17:06:21 UTC</createdTime>
+<commentInRDBMS><![CDATA[Tenant Title]]></commentInRDBMS>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<engineerTo>
+<item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5</dataTypeSize>
+<ownDataTypeParameters>5,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tenant_gname" id="162C2914-4B4E-2391-BA27-2CCDB52CC485">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 16:31:41 UTC</createdTime>
+<commentInRDBMS><![CDATA[Tenant Given Name]]></commentInRDBMS>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<engineerTo>
+<item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tenant_fname" id="07CFD4CE-9E01-2953-C1DF-EE7452CE2453">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 16:31:41 UTC</createdTime>
+<commentInRDBMS><![CDATA[Tenant Family Name]]></commentInRDBMS>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<engineerTo>
+<item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tenant_street" id="86FCEBDB-3123-3131-77FA-EFA49AC3C545">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 16:59:03 UTC</createdTime>
+<commentInRDBMS><![CDATA[Tenant Street]]></commentInRDBMS>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<engineerTo>
+<item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tenant_city" id="17EECE3D-3D0E-FA38-F04E-492AE9990F1D">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 16:59:03 UTC</createdTime>
+<commentInRDBMS><![CDATA[Tenant City]]></commentInRDBMS>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<engineerTo>
+<item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tenant_state" id="26F2FB76-B2AB-3D17-586E-21371E9F0DFA">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 16:59:04 UTC</createdTime>
+<commentInRDBMS><![CDATA[Tenant State]]></commentInRDBMS>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<engineerTo>
+<item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tenant_postcode" id="13302D8D-C58B-AD53-94AE-B071F970572A">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 16:59:04 UTC</createdTime>
+<commentInRDBMS><![CDATA[Tenant Postcode]]></commentInRDBMS>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<engineerTo>
+<item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>5</dataTypeSize>
+<ownDataTypeParameters>5,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tenant_phone" id="BE5180BF-6BF7-CA40-24D0-F94115FA5234">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 16:31:42 UTC</createdTime>
+<commentInRDBMS><![CDATA[Tenant Phone Number ]]></commentInRDBMS>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<engineerTo>
+<item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>12</dataTypeSize>
+<ownDataTypeParameters>12,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="E0D20069-BC28-2ADF-99FB-CD65D274A162" name="TENANT PK">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 16:32:08 UTC</createdTime>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<engineerTo>
+<item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>741C482F-2759-4A8C-600D-29B2DA80A857</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

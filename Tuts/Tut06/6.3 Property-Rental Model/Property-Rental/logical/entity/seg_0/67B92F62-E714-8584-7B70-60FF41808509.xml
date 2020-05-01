@@ -1,0 +1,127 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="67B92F62-E714-8584-7B70-60FF41808509" name="RENT">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 17:23:07 UTC</createdTime>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<engineerTo>
+<item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="rent_lease_startdate" id="3AF4434B-A9EF-B620-4DB5-6498D9D56B94">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 17:23:34 UTC</createdTime>
+<commentInRDBMS><![CDATA[Rent Lease Start Date]]></commentInRDBMS>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<engineerTo>
+<item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rent_weekly_rate" id="59EF1FCF-58DC-2E7A-724B-FFA0119110B6">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 17:23:37 UTC</createdTime>
+<commentInRDBMS><![CDATA[Rent Weekly Rate]]></commentInRDBMS>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<engineerTo>
+<item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
+</engineerTo>
+<constraintName>CHK_WEEKLY_RATE</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="rent_weekly_rate &gt; 0"/>
+</checkConstraint>
+<ownDataTypeParameters>,7,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rent_bond" id="4E41D991-6791-8495-62C5-F08B0D54EB4B">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 17:23:38 UTC</createdTime>
+<commentInRDBMS><![CDATA[Rent Bond(deposit)]]></commentInRDBMS>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<engineerTo>
+<item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,7,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rent_lease_period" id="CC566F3E-64B4-FEE5-CAC4-BF6152DB2EAC">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 17:23:51 UTC</createdTime>
+<commentInRDBMS><![CDATA[Rent Lease ]]></commentInRDBMS>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<engineerTo>
+<item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>5</dataTypeSize>
+<ownDataTypeParameters>5,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="prop_no" id="44DF51DB-41C2-5CF1-4C89-BBBDB18F6C6C">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 17:46:23 UTC</createdTime>
+<commentInRDBMS><![CDATA[Property Number]]></commentInRDBMS>
+<generatorID>F309D569-3A80-47F4-6C75-022DF4C2AC87</generatorID>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<engineerTo>
+<item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
+</engineerTo>
+<referedAttribute>E6D0F091-4301-046E-1D6C-7EFBA247A57D</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="tenant_no" id="307EE01F-83FA-676C-3F10-081BB792A3D4">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 17:49:51 UTC</createdTime>
+<commentInRDBMS><![CDATA[Tenant Number]]></commentInRDBMS>
+<generatorID>8AAB1049-B75E-3861-9356-CACFE2DAC544</generatorID>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<engineerTo>
+<item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
+</engineerTo>
+<referedAttribute>741C482F-2759-4A8C-600D-29B2DA80A857</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="9DED05D7-BA3C-26C9-0D3A-6665FF9FE2B7" name="RENT PK">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 17:36:18 UTC</createdTime>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<engineerTo>
+<item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>3AF4434B-A9EF-B620-4DB5-6498D9D56B94</attributeRef>
+<attributeRef>44DF51DB-41C2-5CF1-4C89-BBBDB18F6C6C</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

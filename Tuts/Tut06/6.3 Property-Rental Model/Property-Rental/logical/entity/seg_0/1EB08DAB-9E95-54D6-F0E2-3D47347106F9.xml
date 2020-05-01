@@ -1,0 +1,134 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="1EB08DAB-9E95-54D6-F0E2-3D47347106F9" name="PAYMENT">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 17:31:19 UTC</createdTime>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<engineerTo>
+<item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="payment_no" id="CD2DED8F-A60E-066E-3E4D-D60BDFAFA6C7">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 17:31:41 UTC</createdTime>
+<commentInRDBMS><![CDATA[Payment Number]]></commentInRDBMS>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<engineerTo>
+<item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="payment_date" id="80D02025-5F99-4FB7-4252-4FF88964F6DD">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 17:31:43 UTC</createdTime>
+<commentInRDBMS><![CDATA[Payment Date]]></commentInRDBMS>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<engineerTo>
+<item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="payment_type" id="ACDF00D4-DDED-0B76-AAB4-77FD0DE849FA">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 17:31:45 UTC</createdTime>
+<commentInRDBMS><![CDATA[Payment Type]]></commentInRDBMS>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<engineerTo>
+<item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="payment_amount" id="46D2B401-D40A-874C-A08B-DE7CE3D5784F">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 17:31:45 UTC</createdTime>
+<commentInRDBMS><![CDATA[Payment Amount]]></commentInRDBMS>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<engineerTo>
+<item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,7,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="payment_paidby" id="0F91C853-70C7-581E-991A-ED00A85D72D0">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 17:31:47 UTC</createdTime>
+<commentInRDBMS><![CDATA[Payment Paid By]]></commentInRDBMS>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<engineerTo>
+<item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="rent_lease_startdate" id="1EDEC557-A30C-1763-168B-BAE2F6C9771D">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 17:52:12 UTC</createdTime>
+<commentInRDBMS><![CDATA[Rent Lease Start Date]]></commentInRDBMS>
+<generatorID>FD9D59E4-3606-7A18-638B-D05BAED413FD</generatorID>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<engineerTo>
+<item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
+</engineerTo>
+<referedAttribute>3AF4434B-A9EF-B620-4DB5-6498D9D56B94</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="prop_no" id="8BC6E07B-50E1-5CBD-53CA-33DB1ACF580A">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 18:01:16 UTC</createdTime>
+<commentInRDBMS><![CDATA[Property Number]]></commentInRDBMS>
+<generatorID>FD9D59E4-3606-7A18-638B-D05BAED413FD</generatorID>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<engineerTo>
+<item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
+</engineerTo>
+<referedAttribute>44DF51DB-41C2-5CF1-4C89-BBBDB18F6C6C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="8613CA27-8F68-B6EC-004E-1BD8C10999A4" name="PAYMENT PK">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 17:32:28 UTC</createdTime>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<engineerTo>
+<item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>CD2DED8F-A60E-066E-3E4D-D60BDFAFA6C7</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
