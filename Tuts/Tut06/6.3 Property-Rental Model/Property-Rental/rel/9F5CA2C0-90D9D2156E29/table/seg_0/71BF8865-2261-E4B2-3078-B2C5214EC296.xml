@@ -1,0 +1,140 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="71BF8865-2261-E4B2-3078-B2C5214EC296" name="RENT">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 18:51:29 UTC</createdTime>
+<generatorID>67B92F62-E714-8584-7B70-60FF41808509</generatorID>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="rent_lease_startdate" id="AD6F3AE9-8746-03CD-002E-3527EB604AE5">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 18:51:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[Rent Lease Start Date]]></commentInRDBMS>
+<generatorID>3AF4434B-A9EF-B620-4DB5-6498D9D56B94</generatorID>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="rent_weekly_rate" id="6C890567-E593-748F-3E23-051DE0DA718F">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 18:51:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[Rent Weekly Rate]]></commentInRDBMS>
+<generatorID>59EF1FCF-58DC-2E7A-724B-FFA0119110B6</generatorID>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<constraintName>CHK_WEEKLY_RATE</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="rent_weekly_rate &gt; 0"/>
+</checkConstraint>
+<ownDataTypeParameters>,7,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="rent_bond" id="92B77290-ED42-4F8A-527C-589A61697CF1">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 18:51:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[Rent Bond(deposit)]]></commentInRDBMS>
+<generatorID>4E41D991-6791-8495-62C5-F08B0D54EB4B</generatorID>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,7,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="rent_lease_period" id="E8E68FB2-E0EA-12C8-D959-83977471DF7E">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 18:51:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[Rent Lease ]]></commentInRDBMS>
+<generatorID>CC566F3E-64B4-FEE5-CAC4-BF6152DB2EAC</generatorID>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>5</dataTypeSize>
+<ownDataTypeParameters>5,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="prop_no" id="05D3A3E7-A0A7-A1B0-1A22-DE34D5B39EDD">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 18:51:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[Property Number]]></commentInRDBMS>
+<generatorID>44DF51DB-41C2-5CF1-4C89-BBBDB18F6C6C</generatorID>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="06A6E69C-B46B-B1AD-3139-351219E465D9" referredColumn="99E45823-1DFB-2EC7-D1EC-3616FCD19AB1"/>
+</associations>
+</Column>
+<Column name="tenant_no" id="DC50F322-FF60-AF1D-5CAE-C80009B73703">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 18:51:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[Tenant Number]]></commentInRDBMS>
+<generatorID>307EE01F-83FA-676C-3F10-081BB792A3D4</generatorID>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E3FA4C75-0A94-3D29-F59A-0EB15D788C85" referredColumn="C14D0566-6137-D9E0-3825-CD1FA8030A34"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="12E22995-CD53-C8DD-28B9-B19D3C12E079" name="RENT_PK">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 18:51:29 UTC</createdTime>
+<generatorID>9DED05D7-BA3C-26C9-0D3A-6665FF9FE2B7</generatorID>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AD6F3AE9-8746-03CD-002E-3527EB604AE5"/>
+<colUsage columnID="05D3A3E7-A0A7-A1B0-1A22-DE34D5B39EDD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="80C73B72-1A1B-C836-A1A6-304FB90C4342" name="PROPERTY_TO_RENT">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 18:51:29 UTC</createdTime>
+<generatorID>F309D569-3A80-47F4-6C75-022DF4C2AC87</generatorID>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="05D3A3E7-A0A7-A1B0-1A22-DE34D5B39EDD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DF22F7E3-1F6A-B0D7-9AEC-4657098B35F5" name="TENANT_TO_RENT">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 18:51:29 UTC</createdTime>
+<generatorID>8AAB1049-B75E-3861-9356-CACFE2DAC544</generatorID>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="DC50F322-FF60-AF1D-5CAE-C80009B73703"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

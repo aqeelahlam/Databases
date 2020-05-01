@@ -50,10 +50,16 @@
 <engineerTo>
 <item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
 </engineerTo>
+<constraintName>DROP DOWN LIST PAYMENT_TYPE</constraintName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>20</dataTypeSize>
+<listOfValues>
+<valueDef value="Bank Transfer" description="Payment By Bank Transfer"/>
+<valueDef value="Cash" description="Payment By Cash"/>
+<valueDef value="Credit/Debit Card" description="Payment By Card"/>
+</listOfValues>
 <ownDataTypeParameters>20,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="payment_amount" id="46D2B401-D40A-874C-A08B-DE7CE3D5784F">
@@ -64,11 +70,15 @@
 <engineerTo>
 <item key="9F5CA2C0-2BBB-499D-2F25-90D9D2156E29" value="true"/>
 </engineerTo>
+<constraintName>CHK PAYMENT AMOUNT</constraintName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>7</dataTypePrecision>
 <dataTypeScale>2</dataTypeScale>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="payment_amount &gt; 0"/>
+</checkConstraint>
 <ownDataTypeParameters>,7,2</ownDataTypeParameters>
 </Attribute>
 <Attribute name="payment_paidby" id="0F91C853-70C7-581E-991A-ED00A85D72D0">
