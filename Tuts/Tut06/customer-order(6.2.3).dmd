@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="customer-order(6.2.3)" id="4F4C4624-0405-A76A-B4AF-1E00FB47CB62" version="3.5">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-01 07:24:54 UTC</createdTime>
+<ownerDesignName>customer-order(6.2.3)</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>4F4C4624-0405-A76A-B4AF-1E00FB47CB62</designId>
+</OSDM_Design>
