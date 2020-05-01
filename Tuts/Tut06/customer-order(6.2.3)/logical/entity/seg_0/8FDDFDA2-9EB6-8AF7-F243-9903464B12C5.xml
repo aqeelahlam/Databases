@@ -18,6 +18,7 @@
 <Attribute name="prod_no" id="DCB75C27-9055-1E81-DFCD-93C3A5644B43">
 <createdBy>aahl0002</createdBy>
 <createdTime>2020-05-01 08:03:14 UTC</createdTime>
+<commentInRDBMS><![CDATA[Product Number]]></commentInRDBMS>
 <ownerDesignName>customer-order(6.2.3)</ownerDesignName>
 <engineerTo>
 <item key="45E97BB6-0216-B07F-2886-6BC4126C7520" value="true"/>
@@ -45,6 +46,7 @@
 <Attribute name="prod_unitprice" id="8873BDF2-7A45-2349-76DA-9256A9F4EC6D">
 <createdBy>aahl0002</createdBy>
 <createdTime>2020-05-01 08:03:15 UTC</createdTime>
+<commentInRDBMS><![CDATA[Product unit price]]></commentInRDBMS>
 <ownerDesignName>customer-order(6.2.3)</ownerDesignName>
 <engineerTo>
 <item key="45E97BB6-0216-B07F-2886-6BC4126C7520" value="true"/>

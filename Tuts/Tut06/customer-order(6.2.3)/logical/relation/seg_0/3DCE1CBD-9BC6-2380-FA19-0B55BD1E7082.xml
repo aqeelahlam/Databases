@@ -9,7 +9,7 @@
 <sourcePk>DD746804-74AE-8EF7-793A-6DCE02995617</sourcePk>
 <identifying>false</identifying>
 <nameOnSource>includes</nameOnSource>
-<optionalSource>true</optionalSource>
+<optionalSource>false</optionalSource>
 <optionalTarget>false</optionalTarget>
 <sourceCardinality>1</sourceCardinality>
 <sourceEntity>5D2DDD04-2542-235F-F183-2DFA5E542D7F</sourceEntity>

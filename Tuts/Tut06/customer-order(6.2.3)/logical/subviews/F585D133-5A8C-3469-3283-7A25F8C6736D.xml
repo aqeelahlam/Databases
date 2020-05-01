@@ -15,7 +15,6 @@
 <notation>2</notation>
 <showAllDetails>false</showAllDetails>
 <showElements>true</showElements>
-<showDatatype>true</showDatatype>
 <objectViews>
 <OView class="oracle.dbtools.crest.swingui.TVLegend" oid="1D223294-86B3-44B7-247E-9DE93CDBAAA9" otype="Legend" vid="8C650253-84BA-7FAF-E146-7E8A5D743E16">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
@@ -31,7 +30,7 @@
 </OView>
 <OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="5D2DDD04-2542-235F-F183-2DFA5E542D7F" otype="Entity" vid="77FD877D-8C56-8CCF-0BBF-797475E71D3A">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="619" y="51" width="170" height="110"/>
+<bounds x="615" y="51" width="196" height="110"/>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="8FDDFDA2-9EB6-8AF7-F243-9903464B12C5" otype="Entity" vid="B1576ACE-F331-AFCC-D8AF-BD552890D638">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
@@ -45,13 +44,13 @@
 <lineWidth>1</lineWidth>
 <sourceLabel class="oracle.dbtools.crest.model.design.Label">
 <site>0</site>
-<labelBounds x="704" y="205" width="55" height="30"/>
+<labelBounds x="713" y="205" width="56" height="30"/>
 <noBackgroundColor>true</noBackgroundColor>
 <noForegroundColor>true</noForegroundColor>
 </sourceLabel>
 <points>
-<point x="704" y="161"/>
-<point x="704" y="235"/>
+<point x="713" y="161"/>
+<point x="713" y="235"/>
 </points>
 </Connector>
 <Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="5D050063-AC99-7CE9-D098-9299232FA88A" otype="Relation" vid_source="6D12B3D9-AFC6-2F1C-AAD8-B72F61D2CF81" vid_target="77FD877D-8C56-8CCF-0BBF-797475E71D3A">
@@ -66,7 +65,7 @@
 </sourceLabel>
 <points>
 <point x="533" y="111"/>
-<point x="619" y="111"/>
+<point x="615" y="111"/>
 </points>
 </Connector>
 <Connector class="oracle.dbtools.crest.swingui.logical.TVRelation" oid="5F8F195A-F1EC-8364-60B2-B1FBA37C7BE5" otype="Relation" vid_source="B1576ACE-F331-AFCC-D8AF-BD552890D638" vid_target="4725FA53-C5EC-5204-BA57-F249E4A5CF4F">
