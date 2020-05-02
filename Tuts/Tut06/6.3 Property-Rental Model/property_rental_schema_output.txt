@@ -30,7 +30,7 @@ Table TENANT dropped.
 
 SQL> 
 SQL> CREATE TABLE maintenance (
-  2      maint_no               NUMBER NOT NULL,
+  2      maint_no               NUMBER(7) NOT NULL,
   3      prop_no                NUMBER(7) NOT NULL,
   4      rent_lease_startdate   DATE NOT NULL,
   5      payment_no             NUMBER(7),
@@ -68,13 +68,8 @@ Comment created.
 SQL> 
 SQL> COMMENT ON COLUMN maintenance.maint_datetime IS
   2      'Maintenance Date & Time';
-old:COMMENT ON COLUMN maintenance.maint_datetime IS
-    'Maintenance Date & Time'
-new:COMMENT ON COLUMN maintenance.maint_datetime IS
-    'Maintenance Date '
 
-Comment created.
-
+Substitution cancelled
 SQL> 
 SQL> COMMENT ON COLUMN maintenance.maint_desc IS
   2      'Maintenance Description';
