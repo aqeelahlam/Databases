@@ -1,0 +1,177 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="A3865459-537F-A0BB-B552-24897FF422D1" name="MAINTENANCE">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-02 13:46:57 UTC</createdTime>
+<generatorID>F9A140CE-9851-4D55-860E-CB0B2A6FDDB5</generatorID>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="maint_no" id="C2D0B00A-8121-1262-2DF2-16F7622605E1">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-02 13:46:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Surrogate Key: Maintainence Number]]></commentInRDBMS>
+<generatorID>A45214D0-7A8E-19B1-F71E-5E6C22B8EAB4</generatorID>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,7,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="prop_no" id="D1FCFBB4-BF16-D956-DD60-B1C07CB11BCF">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-02 13:46:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Property Number]]></commentInRDBMS>
+<generatorID>49C73E7D-C189-757E-1012-057D984031AD</generatorID>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="42E2A46D-C143-8468-ECC8-AE563FFAE5B8" referredColumn="DB9FB8B7-4442-9877-B669-02EBE08A1A5D"/>
+</associations>
+</Column>
+<Column name="rent_lease_startdate" id="510E75E2-7C35-3945-979C-7BC2B22C1E0F">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-02 13:46:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Rent Lease Start Date]]></commentInRDBMS>
+<generatorID>9288A892-B6D9-DF6C-E209-4529FFF163C7</generatorID>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="42E2A46D-C143-8468-ECC8-AE563FFAE5B8" referredColumn="F23584C6-C239-19D0-5DD2-AFCE95769F4B"/>
+</associations>
+</Column>
+<Column name="payment_no" id="880F9AC4-02A3-6648-B1E5-01F40ED5DA12">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-02 13:46:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Payment Number]]></commentInRDBMS>
+<generatorID>F6C433E5-5874-9B23-D7A2-E82874DA3302</generatorID>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="133BCE2B-FC9B-C1CD-4AC8-9CB5E0A3902F" referredColumn="0EE1B9D9-DB14-FD3C-4A68-4D1557FA5DC6"/>
+</associations>
+</Column>
+<Column name="maint_datetime" id="3D82BCC2-D13D-9C64-0F9F-6FF49BC69BFD">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-02 13:46:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Maintenance Date & Time]]></commentInRDBMS>
+<generatorID>E29C1760-077E-472A-E5D0-BC0086F088BB</generatorID>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="maint_desc" id="B3A1981C-907D-8C68-F0A7-7DA053CDABB6">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-02 13:46:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Maintenance Description]]></commentInRDBMS>
+<generatorID>23161BCA-BF01-5CD5-BD67-F1CFAF11FF64</generatorID>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="maint_cost" id="C8E3879A-AC2C-E7DA-D638-93698442FF6C">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-02 13:46:57 UTC</createdTime>
+<commentInRDBMS><![CDATA[Maintenance Cost ]]></commentInRDBMS>
+<generatorID>AA074E47-0753-6D29-224C-8C31454041E2</generatorID>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>7</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<ownDataTypeParameters>,7,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="25D6693F-716D-50FC-8E4B-997EA600A05A" name="MAINTENANCE_PK">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-02 13:46:57 UTC</createdTime>
+<generatorID>0332C0DB-4674-D4E9-BAB1-04F07BC865E4</generatorID>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C2D0B00A-8121-1262-2DF2-16F7622605E1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A6D5CF69-F621-32C8-15B2-276E8BFA8F8D" name="NK_MAINTENANCE">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-02 13:46:57 UTC</createdTime>
+<generatorID>62EBE6F1-CA47-EDBE-BB1C-26888B2D13E7</generatorID>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="510E75E2-7C35-3945-979C-7BC2B22C1E0F"/>
+<colUsage columnID="D1FCFBB4-BF16-D956-DD60-B1C07CB11BCF"/>
+<colUsage columnID="880F9AC4-02A3-6648-B1E5-01F40ED5DA12"/>
+<colUsage columnID="3D82BCC2-D13D-9C64-0F9F-6FF49BC69BFD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="F393D37D-58F2-258C-7172-8DFE39754D3E" name="MAINTENANCE__IDX">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-02 13:46:57 UTC</createdTime>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>E3A8B9F1-2D00-2865-A649-C6C2A2FB7BC4</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="880F9AC4-02A3-6648-B1E5-01F40ED5DA12"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1BC8FD04-826E-23DC-80AB-1A2981D59057" name="DAMAGE_TO_PAYMENT">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-02 13:46:57 UTC</createdTime>
+<generatorID>E3A8B9F1-2D00-2865-A649-C6C2A2FB7BC4</generatorID>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="880F9AC4-02A3-6648-B1E5-01F40ED5DA12"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="12AC2806-74F8-35CD-B7D0-064FEDAFB58F" name="RENT_TO_DAMAGE">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-02 13:46:57 UTC</createdTime>
+<generatorID>3BD731F4-7E5D-6AF7-F79F-991740E367F4</generatorID>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="510E75E2-7C35-3945-979C-7BC2B22C1E0F"/>
+<colUsage columnID="D1FCFBB4-BF16-D956-DD60-B1C07CB11BCF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

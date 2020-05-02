@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="133BCE2B-FC9B-C1CD-4AC8-9CB5E0A3902F" containerWithKeyObject="A3865459-537F-A0BB-B552-24897FF422D1" localFKIndex="1BC8FD04-826E-23DC-80AB-1A2981D59057" name="DAMAGE_TO_PAYMENT">
+<createdBy>aahl0002</createdBy>
+<createdTime>2020-05-02 13:46:57 UTC</createdTime>
+<generatorID>E3A8B9F1-2D00-2865-A649-C6C2A2FB7BC4</generatorID>
+<ownerDesignName>Property-Rental</ownerDesignName>
+<referredTableLongName>PAYMENT</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>E9FD1B4A-153C-F3A1-4A40-AE7962E9B19C</referredTableID>
+<keyObject>1CB648AE-B959-8282-4337-D9AD76944CE4</keyObject>
+<referredKeyID>1CB648AE-B959-8282-4337-D9AD76944CE4</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>payment_no</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>
