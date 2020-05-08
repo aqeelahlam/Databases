@@ -1,0 +1,192 @@
+SQL> 
+SQL> truncate table enrolment;
+
+Table ENROLMENT truncated.
+
+SQL> truncate table student;
+
+Table STUDENT truncated.
+
+SQL> truncate table unit;
+
+Table UNIT truncated.
+
+SQL> 
+SQL> -- 7.3.1 Basic Insert Statement
+SQL> 
+SQL> insert into student values (11111111,'Bloggs','Fred','01-Jan-1990');
+
+1 row inserted.
+
+SQL> insert into student values (11111112,'Nice','Nick','10-Oct-1994');
+
+1 row inserted.
+
+SQL> insert into student values (11111113,'Wheat','Wendy','05-May-1990');
+
+1 row inserted.
+
+SQL> insert into student values (11111114, 'Sheen','Cindy','25-Dec-1996');
+
+1 row inserted.
+
+SQL> -- If you want to see the records
+SQL> --select * from student;
+SQL> 
+SQL> insert into unit values ('FIT9999','FIT Last Unit');
+
+1 row inserted.
+
+SQL> insert into unit values ('FIT5132','Introduction to Databases');
+
+1 row inserted.
+
+SQL> insert into unit values ('FIT5016','Project');
+
+1 row inserted.
+
+SQL> insert into unit values ('FIT5111','Students Life');
+
+1 row inserted.
+
+SQL> 
+SQL> --select * from unit;
+SQL> 
+SQL> insert into enrolment values (11111111, 'FIT5132',2013,'1',35,'N');
+
+1 row inserted.
+
+SQL> insert into enrolment values (11111111, 'FIT5016',2013,'1',61,'C');
+
+1 row inserted.
+
+SQL> insert into enrolment values (11111111, 'FIT5132',2013,'2',42,'N');
+
+1 row inserted.
+
+SQL> insert into enrolment values (11111111, 'FIT5111',2013,'2',76,'D');
+
+1 row inserted.
+
+SQL> insert into enrolment values (11111111, 'FIT5132',2014,'2',null,null);
+
+1 row inserted.
+
+SQL> insert into enrolment values (11111112, 'FIT5132',2013,'2',83,'HD');
+
+1 row inserted.
+
+SQL> insert into enrolment values (11111112, 'FIT5111',2013,'2',79,'D');
+
+1 row inserted.
+
+SQL> insert into enrolment values (11111113, 'FIT5132',2014,'2',null,null);
+
+1 row inserted.
+
+SQL> insert into enrolment values (11111113, 'FIT5111',2014,'2',null,null);
+
+1 row inserted.
+
+SQL> insert into enrolment values (11111114, 'FIT5111',2014,'2',null,null);
+
+1 row inserted.
+
+SQL> 
+SQL> --select * from enrolment
+SQL> 
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> 
+SQL> -- 7.3.2 Using SEQUENCEs in an INSERT statement
+SQL> DROP SEQUENCE student_seq;
+
+Sequence STUDENT_SEQ dropped.
+
+SQL> 
+SQL> CREATE SEQUENCE student_seq START WITH 11111115 INCREMENT BY 1;
+
+Sequence STUDENT_SEQ created.
+
+SQL> 
+SQL> INSERT INTO student VALUES (student_seq.NEXTVAL,'Mouse','Mickey','15-Oct-1997');
+
+1 row inserted.
+
+SQL> --select * from student;
+SQL> 
+SQL> INSERT INTO enrolment VALUES (student_seq.CURRVAL, 'FIT5132',2016,'2',null,null);
+
+1 row inserted.
+
+SQL> --select * from enrolment;
+SQL> 
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> 
+SQL> 
+SQL> -- 7.3.3 Advance INSERT
+SQL> 
+SQL> INSERT INTO student VALUES (student_seq.NEXTVAL, 'Ahlam','Aqeel','15-Oct-1997');
+
+1 row inserted.
+
+SQL> 
+SQL> INSERT INTO enrolment VALUES (student_seq.CURRVAL,
+  2      (SELECT unit_code FROM unit WHERE unit_name = 'Introduction to Databases'),
+  3      2016,'2',null,null);
+
+1 row inserted.
+
+SQL> 
+SQL> --select * from enrolment;
+SQL> 
+SQL> COMMIT;
+
+Commit complete.
+
+SQL> 
+SQL> -- 7.3.4 Creating a table and inserting data as a single SQL statement
+SQL> DROP TABLE FIT5111_STUDENT CASCADE CONSTRAINTS PURGE;
+
+Table FIT5111_STUDENT dropped.
+
+SQL> 
+SQL> CREATE TABLE FIT5111_STUDENT
+  2      AS SELECT * 
+  3      FROM enrolment
+  4      WHERE unit_code = 'FIT5111';
+
+Table FIT5111_STUDENT created.
+
+SQL> 
+SQL> --This is to check if the table exists
+SQL> SELECT table_name from user_tables;
+
+TABLE_NAME                                                                                                                      
+--------------------------------------------------------------------------------------------------------------------------------
+EMPLOYEE
+FIT5111_STUDENT
+TEAM
+ENROLMENT
+STUDENT
+UNIT
+
+6 rows selected. 
+
+SQL> 
+SQL> SELECT * FROM FIT5111_STUDENT;
+
+   STU_NBR UNIT_CO ENROL_YEAR E ENROL_MARK EN
+---------- ------- ---------- - ---------- --
+  11111111 FIT5111       2013 2         76 D 
+  11111112 FIT5111       2013 2         79 D 
+  11111113 FIT5111       2014 2              
+  11111114 FIT5111       2014 2              
+
+SQL> 
+SQL> spool off

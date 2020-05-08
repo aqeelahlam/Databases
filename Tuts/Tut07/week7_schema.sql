@@ -10,6 +10,8 @@ DROP TABLE unit CASCADE CONSTRAINTS PURGE;
 DROP TABLE student CASCADE CONSTRAINTS PURGE;
 DROP TABLE enrolment CASCADE CONSTRAINTS PURGE;
 
+select table_name from user_tables;
+
 CREATE TABLE unit (
     unit_code       CHAR(7) CONSTRAINT unit_pk PRIMARY KEY,
     unit_name       VARCHAR2(50) NOT NULL CONSTRAINT uq_unique_name UNIQUE
@@ -41,6 +43,10 @@ ALTER TABLE enrolment
     CONSTRAINT fk_enrolment_unit FOREIGN KEY (unit_code)
                             REFERENCES unit (unit_code)
 );
-                            
+
+-- select * from user_constraints;
+                           
+spool off
+set echo off
     
 
