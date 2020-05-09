@@ -1,0 +1,7 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BusinessInfoDesign class="oracle.dbtools.crest.model.businessinfo.BusinessInfoDesign" name="Business Information" id="8462BAC8-FCF1-9A43-A81C-0CD95889A889">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-09 19:46:45 UTC</createdTime>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<shouldBeOpen>false</shouldBeOpen>
+</BusinessInfoDesign>

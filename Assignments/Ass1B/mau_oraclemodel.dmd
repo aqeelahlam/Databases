@@ -1,0 +1,8 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="mau_oraclemodel" id="4799E07A-EB0D-2CEB-18BD-4CE78F730C1B" version="3.5">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-09 19:46:44 UTC</createdTime>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>4799E07A-EB0D-2CEB-18BD-4CE78F730C1B</designId>
+</OSDM_Design>

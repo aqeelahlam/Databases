@@ -1,0 +1,102 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="4C427B17-3866-3DF3-E175-93562A740B94" name="ARTWORK">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-09 20:07:54 UTC</createdTime>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="artwork_no" id="E898D6A1-8877-0847-7904-A012A9A5AD29">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-09 20:08:28 UTC</createdTime>
+<commentInRDBMS><![CDATA[Artwork Number]]></commentInRDBMS>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>3</dataTypePrecision>
+<ownDataTypeParameters>,3,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="artwork_title" id="D38365E2-026F-5106-ECBC-FEEA2E24D6A6">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-09 20:08:28 UTC</createdTime>
+<commentInRDBMS><![CDATA[Artwork Title]]></commentInRDBMS>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="artwork_date_of_accept" id="D9DBE260-B96A-7E84-9214-ACAAD0E9D0C0">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-09 20:08:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[The date in which the artwork was accepted into MAU]]></commentInRDBMS>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="artwork_minimum_price" id="5178BAE5-1B0D-57E9-DA09-5A7C40768174">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-09 20:08:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[Artwork Minimum Price]]></commentInRDBMS>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<ownDataTypeParameters>,10,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="artwork_media_description" id="38C21BF2-DB00-0E57-1A73-ED481BF94668">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-09 20:08:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[Artwork Media Description (Material its made from)]]></commentInRDBMS>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="E2E37B92-41B9-7CA1-B89C-0AA091B35546" name="ARTWORK PK">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-09 20:09:33 UTC</createdTime>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>E898D6A1-8877-0847-7904-A012A9A5AD29</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
