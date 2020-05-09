@@ -1,0 +1,79 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E72F7B8E-397E-F767-9586-FA0A30D9D9EE" name="EXHIBITION">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-09 20:33:07 UTC</createdTime>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="exhibition_date_started" id="EB6B9DBD-20C7-B6E2-C565-39D5C7A903DA">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-09 20:33:47 UTC</createdTime>
+<commentInRDBMS><![CDATA[Date Exhibitio Started]]></commentInRDBMS>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="exhibition_date_ended" id="B0D4ABF6-BB40-73AC-151C-8F31ACD5509E">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-09 20:36:32 UTC</createdTime>
+<commentInRDBMS><![CDATA[Date Exhibition Ended]]></commentInRDBMS>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="exhibition_featured_in_catalog" id="609F41FA-7E03-D763-5BE3-73D4F8B0A301">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-09 20:36:32 UTC</createdTime>
+<commentInRDBMS><![CDATA[Exhibition Featured in Catalog]]></commentInRDBMS>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+</engineerTo>
+<constraintName>values_featured_in_catalog</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>3</dataTypeSize>
+<listOfValues>
+<valueDef value="No" description="It is not featured in Catalog"/>
+<valueDef value="Yes" description="It is featured in Catalog"/>
+</listOfValues>
+<ownDataTypeParameters>3,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="79592B24-F022-E69C-ACEC-7EBDAA60A4A6" name="EXHIBITION PK">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-09 20:37:06 UTC</createdTime>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>EB6B9DBD-20C7-B6E2-C565-39D5C7A903DA</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
