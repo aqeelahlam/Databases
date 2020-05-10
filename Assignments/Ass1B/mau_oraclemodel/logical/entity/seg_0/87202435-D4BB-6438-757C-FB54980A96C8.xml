@@ -18,7 +18,7 @@
 <Attribute name="style_artwork" id="9FEEFB67-C59D-B0B5-A459-698D3068797B">
 <createdBy>Aqeel</createdBy>
 <createdTime>2020-05-10 09:35:04 UTC</createdTime>
-<commentInRDBMS><![CDATA[Child Style]]></commentInRDBMS>
+<commentInRDBMS><![CDATA[Child/Parent Style]]></commentInRDBMS>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
 <item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
@@ -43,6 +43,23 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>30</dataTypeSize>
 <ownDataTypeParameters>30,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="art_style" id="EAB82F8C-0650-E38B-695E-F42E9A236358">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-10 19:55:09 UTC</createdTime>
+<commentInRDBMS><![CDATA[Child/Parent Style]]></commentInRDBMS>
+<generatorID>8D6C4512-7EB9-6E9B-0AC3-71D0C1145B2F</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>9FEEFB67-C59D-B0B5-A459-698D3068797B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

@@ -45,7 +45,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>5</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="cs_date" id="55418F00-46A3-FC06-D56E-31C54A660E4F">
 <createdBy>Aqeel</createdBy>
@@ -68,10 +68,18 @@
 <engineerTo>
 <item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
 </engineerTo>
+<constraintName>ARTWORK STATUS VALUES</constraintName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>30</dataTypeSize>
+<listOfValues>
+<valueDef value="In MAU Warehouse" description="Artwork is at MAU central Warehouse"/>
+<valueDef value="In Transit" description="Being shipped to/from a gallery"/>
+<valueDef value="On Display by Gallery" description="Artwork is being Displayed"/>
+<valueDef value="Returned to the Artist" description="Artwork is returned back to Artist"/>
+<valueDef value="Sold" description="Artwork is Sold"/>
+</listOfValues>
 <ownDataTypeParameters>30,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="gallery_id" id="3ECF2085-CB6B-09C1-9654-51D8C958692D">
@@ -89,7 +97,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>4</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

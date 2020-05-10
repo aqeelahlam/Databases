@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="STYLE-STYLE" directorySegmentName="seg_0" id="8D6C4512-7EB9-6E9B-0AC3-71D0C1145B2F">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-10 19:55:09 UTC</createdTime>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+</engineerTo>
+<targetPk>B007D11B-3394-374E-846B-F0319A9D1C55</targetPk>
+<identifying>false</identifying>
+<nameOnSource>has</nameOnSource>
+<optionalSource>true</optionalSource>
+<optionalTarget>true</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>87202435-D4BB-6438-757C-FB54980A96C8</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>87202435-D4BB-6438-757C-FB54980A96C8</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>
