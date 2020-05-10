@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="8C7D5A07-7951-D21C-46DC-F79043A807A4" name="MEDIA_DESCRIPTION">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="87202435-D4BB-6438-757C-FB54980A96C8" name="STYLE">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-10 07:01:43 UTC</createdTime>
+<createdTime>2020-05-10 09:34:56 UTC</createdTime>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
 <item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
@@ -15,23 +15,24 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="media_id" id="3C577C2F-DBEF-A396-3B32-9373FCA60090">
+<Attribute name="style_artwork" id="9FEEFB67-C59D-B0B5-A459-698D3068797B">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-10 07:02:01 UTC</createdTime>
-<commentInRDBMS><![CDATA[Surrogate Key: Media ID]]></commentInRDBMS>
+<createdTime>2020-05-10 09:35:04 UTC</createdTime>
+<commentInRDBMS><![CDATA[Child Style]]></commentInRDBMS>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
 <item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>5</dataTypePrecision>
-<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="media_description" id="3ACD7F19-49E1-ECC1-C7FF-2BA4AE0C23EE">
+<Attribute name="style_parent" id="872F9280-4D1A-754E-08B6-E40044440804">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-10 08:41:34 UTC</createdTime>
+<createdTime>2020-05-10 09:35:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[Parent Style]]></commentInRDBMS>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
 <item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
@@ -45,16 +46,16 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="259318C8-9AB0-D323-6C13-050CCC3A2C31" name="MEDIA_DESCRIPTION PK">
+<identifier id="B007D11B-3394-374E-846B-F0319A9D1C55" name="STYLE PK">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-10 09:36:37 UTC</createdTime>
+<createdTime>2020-05-10 09:35:47 UTC</createdTime>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
 <item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>3C577C2F-DBEF-A396-3B32-9373FCA60090</attributeRef>
+<attributeRef>9FEEFB67-C59D-B0B5-A459-698D3068797B</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

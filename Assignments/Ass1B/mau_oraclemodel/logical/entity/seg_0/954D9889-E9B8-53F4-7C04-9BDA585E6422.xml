@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="FDF10E52-E972-6438-A989-3758D13CB174" name="ARTIST">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="954D9889-E9B8-53F4-7C04-9BDA585E6422" name="CUSTOMER">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-09 19:56:27 UTC</createdTime>
+<createdTime>2020-05-10 09:31:05 UTC</createdTime>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
 <item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
@@ -15,10 +15,10 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="artist_code" id="02E805DF-8361-F10B-8807-85B219296DFF">
+<Attribute name="customer_id" id="03A0917E-F214-ED54-D8C5-CD7622E6A5DB">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-09 19:58:46 UTC</createdTime>
-<commentInRDBMS><![CDATA[Artist Code]]></commentInRDBMS>
+<createdTime>2020-05-10 09:31:14 UTC</createdTime>
+<commentInRDBMS><![CDATA[Customer ID]]></commentInRDBMS>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
 <item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
@@ -29,10 +29,10 @@
 <dataTypePrecision>5</dataTypePrecision>
 <ownDataTypeParameters>,5,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="artist_name" id="CD7FFF6D-FC73-1681-BA7D-8CBBDC4B59EA">
+<Attribute name="customer_name" id="5B810C9D-80F4-CC9F-F353-761ABB6EAC72">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-09 19:58:46 UTC</createdTime>
-<commentInRDBMS><![CDATA[Artist Name]]></commentInRDBMS>
+<createdTime>2020-05-10 09:31:14 UTC</createdTime>
+<commentInRDBMS><![CDATA[Customer Name]]></commentInRDBMS>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
 <item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
@@ -43,10 +43,10 @@
 <dataTypeSize>50</dataTypeSize>
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="artist_address" id="B10A236E-980A-2AB5-8FFF-77D26D389006">
+<Attribute name="customer_address" id="23AC597E-90AC-90C5-CA84-0BB0B271385F">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-09 19:58:46 UTC</createdTime>
-<commentInRDBMS><![CDATA[Artist Address]]></commentInRDBMS>
+<createdTime>2020-05-10 09:31:14 UTC</createdTime>
+<commentInRDBMS><![CDATA[Customer Address]]></commentInRDBMS>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
 <item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
@@ -57,10 +57,24 @@
 <dataTypeSize>50</dataTypeSize>
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="artist_telephone_number" id="A1E199AA-D448-3078-C435-386CFCA43842">
+<Attribute name="customer_phone" id="0A608941-359C-99A0-4703-AB3F03FF92FD">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-09 19:58:47 UTC</createdTime>
-<commentInRDBMS><![CDATA[Artist Telephone Number]]></commentInRDBMS>
+<createdTime>2020-05-10 09:31:15 UTC</createdTime>
+<commentInRDBMS><![CDATA[Customer Phone Number]]></commentInRDBMS>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="customer_business_name" id="727BF92A-F7BE-864B-1B33-98D9382FC89C">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-10 09:31:15 UTC</createdTime>
+<commentInRDBMS><![CDATA[Customer Business Name]]></commentInRDBMS>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
 <item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
@@ -68,36 +82,22 @@
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT025</logicalDatatype>
-<dataTypeSize>10</dataTypeSize>
-<ownDataTypeParameters>10,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="artist_no_of_work" id="09FE7704-8BF6-17FD-6C5F-6B22C1685795">
-<createdBy>Aqeel</createdBy>
-<createdTime>2020-05-09 19:58:47 UTC</createdTime>
-<commentInRDBMS><![CDATA[Artist Number of Works]]></commentInRDBMS>
-<ownerDesignName>mau_oraclemodel</ownerDesignName>
-<engineerTo>
-<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>5</dataTypePrecision>
-<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="C36967E0-1EB9-3DBD-056D-CB7C9868B354" name="ARTIST PK">
+<identifier id="29291AC3-1B15-C3C9-736F-AFA68D191FFE" name="CUSTOMER PK">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-09 20:00:13 UTC</createdTime>
+<createdTime>2020-05-10 09:32:19 UTC</createdTime>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
 <item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>02E805DF-8361-F10B-8807-85B219296DFF</attributeRef>
+<attributeRef>03A0917E-F214-ED54-D8C5-CD7622E6A5DB</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

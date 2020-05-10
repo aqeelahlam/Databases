@@ -57,10 +57,10 @@
 <dataTypeSize>50</dataTypeSize>
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="gallery_address" id="9BA9D8D1-FBD7-BD60-2E92-439566FCEAB2">
+<Attribute name="gallery_street" id="9BA9D8D1-FBD7-BD60-2E92-439566FCEAB2">
 <createdBy>Aqeel</createdBy>
 <createdTime>2020-05-09 20:18:04 UTC</createdTime>
-<commentInRDBMS><![CDATA[Gallery Address]]></commentInRDBMS>
+<commentInRDBMS><![CDATA[Gallery Street]]></commentInRDBMS>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
 <item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
@@ -70,6 +70,35 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>50</dataTypeSize>
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="gallery_town" id="767327A0-332A-E0F5-E04E-2FA0788305BD">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-10 09:24:14 UTC</createdTime>
+<commentInRDBMS><![CDATA[Gallery Town]]></commentInRDBMS>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="gallery_state" id="7F23E2E7-5E5C-25E6-797C-95E421D1C80E">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-10 09:24:22 UTC</createdTime>
+<commentInRDBMS><![CDATA[Gallery State]]></commentInRDBMS>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="gallery_contact" id="3DDE08B1-5783-AF41-7CED-B34B32C46E26">
 <createdBy>Aqeel</createdBy>
@@ -85,10 +114,36 @@
 <dataTypeSize>10</dataTypeSize>
 <ownDataTypeParameters>10,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="gallery_open" id="6B08D283-C4FC-14B5-938D-9523D233A873">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-10 09:27:17 UTC</createdTime>
+<commentInRDBMS><![CDATA[Gallery Open Time]]></commentInRDBMS>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="gallery_close" id="3204CCC1-55D1-169F-5D89-FD5001211299">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-10 09:27:17 UTC</createdTime>
+<commentInRDBMS><![CDATA[Gallery Close Time]]></commentInRDBMS>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 <Attribute name="gallery_percentage_comission" id="80BF1ABB-1CAC-EAA4-F8E9-75CE40215B42">
 <createdBy>Aqeel</createdBy>
 <createdTime>2020-05-09 20:18:04 UTC</createdTime>
-<commentInRDBMS><![CDATA[Gallery Percentage Comission]]></commentInRDBMS>
+<commentInRDBMS><![CDATA[Gallery Percentage Comission(In Percentage)]]></commentInRDBMS>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
 <item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>

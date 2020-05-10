@@ -26,8 +26,8 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>3</dataTypePrecision>
-<ownDataTypeParameters>,3,</ownDataTypeParameters>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="artwork_title" id="D38365E2-026F-5106-ECBC-FEEA2E24D6A6">
 <createdBy>Aqeel</createdBy>
@@ -43,7 +43,7 @@
 <dataTypeSize>50</dataTypeSize>
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="artwork_date_of_accept" id="D9DBE260-B96A-7E84-9214-ACAAD0E9D0C0">
+<Attribute name="artwork_date_added_to_stock" id="D9DBE260-B96A-7E84-9214-ACAAD0E9D0C0">
 <createdBy>Aqeel</createdBy>
 <createdTime>2020-05-09 20:08:29 UTC</createdTime>
 <commentInRDBMS><![CDATA[The date in which the artwork was accepted into MAU]]></commentInRDBMS>
