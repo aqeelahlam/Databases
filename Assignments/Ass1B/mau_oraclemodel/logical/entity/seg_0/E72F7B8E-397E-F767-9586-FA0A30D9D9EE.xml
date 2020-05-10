@@ -15,6 +15,20 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="exhibition_no" id="E9A3326F-EA44-9EFD-3AFF-7D96991EC9B1">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-10 20:30:27 UTC</createdTime>
+<commentInRDBMS><![CDATA[Surrogate Key: Exhibition Number]]></commentInRDBMS>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+</Attribute>
 <Attribute name="artwork_no" id="D854FE6A-1CA7-DB30-F8C1-D386834E6569">
 <createdBy>Aqeel</createdBy>
 <createdTime>2020-05-10 12:48:47 UTC</createdTime>
@@ -107,22 +121,34 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>4</dataTypePrecision>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
+<ownDataTypeParameters>,4,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="79592B24-F022-E69C-ACEC-7EBDAA60A4A6" name="EXHIBITION PK">
+<identifier id="271709FC-4A6B-062C-A662-62C6407590B2" name="NK_Exhibition">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-09 20:37:06 UTC</createdTime>
+<createdTime>2020-05-10 20:33:46 UTC</createdTime>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+</engineerTo>
+<newElementsIDs>EB6B9DBD-20C7-B6E2-C565-39D5C7A903DA,68C0AF93-E86A-10AC-4EF3-271076731D35</newElementsIDs>
+<usedAttributes>
+<attributeRef>EB6B9DBD-20C7-B6E2-C565-39D5C7A903DA</attributeRef>
+<attributeRef>D854FE6A-1CA7-DB30-F8C1-D386834E6569</attributeRef>
+<attributeRef>47283E01-0BA1-196E-B0D6-986108CA7D3B</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="71CB748C-EE04-6DC2-4CB1-E5D3BEEAC249" name="EXHIBITION PK">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-10 20:35:09 UTC</createdTime>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
 <item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>EB6B9DBD-20C7-B6E2-C565-39D5C7A903DA</attributeRef>
-<attributeRef>D854FE6A-1CA7-DB30-F8C1-D386834E6569</attributeRef>
-<attributeRef>47283E01-0BA1-196E-B0D6-986108CA7D3B</attributeRef>
+<attributeRef>E9A3326F-EA44-9EFD-3AFF-7D96991EC9B1</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

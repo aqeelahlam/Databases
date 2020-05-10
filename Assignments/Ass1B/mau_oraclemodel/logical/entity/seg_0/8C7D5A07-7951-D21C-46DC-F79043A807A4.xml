@@ -32,6 +32,7 @@
 <Attribute name="media_description" id="3ACD7F19-49E1-ECC1-C7FF-2BA4AE0C23EE">
 <createdBy>Aqeel</createdBy>
 <createdTime>2020-05-10 08:41:34 UTC</createdTime>
+<commentInRDBMS><![CDATA[Artwork Media Description (Material its made from)]]></commentInRDBMS>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
 <item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>

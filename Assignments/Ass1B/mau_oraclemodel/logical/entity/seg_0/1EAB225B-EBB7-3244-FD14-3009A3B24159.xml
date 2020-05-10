@@ -147,11 +147,15 @@
 <engineerTo>
 <item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
 </engineerTo>
+<constraintName>CHK_GL_PERCENTAGE_COMISSION</constraintName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>3</dataTypePrecision>
 <dataTypeScale>2</dataTypeScale>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="gallery_percentage_comission &gt; 0"/>
+</checkConstraint>
 <ownDataTypeParameters>,3,2</ownDataTypeParameters>
 </Attribute>
 </attributes>
