@@ -26,8 +26,8 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<dataTypePrecision>7</dataTypePrecision>
-<ownDataTypeParameters>,7,</ownDataTypeParameters>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="sale_date" id="0B5A92CA-BC74-A4C1-7E44-1E6FDCC7DAE2">
 <createdBy>Aqeel</createdBy>
@@ -57,6 +57,69 @@
 <dataTypePrecision>10</dataTypePrecision>
 <dataTypeScale>2</dataTypeScale>
 <ownDataTypeParameters>,10,2</ownDataTypeParameters>
+</Attribute>
+<Attribute name="exhibition_date_started" id="5B2AD00C-55EF-4778-3DB3-D66A86789CD1">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-10 12:50:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[Date Exhibitio Started]]></commentInRDBMS>
+<generatorID>678550D6-314E-DCE1-C2F5-95AEA77B8F06</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+</engineerTo>
+<referedAttribute>EB6B9DBD-20C7-B6E2-C565-39D5C7A903DA</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="artwork_no" id="8AE1AF9D-F6AE-190D-9CEE-2A2DB774253A">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-10 12:50:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[Artwork Number]]></commentInRDBMS>
+<generatorID>678550D6-314E-DCE1-C2F5-95AEA77B8F06</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+</engineerTo>
+<referedAttribute>D854FE6A-1CA7-DB30-F8C1-D386834E6569</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="artist_code" id="347C3F71-0FBF-ADBD-B6EF-5A842CAA1863">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-10 12:50:59 UTC</createdTime>
+<commentInRDBMS><![CDATA[Artist Code]]></commentInRDBMS>
+<generatorID>678550D6-314E-DCE1-C2F5-95AEA77B8F06</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+</engineerTo>
+<referedAttribute>47283E01-0BA1-196E-B0D6-986108CA7D3B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="customer_id" id="D22D4A2A-DAEF-10C7-B0A3-959230200CA2">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-10 12:51:31 UTC</createdTime>
+<commentInRDBMS><![CDATA[Customer ID]]></commentInRDBMS>
+<generatorID>475FD819-B08C-4E0B-171D-3B174FCE086F</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+</engineerTo>
+<referedAttribute>03A0917E-F214-ED54-D8C5-CD7622E6A5DB</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="ARTIST-ARTWORK" directorySegmentName="seg_0" id="73411C46-7661-8100-D2A6-F19CD6C53288">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-10 12:39:26 UTC</createdTime>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+</engineerTo>
+<sourcePk>C36967E0-1EB9-3DBD-056D-CB7C9868B354</sourcePk>
+<identifying>true</identifying>
+<nameOnSource>paints</nameOnSource>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>FDF10E52-E972-6438-A989-3758D13CB174</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>4C427B17-3866-3DF3-E175-93562A740B94</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

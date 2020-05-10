@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E72F7B8E-397E-F767-9586-FA0A30D9D9EE" name="EXHIBITION">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="53B1B320-3C5F-5990-8988-E309095A7135" name="CURRENT_STATUS">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-09 20:33:07 UTC</createdTime>
+<createdTime>2020-05-10 12:34:38 UTC</createdTime>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
 <item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
@@ -15,11 +15,11 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="artwork_no" id="D854FE6A-1CA7-DB30-F8C1-D386834E6569">
+<Attribute name="artwork_no" id="4FB4FC34-FB63-505F-57E9-AADA58F6E334">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-10 12:48:47 UTC</createdTime>
+<createdTime>2020-05-10 12:58:58 UTC</createdTime>
 <commentInRDBMS><![CDATA[Artwork Number]]></commentInRDBMS>
-<generatorID>68C0AF93-E86A-10AC-4EF3-271076731D35</generatorID>
+<generatorID>6BD53A4C-1F5F-B367-0786-258C25475671</generatorID>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
 <item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
@@ -31,11 +31,11 @@
 <dataTypePrecision>4</dataTypePrecision>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="artist_code" id="47283E01-0BA1-196E-B0D6-986108CA7D3B">
+<Attribute name="artist_code" id="250725C4-AC09-BEB6-FE37-6A2481D6521A">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-10 12:48:47 UTC</createdTime>
+<createdTime>2020-05-10 12:58:58 UTC</createdTime>
 <commentInRDBMS><![CDATA[Artist Code]]></commentInRDBMS>
-<generatorID>68C0AF93-E86A-10AC-4EF3-271076731D35</generatorID>
+<generatorID>6BD53A4C-1F5F-B367-0786-258C25475671</generatorID>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
 <item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
@@ -47,10 +47,10 @@
 <dataTypePrecision>5</dataTypePrecision>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="exhibition_date_started" id="EB6B9DBD-20C7-B6E2-C565-39D5C7A903DA">
+<Attribute name="cs_date" id="55418F00-46A3-FC06-D56E-31C54A660E4F">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-09 20:33:47 UTC</createdTime>
-<commentInRDBMS><![CDATA[Date Exhibitio Started]]></commentInRDBMS>
+<createdTime>2020-05-10 12:35:17 UTC</createdTime>
+<commentInRDBMS><![CDATA[Current Status Date]]></commentInRDBMS>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
 <item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
@@ -60,44 +60,25 @@
 <logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="exhibition_date_ended" id="B0D4ABF6-BB40-73AC-151C-8F31ACD5509E">
+<Attribute name="cs_artwork_status" id="A16B40BB-794C-2807-736C-70E6B187406F">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-09 20:36:32 UTC</createdTime>
-<commentInRDBMS><![CDATA[Date Exhibition Ended]]></commentInRDBMS>
+<createdTime>2020-05-10 13:02:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Artwork Status]]></commentInRDBMS>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
 <item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT007</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="exhibition_featured_in_catalog" id="609F41FA-7E03-D763-5BE3-73D4F8B0A301">
-<createdBy>Aqeel</createdBy>
-<createdTime>2020-05-09 20:36:32 UTC</createdTime>
-<commentInRDBMS><![CDATA[Exhibition Featured in Catalog]]></commentInRDBMS>
-<ownerDesignName>mau_oraclemodel</ownerDesignName>
-<engineerTo>
-<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
-</engineerTo>
-<constraintName>values_featured_in_catalog</constraintName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>3</dataTypeSize>
-<listOfValues>
-<valueDef value="No" description="It is not featured in Catalog"/>
-<valueDef value="Yes" description="It is featured in Catalog"/>
-</listOfValues>
-<ownDataTypeParameters>3,,</ownDataTypeParameters>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="gallery_id" id="D2B5B758-4FC6-DCE6-635A-5FBF42B1B5C0">
+<Attribute name="gallery_id" id="3ECF2085-CB6B-09C1-9654-51D8C958692D">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-10 12:46:47 UTC</createdTime>
+<createdTime>2020-05-10 12:57:02 UTC</createdTime>
 <commentInRDBMS><![CDATA[Gallery ID]]></commentInRDBMS>
-<generatorID>6C9DFA7B-2648-E1D9-77B5-BC2A08136BC2</generatorID>
+<generatorID>A7F85A12-A4DF-367A-9A0D-3DD747BEB01D</generatorID>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
 <item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
@@ -111,18 +92,18 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="79592B24-F022-E69C-ACEC-7EBDAA60A4A6" name="EXHIBITION PK">
+<identifier id="6207C99D-F523-3B1E-5477-3ABFA727DBB7" name="CURRENT_STATUS PK">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-09 20:37:06 UTC</createdTime>
+<createdTime>2020-05-10 12:50:34 UTC</createdTime>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
 <item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>EB6B9DBD-20C7-B6E2-C565-39D5C7A903DA</attributeRef>
-<attributeRef>D854FE6A-1CA7-DB30-F8C1-D386834E6569</attributeRef>
-<attributeRef>47283E01-0BA1-196E-B0D6-986108CA7D3B</attributeRef>
+<attributeRef>55418F00-46A3-FC06-D56E-31C54A660E4F</attributeRef>
+<attributeRef>4FB4FC34-FB63-505F-57E9-AADA58F6E334</attributeRef>
+<attributeRef>250725C4-AC09-BEB6-FE37-6A2481D6521A</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>
