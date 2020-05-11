@@ -1,0 +1,174 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1FF95020-912D-B596-06AA-AE622C50E0E7" name="SALE">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<generatorID>3557328C-42A1-7860-B994-616326DBCE92</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="sale_id" id="6C7AF41B-D1A4-55D1-E4AD-D7B6D5A78529">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Sale ID]]></commentInRDBMS>
+<generatorID>67E7D2A9-A393-05EE-22ED-F659D4FAF94A</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="sale_date" id="4C17B374-E67C-3729-E3B9-C8C090046DD7">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Sale Date]]></commentInRDBMS>
+<generatorID>0B5A92CA-BC74-A4C1-7E44-1E6FDCC7DAE2</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="sale_price" id="25948142-02E0-1401-E859-4581E7A52BFB">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Sale Price]]></commentInRDBMS>
+<generatorID>01A69207-D04B-BC0F-E899-B0AB426C8299</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<constraintName>CHK_SL_SALE_PRICE</constraintName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="sale_id &gt; 0"/>
+</checkConstraint>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="customer_id" id="F7868BB7-50FB-37B8-7755-BC014DB1B4A8">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Customer ID]]></commentInRDBMS>
+<generatorID>D22D4A2A-DAEF-10C7-B0A3-959230200CA2</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="953AFA39-F410-4E96-EBE3-6779A3148260" referredColumn="F18DCE25-4F46-4116-6DA4-4E599B2D75BE"/>
+</associations>
+</Column>
+<Column name="exhibition_date_started" id="85A90B62-3D39-9BC5-6C56-BCE6545CFA4D">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Date Exhibition Started]]></commentInRDBMS>
+<generatorID>B4913F2E-79B7-3B22-45DA-9596BAF55DB8</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8C39A7F8-D5C2-3343-24C4-24BFCB69ACF8" referredColumn="44EB9661-C2EF-4BE0-642E-142681F420D0"/>
+</associations>
+</Column>
+<Column name="artwork_no" id="A3B01C6D-985C-62AA-D277-64BBE3EFDBB6">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Artwork Number]]></commentInRDBMS>
+<generatorID>D79B11CE-471E-EE66-E5AC-E61B97C170B9</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8C39A7F8-D5C2-3343-24C4-24BFCB69ACF8" referredColumn="7B96551D-EE6B-6A9F-AD90-3D3C7DC2F807"/>
+</associations>
+</Column>
+<Column name="artist_code" id="5C11D280-A7EE-F4B3-0275-C998C322917C">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Artist Code]]></commentInRDBMS>
+<generatorID>C5C24AF1-578C-3FED-84B2-7466C48B4414</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8C39A7F8-D5C2-3343-24C4-24BFCB69ACF8" referredColumn="B3CF915B-A142-E86F-C331-43E9456872BD"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="8DECD027-D8C0-9D18-F0BF-F81A50851187" name="SALE_PK">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<generatorID>A2D884BC-15D4-3F8F-371C-2452D91A9512</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="6C7AF41B-D1A4-55D1-E4AD-D7B6D5A78529"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DE68789A-5FB2-F05B-A7C7-629724684D47" name="SALE__IDX">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>678550D6-314E-DCE1-C2F5-95AEA77B8F06</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="85A90B62-3D39-9BC5-6C56-BCE6545CFA4D"/>
+<colUsage columnID="A3B01C6D-985C-62AA-D277-64BBE3EFDBB6"/>
+<colUsage columnID="5C11D280-A7EE-F4B3-0275-C998C322917C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4EB6E786-F8C4-7A23-3D80-E2B1160DAB1D" name="CUSTOMER-SALE">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<generatorID>475FD819-B08C-4E0B-171D-3B174FCE086F</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F7868BB7-50FB-37B8-7755-BC014DB1B4A8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="5C4380D2-DE31-7B47-059A-D07C200DD570" name="EXHIBITION-SALE">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<generatorID>678550D6-314E-DCE1-C2F5-95AEA77B8F06</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="85A90B62-3D39-9BC5-6C56-BCE6545CFA4D"/>
+<colUsage columnID="A3B01C6D-985C-62AA-D277-64BBE3EFDBB6"/>
+<colUsage columnID="5C11D280-A7EE-F4B3-0275-C998C322917C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

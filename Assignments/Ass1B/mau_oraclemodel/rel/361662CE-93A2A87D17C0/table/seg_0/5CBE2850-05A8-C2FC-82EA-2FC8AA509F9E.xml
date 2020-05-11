@@ -1,0 +1,92 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="5CBE2850-05A8-C2FC-82EA-2FC8AA509F9E" name="ARTIST">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<generatorID>FDF10E52-E972-6438-A989-3758D13CB174</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="artist_code" id="4A5846DD-B482-2F20-9ECF-861020C125D0">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Artist Code]]></commentInRDBMS>
+<generatorID>02E805DF-8361-F10B-8807-85B219296DFF</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="artist_name" id="04A937C7-BA9E-22C2-A8D1-D03CD63348A6">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Artist Name]]></commentInRDBMS>
+<generatorID>CD7FFF6D-FC73-1681-BA7D-8CBBDC4B59EA</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="artist_address" id="48F8D2D6-22C0-055D-694E-B9F3BE957939">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Artist Address]]></commentInRDBMS>
+<generatorID>B10A236E-980A-2AB5-8FFF-77D26D389006</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="artist_telephone_number" id="53735D1C-F633-16B8-EEFA-1CE0BBA9BF66">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Artist Telephone Number]]></commentInRDBMS>
+<generatorID>A1E199AA-D448-3078-C435-386CFCA43842</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="artist_no_of_work" id="68BF2FA0-32DA-A62D-47AC-5EF7CE11221C">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Artist Number of Works]]></commentInRDBMS>
+<generatorID>09FE7704-8BF6-17FD-6C5F-6B22C1685795</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="ED7EDA2E-13FB-4CB8-5F25-DDC3AE86617E" name="ARTIST_PK">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<generatorID>C36967E0-1EB9-3DBD-056D-CB7C9868B354</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4A5846DD-B482-2F20-9ECF-861020C125D0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,92 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="201E6AC2-7BBA-0339-A8E5-3A14F40E93E2" name="CUSTOMER">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<generatorID>954D9889-E9B8-53F4-7C04-9BDA585E6422</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="customer_id" id="F18DCE25-4F46-4116-6DA4-4E599B2D75BE">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Customer ID]]></commentInRDBMS>
+<generatorID>03A0917E-F214-ED54-D8C5-CD7622E6A5DB</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="customer_name" id="9E05AEDE-35D7-6771-8DF1-661621F3FD52">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Customer Name]]></commentInRDBMS>
+<generatorID>5B810C9D-80F4-CC9F-F353-761ABB6EAC72</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="customer_address" id="A2B0D947-8250-FEB7-BAE2-C4E56F55791E">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Customer Address]]></commentInRDBMS>
+<generatorID>23AC597E-90AC-90C5-CA84-0BB0B271385F</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="customer_phone" id="A9E52BB9-1F25-47A7-B02F-282BB6B9E2BB">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Customer Phone Number]]></commentInRDBMS>
+<generatorID>0A608941-359C-99A0-4703-AB3F03FF92FD</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="customer_business_name" id="4B4E6123-4BBA-E168-9979-49D117E01B69">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Customer Business Name]]></commentInRDBMS>
+<generatorID>727BF92A-F7BE-864B-1B33-98D9382FC89C</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="032677B6-EF32-32D6-4450-D8247BC71BE4" name="CUSTOMER_PK">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<generatorID>29291AC3-1B15-C3C9-736F-AFA68D191FFE</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="F18DCE25-4F46-4116-6DA4-4E599B2D75BE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,82 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="582EA434-72CA-0497-AE97-FB909ACA3742" name="STYLE">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<generatorID>87202435-D4BB-6438-757C-FB54980A96C8</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="style_artwork" id="0F23ABF8-31E2-B44D-883D-71B913D2CC90">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Child/Parent Style]]></commentInRDBMS>
+<generatorID>9FEEFB67-C59D-B0B5-A459-698D3068797B</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="style_parent" id="BA33EF33-13C6-44DB-61E1-D3D35F1B2031">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Parent Style]]></commentInRDBMS>
+<generatorID>872F9280-4D1A-754E-08B6-E40044440804</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="art_style" id="4EA07355-3A7E-67D5-46CB-F33F9B218B7B">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Child/Parent Style]]></commentInRDBMS>
+<generatorID>EAB82F8C-0650-E38B-695E-F42E9A236358</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="46FDDF35-A4C4-ACEF-D9D9-642C68ED057E" referredColumn="0F23ABF8-31E2-B44D-883D-71B913D2CC90"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1DE78539-EB93-C8AB-F6B4-D6EFECB14814" name="STYLE_PK">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<generatorID>B007D11B-3394-374E-846B-F0319A9D1C55</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0F23ABF8-31E2-B44D-883D-71B913D2CC90"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="DC25D5E8-24DB-C802-D809-F3F7670EC2ED" name="STYLE-STYLE">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<generatorID>8D6C4512-7EB9-6E9B-0AC3-71D0C1145B2F</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4EA07355-3A7E-67D5-46CB-F33F9B218B7B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
