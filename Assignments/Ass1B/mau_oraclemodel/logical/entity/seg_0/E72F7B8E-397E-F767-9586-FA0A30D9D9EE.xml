@@ -64,7 +64,7 @@
 <Attribute name="exhibition_date_started" id="EB6B9DBD-20C7-B6E2-C565-39D5C7A903DA">
 <createdBy>Aqeel</createdBy>
 <createdTime>2020-05-09 20:33:47 UTC</createdTime>
-<commentInRDBMS><![CDATA[Date Exhibitio Started]]></commentInRDBMS>
+<commentInRDBMS><![CDATA[Date Exhibition Started]]></commentInRDBMS>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
 <item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
@@ -121,7 +121,7 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>4</dataTypePrecision>
-<ownDataTypeParameters>,4,</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">

@@ -42,7 +42,7 @@
 </OView>
 <OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="8C7D5A07-7951-D21C-46DC-F79043A807A4" otype="Entity" vid="9E1E2669-9D8C-2670-64FB-D0B4CC62A7AF">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
-<bounds x="330" y="500" width="131" height="111"/>
+<bounds x="340" y="500" width="131" height="111"/>
 </OView>
 <OView class="oracle.dbtools.crest.swingui.logical.TVEntity" oid="954D9889-E9B8-53F4-7C04-9BDA585E6422" otype="Entity" vid="74173E7A-5FEE-B7E1-257C-5A54164D3FFE">
 <hideElementsInCurrentOnly>false</hideElementsInCurrentOnly>
@@ -64,7 +64,7 @@
 <lineWidth>1</lineWidth>
 <sourceLabel class="oracle.dbtools.crest.model.design.Label">
 <site>0</site>
-<labelBounds x="921" y="525" width="47" height="30"/>
+<labelBounds x="921" y="520" width="50" height="35"/>
 <noBackgroundColor>true</noBackgroundColor>
 <noForegroundColor>true</noForegroundColor>
 </sourceLabel>
@@ -94,7 +94,7 @@
 <lineWidth>1</lineWidth>
 <sourceLabel class="oracle.dbtools.crest.model.design.Label">
 <site>0</site>
-<labelBounds x="621" y="295" width="54" height="30"/>
+<labelBounds x="621" y="295" width="60" height="30"/>
 <noBackgroundColor>true</noBackgroundColor>
 <noForegroundColor>true</noForegroundColor>
 </sourceLabel>
@@ -187,7 +187,7 @@
 <lineWidth>1</lineWidth>
 <sourceLabel class="oracle.dbtools.crest.model.design.Label">
 <site>0</site>
-<labelBounds x="962" y="25" width="32" height="30"/>
+<labelBounds x="750" y="25" width="244" height="30"/>
 <noBackgroundColor>true</noBackgroundColor>
 <noForegroundColor>true</noForegroundColor>
 </sourceLabel>
@@ -202,13 +202,13 @@
 <lineWidth>1</lineWidth>
 <sourceLabel class="oracle.dbtools.crest.model.design.Label">
 <site>0</site>
-<labelBounds x="400" y="464" width="71" height="30"/>
+<labelBounds x="405" y="464" width="71" height="30"/>
 <noBackgroundColor>true</noBackgroundColor>
 <noForegroundColor>true</noForegroundColor>
 </sourceLabel>
 <points>
-<point x="400" y="500"/>
-<point x="400" y="401"/>
+<point x="405" y="500"/>
+<point x="405" y="401"/>
 </points>
 </Connector>
 </connectors>

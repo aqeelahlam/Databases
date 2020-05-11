@@ -76,12 +76,12 @@
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <dataTypePrecision>5</dataTypePrecision>
-<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="exhibition_date_started" id="B4913F2E-79B7-3B22-45DA-9596BAF55DB8">
 <createdBy>Aqeel</createdBy>
 <createdTime>2020-05-10 20:35:00 UTC</createdTime>
-<commentInRDBMS><![CDATA[Date Exhibitio Started]]></commentInRDBMS>
+<commentInRDBMS><![CDATA[Date Exhibition Started]]></commentInRDBMS>
 <generatorID>678550D6-314E-DCE1-C2F5-95AEA77B8F06</generatorID>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
