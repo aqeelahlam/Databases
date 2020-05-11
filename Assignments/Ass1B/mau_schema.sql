@@ -3,6 +3,10 @@
 --   site:      Oracle Database 11g
 --   type:      Oracle Database 11g
 
+--Student ID: 29262674
+--Student Name: Aqeel Ahlam
+
+
 set echo on
 spool mau_schema_output.txt
 
