@@ -1,0 +1,144 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="1E471500-A0CB-5179-E8DC-3D22B039BA75" name="CUSTOMER">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-12 18:15:54 UTC</createdTime>
+<generatorID>954D9889-E9B8-53F4-7C04-9BDA585E6422</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="customer_id" id="BF83EB64-9673-45B3-2EB6-DFE2C67086C5">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-12 18:15:54 UTC</createdTime>
+<commentInRDBMS><![CDATA[Customer ID]]></commentInRDBMS>
+<generatorID>03A0917E-F214-ED54-D8C5-CD7622E6A5DB</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="customer_title" id="F4E00083-AF45-B5BB-10FD-57DA1C63B1E7">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-12 18:15:54 UTC</createdTime>
+<commentInRDBMS><![CDATA[Customer title]]></commentInRDBMS>
+<generatorID>82277715-C0BE-7707-BC70-ADF18419801C</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5</dataTypeSize>
+<ownDataTypeParameters>5,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="customer_fname" id="A8EFF52D-275A-5237-8365-2B4236823A45">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-12 18:15:54 UTC</createdTime>
+<commentInRDBMS><![CDATA[Customer First Name]]></commentInRDBMS>
+<generatorID>5B810C9D-80F4-CC9F-F353-761ABB6EAC72</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="customer_lname" id="45131293-3D85-2DD4-ED9E-63754207BEE8">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-12 18:15:54 UTC</createdTime>
+<commentInRDBMS><![CDATA[Customer Last Name]]></commentInRDBMS>
+<generatorID>FCEB4C08-4719-0BA4-2D31-AF6321452B9F</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="customer_street" id="D6309158-BD81-C2C4-4ABF-FFF6EBB883BF">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-12 18:15:54 UTC</createdTime>
+<commentInRDBMS><![CDATA[Customer Street]]></commentInRDBMS>
+<generatorID>23AC597E-90AC-90C5-CA84-0BB0B271385F</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="customer_town" id="E7EF11C6-4DCA-4AD8-A064-160EED3E4778">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-12 18:15:54 UTC</createdTime>
+<commentInRDBMS><![CDATA[Customer Town]]></commentInRDBMS>
+<generatorID>3BDE7B88-AF01-069C-9707-BF7809E21242</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="customer_state" id="1F238053-9E31-BD2B-EC91-C0BA2A932494">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-12 18:15:54 UTC</createdTime>
+<commentInRDBMS><![CDATA[Customer State]]></commentInRDBMS>
+<generatorID>E8C61D6D-4CDF-5A95-3731-284F3BE44B6E</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="customer_phone" id="2E1C653F-AAF8-BB58-86C3-86D051070B5B">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-12 18:15:54 UTC</createdTime>
+<commentInRDBMS><![CDATA[Customer Phone Number]]></commentInRDBMS>
+<generatorID>0A608941-359C-99A0-4703-AB3F03FF92FD</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>10</dataTypeSize>
+<ownDataTypeParameters>10,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="customer_business_name" id="FA526398-BE7F-9E08-D1A4-0040420DD787">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-12 18:15:54 UTC</createdTime>
+<commentInRDBMS><![CDATA[Customer Business Name]]></commentInRDBMS>
+<generatorID>727BF92A-F7BE-864B-1B33-98D9382FC89C</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1D4E0701-7EE3-B633-A159-55E1CFEFF64F" name="CUSTOMER_PK">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-12 18:15:54 UTC</createdTime>
+<generatorID>29291AC3-1B15-C3C9-736F-AFA68D191FFE</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BF83EB64-9673-45B3-2EB6-DFE2C67086C5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

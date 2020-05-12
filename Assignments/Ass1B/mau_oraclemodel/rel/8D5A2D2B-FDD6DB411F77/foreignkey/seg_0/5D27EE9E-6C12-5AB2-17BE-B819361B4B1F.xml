@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="5D27EE9E-6C12-5AB2-17BE-B819361B4B1F" containerWithKeyObject="27472A89-E6D0-D4D7-0CD1-A216ED315E5A" localFKIndex="72AA90B8-A452-6270-6794-31D711C6980E" name="STYLE-ARTWORK">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-12 18:15:54 UTC</createdTime>
+<generatorID>931A7974-6F5E-F1AF-4EC3-1E4C0F2338AF</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<referredTableLongName>STYLE</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>1A6FD73D-2F79-E9AE-EFC8-49137D42F095</referredTableID>
+<keyObject>F94530D0-28BB-A92E-53AF-64AAD1B129D4</keyObject>
+<referredKeyID>F94530D0-28BB-A92E-53AF-64AAD1B129D4</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>style_artwork</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

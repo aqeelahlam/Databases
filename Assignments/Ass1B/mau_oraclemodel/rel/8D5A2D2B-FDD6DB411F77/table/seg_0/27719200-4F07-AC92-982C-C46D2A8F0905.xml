@@ -1,0 +1,137 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="27719200-4F07-AC92-982C-C46D2A8F0905" name="SALE">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-12 18:15:54 UTC</createdTime>
+<generatorID>3557328C-42A1-7860-B994-616326DBCE92</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="sale_id" id="803953AA-B115-8DAA-942D-78D4936E2D0F">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-12 18:15:54 UTC</createdTime>
+<commentInRDBMS><![CDATA[Sale ID]]></commentInRDBMS>
+<generatorID>67E7D2A9-A393-05EE-22ED-F659D4FAF94A</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="sale_date" id="120AFDF3-919C-D611-95FF-6B39EBA86E2B">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-12 18:15:54 UTC</createdTime>
+<commentInRDBMS><![CDATA[Sale Date]]></commentInRDBMS>
+<generatorID>0B5A92CA-BC74-A4C1-7E44-1E6FDCC7DAE2</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="sale_price" id="4A436860-1AA0-F026-828F-D2EB362A2448">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-12 18:15:54 UTC</createdTime>
+<commentInRDBMS><![CDATA[Sale Price]]></commentInRDBMS>
+<generatorID>01A69207-D04B-BC0F-E899-B0AB426C8299</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<constraintName>CHK_SL_SALE_PRICE</constraintName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>10</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<checkConstraint>
+<implementationDef dbType="Oracle Database 11g" definition="sale_id &gt; 0"/>
+</checkConstraint>
+<ownDataTypeParameters>,10,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="customer_id" id="810BDFF9-5FEA-BE83-CD09-2A8468E9809B">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-12 18:15:54 UTC</createdTime>
+<commentInRDBMS><![CDATA[Customer ID]]></commentInRDBMS>
+<generatorID>D22D4A2A-DAEF-10C7-B0A3-959230200CA2</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="481EAA21-A367-EBAF-CCA5-6A631907D3CB" referredColumn="BF83EB64-9673-45B3-2EB6-DFE2C67086C5"/>
+</associations>
+</Column>
+<Column name="exhibition_no" id="CAB8A535-542D-FC27-97DB-8A8DDF37DDEB">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-12 18:15:54 UTC</createdTime>
+<commentInRDBMS><![CDATA[Surrogate Key: Exhibition Number]]></commentInRDBMS>
+<generatorID>79FD23C0-DCA2-06A6-E576-C1961C7DADD5</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="8B8CBB41-0788-5603-CA42-415109598F6F" referredColumn="58C6AD87-511A-4E89-8792-83A26AD7584A"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="AE6215B7-ECD5-AAFE-86E0-573518D81EEF" name="SALE_PK">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-12 18:15:54 UTC</createdTime>
+<generatorID>A2D884BC-15D4-3F8F-371C-2452D91A9512</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="803953AA-B115-8DAA-942D-78D4936E2D0F"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4B98EA68-A610-7C6C-06CD-B1171F4E9E53" name="SALE__IDX">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-12 18:15:54 UTC</createdTime>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<relationGeneratorID>C4A20B87-ECA6-04C3-A2CE-3BD4711C921E</relationGeneratorID>
+<indexColumnUsage>
+<colUsage columnID="CAB8A535-542D-FC27-97DB-8A8DDF37DDEB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="44B5616C-1D82-6ECD-9225-FCA23618C503" name="CUSTOMER-SALE">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-12 18:15:54 UTC</createdTime>
+<generatorID>475FD819-B08C-4E0B-171D-3B174FCE086F</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="810BDFF9-5FEA-BE83-CD09-2A8468E9809B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7E2CF00E-BEF7-1F3A-EBFB-CD66366D88CA" name="EXHIBITION-SALE">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-12 18:15:54 UTC</createdTime>
+<generatorID>C4A20B87-ECA6-04C3-A2CE-3BD4711C921E</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CAB8A535-542D-FC27-97DB-8A8DDF37DDEB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

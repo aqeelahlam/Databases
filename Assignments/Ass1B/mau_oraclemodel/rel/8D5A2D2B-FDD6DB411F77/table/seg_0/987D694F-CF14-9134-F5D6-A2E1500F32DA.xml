@@ -1,0 +1,136 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="987D694F-CF14-9134-F5D6-A2E1500F32DA" name="CURRENT_STATUS">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-12 18:15:54 UTC</createdTime>
+<generatorID>53B1B320-3C5F-5990-8988-E309095A7135</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="artwork_no" id="B3966C87-1248-9269-866A-F81E07E0DB59">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-12 18:15:54 UTC</createdTime>
+<commentInRDBMS><![CDATA[Artwork Number]]></commentInRDBMS>
+<generatorID>4FB4FC34-FB63-505F-57E9-AADA58F6E334</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="52858284-B20C-0FB6-B5F8-F3BF3BC12D19" referredColumn="D03A5BA5-C3E7-87AF-FE64-49E2962097E8"/>
+</associations>
+</Column>
+<Column name="artist_code" id="B6677BCB-D8A7-6D94-5D8B-B64E72D3AB81">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-12 18:15:54 UTC</createdTime>
+<commentInRDBMS><![CDATA[Artist Code]]></commentInRDBMS>
+<generatorID>250725C4-AC09-BEB6-FE37-6A2481D6521A</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="52858284-B20C-0FB6-B5F8-F3BF3BC12D19" referredColumn="1CDE58EA-8140-4C20-CE62-763F0C9C3765"/>
+</associations>
+</Column>
+<Column name="cs_date" id="D54C2A97-D6EA-091D-D5A8-AD96CAD35791">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-12 18:15:54 UTC</createdTime>
+<commentInRDBMS><![CDATA[Current Status Date]]></commentInRDBMS>
+<generatorID>55418F00-46A3-FC06-D56E-31C54A660E4F</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="cs_artwork_status" id="8D6D80A0-65A1-55E7-49EB-1411B2E481CA">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-12 18:15:54 UTC</createdTime>
+<commentInRDBMS><![CDATA[Artwork Status]]></commentInRDBMS>
+<generatorID>A16B40BB-794C-2807-736C-70E6B187406F</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<constraintName>ARTWORK STATUS VALUES</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30</dataTypeSize>
+<listOfValues>
+<valueDef value="In MAU Warehouse" description="Artwork is at MAU central Warehouse"/>
+<valueDef value="In Transit" description="Being shipped to/from a gallery"/>
+<valueDef value="On Display by Gallery" description="Artwork is being Displayed"/>
+<valueDef value="Returned to the Artist" description="Artwork is returned back to Artist"/>
+<valueDef value="Sold" description="Artwork is Sold"/>
+</listOfValues>
+<ownDataTypeParameters>30,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="gallery_id" id="67D3247F-A498-911A-AEA4-17730A2229A6">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-12 18:15:54 UTC</createdTime>
+<commentInRDBMS><![CDATA[Gallery ID]]></commentInRDBMS>
+<generatorID>3ECF2085-CB6B-09C1-9654-51D8C958692D</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>4</dataTypePrecision>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9DD47F4E-3837-8B46-E2F8-32ABD75740ED" referredColumn="A3FAF6B2-FB31-C244-DA67-A4CBC09E9D0B"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4CA2FAEC-09C7-6799-DB4C-5A43D1834485" name="CURRENT_STATUS_PK">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-12 18:15:54 UTC</createdTime>
+<generatorID>6207C99D-F523-3B1E-5477-3ABFA727DBB7</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D54C2A97-D6EA-091D-D5A8-AD96CAD35791"/>
+<colUsage columnID="B3966C87-1248-9269-866A-F81E07E0DB59"/>
+<colUsage columnID="B6677BCB-D8A7-6D94-5D8B-B64E72D3AB81"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6761F176-780A-F865-DAD5-8AC9A20FBB1D" name="ARTWORK-CURRENT_STATUS">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-12 18:15:54 UTC</createdTime>
+<generatorID>6BD53A4C-1F5F-B367-0786-258C25475671</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B3966C87-1248-9269-866A-F81E07E0DB59"/>
+<colUsage columnID="B6677BCB-D8A7-6D94-5D8B-B64E72D3AB81"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="319CA022-296F-A511-8716-3020D4F6077B" name="GALLERY-CURRENT_STATUS">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-12 18:15:54 UTC</createdTime>
+<generatorID>A7F85A12-A4DF-367A-9A0D-3DD747BEB01D</generatorID>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="67D3247F-A498-911A-AEA4-17730A2229A6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
