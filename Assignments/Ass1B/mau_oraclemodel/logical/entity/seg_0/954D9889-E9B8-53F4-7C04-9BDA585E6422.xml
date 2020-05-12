@@ -4,7 +4,7 @@
 <createdTime>2020-05-10 09:31:05 UTC</createdTime>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
-<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+<item key="5F4C571D-E89A-CA4C-A546-137553471CF6" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -21,7 +21,7 @@
 <commentInRDBMS><![CDATA[Customer ID]]></commentInRDBMS>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
-<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+<item key="5F4C571D-E89A-CA4C-A546-137553471CF6" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -29,13 +29,27 @@
 <dataTypePrecision>5</dataTypePrecision>
 <ownDataTypeParameters>,5,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="customer_name" id="5B810C9D-80F4-CC9F-F353-761ABB6EAC72">
+<Attribute name="customer_title" id="82277715-C0BE-7707-BC70-ADF18419801C">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-10 09:31:14 UTC</createdTime>
-<commentInRDBMS><![CDATA[Customer Name]]></commentInRDBMS>
+<createdTime>2020-05-12 17:33:30 UTC</createdTime>
+<commentInRDBMS><![CDATA[Customer title]]></commentInRDBMS>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
-<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+<item key="5F4C571D-E89A-CA4C-A546-137553471CF6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>5</dataTypeSize>
+<ownDataTypeParameters>5,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="customer_fname" id="5B810C9D-80F4-CC9F-F353-761ABB6EAC72">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-10 09:31:14 UTC</createdTime>
+<commentInRDBMS><![CDATA[Customer First Name]]></commentInRDBMS>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="5F4C571D-E89A-CA4C-A546-137553471CF6" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -43,19 +57,61 @@
 <dataTypeSize>50</dataTypeSize>
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="customer_address" id="23AC597E-90AC-90C5-CA84-0BB0B271385F">
+<Attribute name="customer_lname" id="FCEB4C08-4719-0BA4-2D31-AF6321452B9F">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-10 09:31:14 UTC</createdTime>
-<commentInRDBMS><![CDATA[Customer Address]]></commentInRDBMS>
+<createdTime>2020-05-12 17:32:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[Customer Last Name]]></commentInRDBMS>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
-<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+<item key="5F4C571D-E89A-CA4C-A546-137553471CF6" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>50</dataTypeSize>
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="customer_street" id="23AC597E-90AC-90C5-CA84-0BB0B271385F">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-10 09:31:14 UTC</createdTime>
+<commentInRDBMS><![CDATA[Customer Street]]></commentInRDBMS>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="5F4C571D-E89A-CA4C-A546-137553471CF6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="customer_town" id="3BDE7B88-AF01-069C-9707-BF7809E21242">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-12 17:38:07 UTC</createdTime>
+<commentInRDBMS><![CDATA[Customer Town]]></commentInRDBMS>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="5F4C571D-E89A-CA4C-A546-137553471CF6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="customer_state" id="E8C61D6D-4CDF-5A95-3731-284F3BE44B6E">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-12 17:38:06 UTC</createdTime>
+<commentInRDBMS><![CDATA[Customer State]]></commentInRDBMS>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="5F4C571D-E89A-CA4C-A546-137553471CF6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="customer_phone" id="0A608941-359C-99A0-4703-AB3F03FF92FD">
 <createdBy>Aqeel</createdBy>
@@ -63,7 +119,7 @@
 <commentInRDBMS><![CDATA[Customer Phone Number]]></commentInRDBMS>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
-<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+<item key="5F4C571D-E89A-CA4C-A546-137553471CF6" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -77,7 +133,7 @@
 <commentInRDBMS><![CDATA[Customer Business Name]]></commentInRDBMS>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
-<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+<item key="5F4C571D-E89A-CA4C-A546-137553471CF6" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -93,7 +149,7 @@
 <createdTime>2020-05-10 09:32:19 UTC</createdTime>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
-<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+<item key="5F4C571D-E89A-CA4C-A546-137553471CF6" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

@@ -4,7 +4,7 @@
 <createdTime>2020-05-09 19:56:27 UTC</createdTime>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
-<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+<item key="5F4C571D-E89A-CA4C-A546-137553471CF6" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -21,7 +21,7 @@
 <commentInRDBMS><![CDATA[Artist Code]]></commentInRDBMS>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
-<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+<item key="5F4C571D-E89A-CA4C-A546-137553471CF6" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -29,13 +29,13 @@
 <dataTypePrecision>5</dataTypePrecision>
 <ownDataTypeParameters>,5,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="artist_name" id="CD7FFF6D-FC73-1681-BA7D-8CBBDC4B59EA">
+<Attribute name="artist_fname" id="CD7FFF6D-FC73-1681-BA7D-8CBBDC4B59EA">
 <createdBy>Aqeel</createdBy>
 <createdTime>2020-05-09 19:58:46 UTC</createdTime>
-<commentInRDBMS><![CDATA[Artist Name]]></commentInRDBMS>
+<commentInRDBMS><![CDATA[Artist First Name]]></commentInRDBMS>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
-<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+<item key="5F4C571D-E89A-CA4C-A546-137553471CF6" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -43,19 +43,61 @@
 <dataTypeSize>50</dataTypeSize>
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="artist_address" id="B10A236E-980A-2AB5-8FFF-77D26D389006">
+<Attribute name="artist_lname" id="0A1CC5DC-984D-60FC-F589-796C7355AB7A">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-09 19:58:46 UTC</createdTime>
-<commentInRDBMS><![CDATA[Artist Address]]></commentInRDBMS>
+<createdTime>2020-05-12 17:29:36 UTC</createdTime>
+<commentInRDBMS><![CDATA[Artist Last Name]]></commentInRDBMS>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
-<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+<item key="5F4C571D-E89A-CA4C-A546-137553471CF6" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <dataTypeSize>50</dataTypeSize>
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="artist_street" id="B10A236E-980A-2AB5-8FFF-77D26D389006">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-09 19:58:46 UTC</createdTime>
+<commentInRDBMS><![CDATA[Artist Street]]></commentInRDBMS>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="5F4C571D-E89A-CA4C-A546-137553471CF6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="artist_town" id="1182A1D6-6FFF-4092-0F88-8D439E48BEAE">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-12 17:36:30 UTC</createdTime>
+<commentInRDBMS><![CDATA[Artist Town]]></commentInRDBMS>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="5F4C571D-E89A-CA4C-A546-137553471CF6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="artist_state" id="3BB198FC-E512-3328-F4C1-538D75E409C6">
+<createdBy>Aqeel</createdBy>
+<createdTime>2020-05-12 17:36:29 UTC</createdTime>
+<commentInRDBMS><![CDATA[Artist State]]></commentInRDBMS>
+<ownerDesignName>mau_oraclemodel</ownerDesignName>
+<engineerTo>
+<item key="5F4C571D-E89A-CA4C-A546-137553471CF6" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20</dataTypeSize>
+<ownDataTypeParameters>20,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="artist_telephone_number" id="A1E199AA-D448-3078-C435-386CFCA43842">
 <createdBy>Aqeel</createdBy>
@@ -63,7 +105,7 @@
 <commentInRDBMS><![CDATA[Artist Telephone Number]]></commentInRDBMS>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
-<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+<item key="5F4C571D-E89A-CA4C-A546-137553471CF6" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -78,7 +120,7 @@
 <commentInRDBMS><![CDATA[Artist Number of Works]]></commentInRDBMS>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
-<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+<item key="5F4C571D-E89A-CA4C-A546-137553471CF6" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -93,7 +135,7 @@
 <createdTime>2020-05-09 20:00:13 UTC</createdTime>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
-<item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+<item key="5F4C571D-E89A-CA4C-A546-137553471CF6" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
