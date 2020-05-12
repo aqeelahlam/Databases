@@ -5,6 +5,7 @@
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
 <item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+<item key="5F4C571D-E89A-CA4C-A546-137553471CF6" value="true"/>
 </engineerTo>
 <adequatelyNormalized>NO</adequatelyNormalized>
 <expectedVolumes>0</expectedVolumes>
@@ -22,6 +23,7 @@
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
 <item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+<item key="5F4C571D-E89A-CA4C-A546-137553471CF6" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -37,6 +39,7 @@
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
 <item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+<item key="5F4C571D-E89A-CA4C-A546-137553471CF6" value="true"/>
 </engineerTo>
 <referedAttribute>E898D6A1-8877-0847-7904-A012A9A5AD29</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
@@ -53,6 +56,7 @@
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
 <item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+<item key="5F4C571D-E89A-CA4C-A546-137553471CF6" value="true"/>
 </engineerTo>
 <referedAttribute>B9F85745-5974-90D0-C139-E23B5FBEFBA6</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
@@ -68,6 +72,7 @@
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
 <item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+<item key="5F4C571D-E89A-CA4C-A546-137553471CF6" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -81,6 +86,7 @@
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
 <item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+<item key="5F4C571D-E89A-CA4C-A546-137553471CF6" value="true"/>
 </engineerTo>
 <nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
@@ -95,6 +101,7 @@
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
 <item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+<item key="5F4C571D-E89A-CA4C-A546-137553471CF6" value="true"/>
 </engineerTo>
 <constraintName>values_featured_in_catalog</constraintName>
 <useDomainConstraints>false</useDomainConstraints>
@@ -115,6 +122,7 @@
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
 <item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+<item key="5F4C571D-E89A-CA4C-A546-137553471CF6" value="true"/>
 </engineerTo>
 <referedAttribute>7EE46E35-5651-78A2-9A0C-56EA99BA7FB2</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
@@ -131,6 +139,7 @@
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
 <item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+<item key="5F4C571D-E89A-CA4C-A546-137553471CF6" value="true"/>
 </engineerTo>
 <newElementsIDs>EB6B9DBD-20C7-B6E2-C565-39D5C7A903DA,68C0AF93-E86A-10AC-4EF3-271076731D35</newElementsIDs>
 <usedAttributes>
@@ -145,6 +154,7 @@
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <engineerTo>
 <item key="361662CE-2251-6BFA-24EA-93A2A87D17C0" value="true"/>
+<item key="5F4C571D-E89A-CA4C-A546-137553471CF6" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

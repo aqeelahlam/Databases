@@ -1,18 +1,18 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="201E6AC2-7BBA-0339-A8E5-3A14F40E93E2" name="CUSTOMER">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FB02A3B0-6BAA-D4DA-630F-DCF888A10853" name="ARTIST">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-11 18:43:07 UTC</createdTime>
-<generatorID>954D9889-E9B8-53F4-7C04-9BDA585E6422</generatorID>
+<createdTime>2020-05-12 09:49:10 UTC</createdTime>
+<generatorID>FDF10E52-E972-6438-A989-3758D13CB174</generatorID>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="customer_id" id="F18DCE25-4F46-4116-6DA4-4E599B2D75BE">
+<Column name="artist_code" id="7C0E741D-3714-56FA-CE35-B9EEFE16F3B1">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-11 18:43:07 UTC</createdTime>
-<commentInRDBMS><![CDATA[Customer ID]]></commentInRDBMS>
-<generatorID>03A0917E-F214-ED54-D8C5-CD7622E6A5DB</generatorID>
+<createdTime>2020-05-12 09:49:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[Artist Code]]></commentInRDBMS>
+<generatorID>02E805DF-8361-F10B-8807-85B219296DFF</generatorID>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -21,11 +21,11 @@
 <ownDataTypeParameters>,5,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="customer_name" id="9E05AEDE-35D7-6771-8DF1-661621F3FD52">
+<Column name="artist_name" id="22DE9A01-39B7-EBB9-6266-ACB28BBBA60E">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-11 18:43:07 UTC</createdTime>
-<commentInRDBMS><![CDATA[Customer Name]]></commentInRDBMS>
-<generatorID>5B810C9D-80F4-CC9F-F353-761ABB6EAC72</generatorID>
+<createdTime>2020-05-12 09:49:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[Artist Name]]></commentInRDBMS>
+<generatorID>CD7FFF6D-FC73-1681-BA7D-8CBBDC4B59EA</generatorID>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -34,11 +34,11 @@
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="customer_address" id="A2B0D947-8250-FEB7-BAE2-C4E56F55791E">
+<Column name="artist_address" id="DA322196-AF65-0735-FD67-AF56FC09B73A">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-11 18:43:07 UTC</createdTime>
-<commentInRDBMS><![CDATA[Customer Address]]></commentInRDBMS>
-<generatorID>23AC597E-90AC-90C5-CA84-0BB0B271385F</generatorID>
+<createdTime>2020-05-12 09:49:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[Artist Address]]></commentInRDBMS>
+<generatorID>B10A236E-980A-2AB5-8FFF-77D26D389006</generatorID>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -47,12 +47,13 @@
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="customer_phone" id="A9E52BB9-1F25-47A7-B02F-282BB6B9E2BB">
+<Column name="artist_telephone_number" id="C0BBD618-3B21-A0EA-365E-3C160BBC33F8">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-11 18:43:07 UTC</createdTime>
-<commentInRDBMS><![CDATA[Customer Phone Number]]></commentInRDBMS>
-<generatorID>0A608941-359C-99A0-4703-AB3F03FF92FD</generatorID>
+<createdTime>2020-05-12 09:49:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[Artist Telephone Number]]></commentInRDBMS>
+<generatorID>A1E199AA-D448-3078-C435-386CFCA43842</generatorID>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT025</logicalDatatype>
@@ -60,32 +61,31 @@
 <ownDataTypeParameters>10,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="customer_business_name" id="4B4E6123-4BBA-E168-9979-49D117E01B69">
+<Column name="artist_no_of_work" id="8DEDC1E9-AB2C-58FD-324C-B6F7A70B979C">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-11 18:43:07 UTC</createdTime>
-<commentInRDBMS><![CDATA[Customer Business Name]]></commentInRDBMS>
-<generatorID>727BF92A-F7BE-864B-1B33-98D9382FC89C</generatorID>
+<createdTime>2020-05-12 09:49:10 UTC</createdTime>
+<commentInRDBMS><![CDATA[Artist Number of Works]]></commentInRDBMS>
+<generatorID>09FE7704-8BF6-17FD-6C5F-6B22C1685795</generatorID>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<dataTypeSize>50</dataTypeSize>
-<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<ownDataTypeParameters>,5,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="032677B6-EF32-32D6-4450-D8247BC71BE4" name="CUSTOMER_PK">
+<ind_PK_UK id="B62955FD-86CF-4DCD-39E6-E540AD5F494D" name="ARTIST_PK">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-11 18:43:07 UTC</createdTime>
-<generatorID>29291AC3-1B15-C3C9-736F-AFA68D191FFE</generatorID>
+<createdTime>2020-05-12 09:49:10 UTC</createdTime>
+<generatorID>C36967E0-1EB9-3DBD-056D-CB7C9868B354</generatorID>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="F18DCE25-4F46-4116-6DA4-4E599B2D75BE"/>
+<colUsage columnID="7C0E741D-3714-56FA-CE35-B9EEFE16F3B1"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

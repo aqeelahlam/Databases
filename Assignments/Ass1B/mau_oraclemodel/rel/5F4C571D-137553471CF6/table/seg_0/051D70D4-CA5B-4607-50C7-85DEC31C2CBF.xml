@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="04ADE634-DAFC-F2D4-BFEC-6FF8A0EFB92C" name="GALLERY">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="051D70D4-CA5B-4607-50C7-85DEC31C2CBF" name="GALLERY">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<createdTime>2020-05-12 09:49:10 UTC</createdTime>
 <generatorID>1EAB225B-EBB7-3244-FD14-3009A3B24159</generatorID>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="gallery_id" id="E13C22E9-C937-82FE-75A2-3858A51D0D0A">
+<Column name="gallery_id" id="B2457EA9-186B-1C6C-83D9-1167C2F737A5">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<createdTime>2020-05-12 09:49:10 UTC</createdTime>
 <commentInRDBMS><![CDATA[Gallery ID]]></commentInRDBMS>
 <generatorID>7EE46E35-5651-78A2-9A0C-56EA99BA7FB2</generatorID>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
@@ -21,9 +21,9 @@
 <ownDataTypeParameters>,4,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="gallery_name" id="C3652DC3-F05B-FDB7-3D2C-82F85FCB7032">
+<Column name="gallery_name" id="1F4FD0D0-38B5-A19C-21E6-4CF317ABF8B8">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<createdTime>2020-05-12 09:49:10 UTC</createdTime>
 <commentInRDBMS><![CDATA[Gallery Name]]></commentInRDBMS>
 <generatorID>9F350A7B-AAA4-6D05-3ADA-0FB91B0C2CF6</generatorID>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
@@ -34,9 +34,9 @@
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="gallery_manager" id="DABA1BF8-100D-CD4F-0130-848E1DC2C5FA">
+<Column name="gallery_manager" id="D0352EF5-FC1A-E5ED-AA73-AAEE9A20B4CC">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<createdTime>2020-05-12 09:49:10 UTC</createdTime>
 <commentInRDBMS><![CDATA[Name of the Gallery Manager]]></commentInRDBMS>
 <generatorID>C7FF75A0-1A94-D15E-AC4A-0548CE38D53D</generatorID>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
@@ -47,9 +47,9 @@
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="gallery_street" id="DFDC7E9C-1196-E6BC-E367-D6CB1413D27D">
+<Column name="gallery_street" id="E9596544-8D9B-C03C-2A33-62F287757CD4">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<createdTime>2020-05-12 09:49:10 UTC</createdTime>
 <commentInRDBMS><![CDATA[Gallery Street]]></commentInRDBMS>
 <generatorID>9BA9D8D1-FBD7-BD60-2E92-439566FCEAB2</generatorID>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
@@ -60,9 +60,9 @@
 <ownDataTypeParameters>50,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="gallery_town" id="085043E7-BC50-88B6-000B-E6D10543C68B">
+<Column name="gallery_town" id="900848B9-F5F2-158B-2129-0F8557CA2F85">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<createdTime>2020-05-12 09:49:10 UTC</createdTime>
 <commentInRDBMS><![CDATA[Gallery Town]]></commentInRDBMS>
 <generatorID>767327A0-332A-E0F5-E04E-2FA0788305BD</generatorID>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
@@ -73,9 +73,9 @@
 <ownDataTypeParameters>20,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="gallery_state" id="55AFF8AD-1C54-5394-06EA-4B1F242BA65E">
+<Column name="gallery_state" id="94851EB2-D2BE-477C-038C-21C25FD044FE">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<createdTime>2020-05-12 09:49:10 UTC</createdTime>
 <commentInRDBMS><![CDATA[Gallery State]]></commentInRDBMS>
 <generatorID>7F23E2E7-5E5C-25E6-797C-95E421D1C80E</generatorID>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
@@ -86,9 +86,9 @@
 <ownDataTypeParameters>20,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="gallery_contact" id="5F29A505-375D-4093-9C5A-F2AF4533C8D4">
+<Column name="gallery_contact" id="3BDEB0FC-0DE3-AA50-234C-32BC26130DAE">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<createdTime>2020-05-12 09:49:10 UTC</createdTime>
 <commentInRDBMS><![CDATA[Gallery Contact Number]]></commentInRDBMS>
 <generatorID>3DDE08B1-5783-AF41-7CED-B34B32C46E26</generatorID>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
@@ -99,9 +99,9 @@
 <ownDataTypeParameters>10,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="gallery_open" id="126583DD-1154-A1BA-DFA3-BDEC7EADD11C">
+<Column name="gallery_open" id="27471B3B-0755-CDB5-4607-3E299028A873">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<createdTime>2020-05-12 09:49:10 UTC</createdTime>
 <commentInRDBMS><![CDATA[Gallery Open Time]]></commentInRDBMS>
 <generatorID>6B08D283-C4FC-14B5-938D-9523D233A873</generatorID>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
@@ -111,9 +111,9 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="gallery_close" id="659BA9B7-1BB8-E19E-EC34-97CFE1F8EF94">
+<Column name="gallery_close" id="641AA0FC-8B04-3362-5A3E-1A00E75E5BEF">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<createdTime>2020-05-12 09:49:10 UTC</createdTime>
 <commentInRDBMS><![CDATA[Gallery Close Time]]></commentInRDBMS>
 <generatorID>3204CCC1-55D1-169F-5D89-FD5001211299</generatorID>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
@@ -123,9 +123,9 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="gallery_percentage_comission" id="83374A34-DE99-CB74-EFA8-CCB7D610E560">
+<Column name="gallery_percentage_comission" id="8004B5D8-67B0-164D-BCC4-A62E0ABE6A23">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<createdTime>2020-05-12 09:49:10 UTC</createdTime>
 <commentInRDBMS><![CDATA[Gallery Percentage Comission(In Percentage)]]></commentInRDBMS>
 <generatorID>80BF1ABB-1CAC-EAA4-F8E9-75CE40215B42</generatorID>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
@@ -143,16 +143,16 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="9CB6F7DD-8C95-E2E4-B085-B5DB8AB98786" name="GALLERY_PK">
+<ind_PK_UK id="C1E34743-5EC6-698A-BCE9-91108E5DA641" name="GALLERY_PK">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<createdTime>2020-05-12 09:49:10 UTC</createdTime>
 <generatorID>84C3A013-DB8E-6405-1D43-23DFA20273B7</generatorID>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="E13C22E9-C937-82FE-75A2-3858A51D0D0A"/>
+<colUsage columnID="B2457EA9-186B-1C6C-83D9-1167C2F737A5"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>

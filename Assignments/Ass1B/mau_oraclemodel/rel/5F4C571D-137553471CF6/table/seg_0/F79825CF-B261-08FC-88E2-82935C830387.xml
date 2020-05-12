@@ -1,16 +1,16 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="DEE93130-684E-A74C-344D-F0D00D780147" name="MEDIA_DESCRIPTION">
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F79825CF-B261-08FC-88E2-82935C830387" name="MEDIA_DESCRIPTION">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<createdTime>2020-05-12 09:49:10 UTC</createdTime>
 <generatorID>8C7D5A07-7951-D21C-46DC-F79043A807A4</generatorID>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <allowColumnReorder>false</allowColumnReorder>
 <existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
 <parsed>true</parsed>
 <columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
-<Column name="media_id" id="12752EC5-F277-F387-A65A-7FA8747D38A9">
+<Column name="media_id" id="54641E2B-28B1-4B60-42F0-4E788F41C28F">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<createdTime>2020-05-12 09:49:10 UTC</createdTime>
 <commentInRDBMS><![CDATA[Surrogate Key: Media ID]]></commentInRDBMS>
 <generatorID>3C577C2F-DBEF-A396-3B32-9373FCA60090</generatorID>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
@@ -21,9 +21,9 @@
 <ownDataTypeParameters>,5,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="media_description" id="E7720D64-600C-626F-3EA7-82974A3CC33E">
+<Column name="media_description" id="E18E72CD-4449-9DA3-937F-D5ABBDF05AAB">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<createdTime>2020-05-12 09:49:10 UTC</createdTime>
 <commentInRDBMS><![CDATA[Artwork Media Description (Material its made from)]]></commentInRDBMS>
 <generatorID>3ACD7F19-49E1-ECC1-C7FF-2BA4AE0C23EE</generatorID>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
@@ -37,16 +37,16 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
-<ind_PK_UK id="311045B5-41F7-C43A-F64C-5DCDA9A8E0C7" name="MEDIA_DESCRIPTION_PK">
+<ind_PK_UK id="5DEFBDD5-F696-34FC-9BAB-99ABF0C60181" name="MEDIA_DESCRIPTION_PK">
 <createdBy>Aqeel</createdBy>
-<createdTime>2020-05-11 18:43:07 UTC</createdTime>
+<createdTime>2020-05-12 09:49:10 UTC</createdTime>
 <generatorID>259318C8-9AB0-D323-6C13-050CCC3A2C31</generatorID>
 <ownerDesignName>mau_oraclemodel</ownerDesignName>
 <pk>true</pk>
 <indexState>Primary Constraint</indexState>
 <isSurrogateKey>false</isSurrogateKey>
 <indexColumnUsage>
-<colUsage columnID="12752EC5-F277-F387-A65A-7FA8747D38A9"/>
+<colUsage columnID="54641E2B-28B1-4B60-42F0-4E788F41C28F"/>
 </indexColumnUsage>
 </ind_PK_UK>
 </indexes>
