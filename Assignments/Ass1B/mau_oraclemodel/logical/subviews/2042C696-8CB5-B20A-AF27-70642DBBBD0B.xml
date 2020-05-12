@@ -187,12 +187,12 @@
 <lineWidth>1</lineWidth>
 <sourceLabel class="oracle.dbtools.crest.model.design.Label">
 <site>0</site>
-<labelBounds x="1095" y="463" width="64" height="30"/>
+<labelBounds x="920" y="399" width="64" height="30"/>
 <noBackgroundColor>true</noBackgroundColor>
 <noForegroundColor>true</noForegroundColor>
 </sourceLabel>
 <points>
-<point x="811" y="391"/>
+<point x="990" y="391"/>
 <point x="1095" y="510"/>
 </points>
 </Connector>
