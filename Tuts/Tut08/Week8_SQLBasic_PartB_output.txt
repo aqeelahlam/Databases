@@ -1,0 +1,242 @@
+SQL> 
+SQL> 
+SQL> /*
+SQL>Databases Week 8 Tutorial Sample Solution
+SQL>week8_SQLBasic_PartB.sql
+SQL>
+SQL>student id: 29262674
+SQL>student name: AQEEL AHLAM
+SQL>last modified date: 16/5/20
+SQL>*/
+SQL> 
+SQL> /* B1. List all the unit codes, semester and name of the chief examiner for all 
+SQL>      the units that are offered in 2014.*/
+SQL> SELECT 
+  2      O.UNITCODE, 
+  3      O.SEMESTER,
+  4      O.CHIEFEXAM,
+  5      S.STAFFFNAME || ' ' || S.STAFFLNAME AS NAME
+  6  FROM 
+  7      UNI.OFFERING O
+  8  JOIN 
+  9      UNI.STAFF S
+ 10  ON
+ 11      O.CHIEFEXAM = S.STAFFID
+ 12  WHERE
+ 13      TO_CHAR(OFYEAR, 'YYYY') = '2014'
+ 14  ORDER BY 
+ 15      O.UNITCODE;
+
+UNITCOD   SEMESTER  CHIEFEXAM NAME                                     
+------- ---------- ---------- -----------------------------------------
+FIT1040          3          4 Rubeus Hagrid                            
+FIT5131          1          7 Minerva McGonagall                       
+FIT5131          2          7 Minerva McGonagall                       
+
+SQL> 
+SQL> /* B2. List all the unit codes and the unit names and their year and semester 
+SQL>      offerings. To display the date correctly in Oracle, you need to use to_char function. 
+SQL>      For example, to_char(ofyear,'YYYY'). */
+SQL> 
+SQL> SELECT
+  2      UNITCODE, 
+  3      UNITNAME,
+  4      TO_CHAR(OFYEAR, 'YYYY'),
+  5      SEMESTER
+  6  FROM 
+  7      UNI.OFFERING 
+  8  NATURAL JOIN 
+  9      UNI.UNIT
+ 10  ORDER BY
+ 11      UNITCODE;
+
+UNITCOD UNITNAME                                                                                             TO_C   SEMESTER
+------- ---------------------------------------------------------------------------------------------------- ---- ----------
+FIT1004 Introduction to Data Management                                                                      2013          1
+FIT1004 Introduction to Data Management                                                                      2013          2
+FIT1040 Programming Fundamental                                                                              2013          1
+FIT1040 Programming Fundamental                                                                              2013          2
+FIT1040 Programming Fundamental                                                                              2014          3
+FIT2077 Advanced Data Management                                                                             2013          1
+FIT2077 Advanced Data Management                                                                             2013          2
+FIT5131 Programming Foundations                                                                              2013          1
+FIT5131 Programming Foundations                                                                              2014          1
+FIT5131 Programming Foundations                                                                              2013          2
+FIT5131 Programming Foundations                                                                              2014          2
+
+UNITCOD UNITNAME                                                                                             TO_C   SEMESTER
+------- ---------------------------------------------------------------------------------------------------- ---- ----------
+FIT5132 Introduction to Databases                                                                            2013          1
+FIT5132 Introduction to Databases                                                                            2013          3
+FIT5136 Software Enginnering                                                                                 2013          2
+
+14 rows selected. 
+
+SQL> 
+SQL> /* B3. List the unit code, semester, class type (lecture or tutorial), 
+SQL>      day and time for all units taught by Albus Dumbledore in 2013. 
+SQL>      Sort the list according to the unit code.*/
+SQL> 
+SQL> SELECT 
+  2      UNITCODE,
+  3      SEMESTER,
+  4      CLTYPE,
+  5      CLDAY, 
+  6      TO_CHAR(CLTIME, 'HH:MI PM')
+  7  FROM
+  8      UNI.SCHEDCLASS C
+  9  JOIN
+ 10      UNI.STAFF S
+ 11  ON
+ 12      S.STAFFID = C.STAFFID
+ 13  WHERE
+ 14      S.STAFFFNAME = 'Albus' 
+ 15      AND
+ 16      S.STAFFLNAME = 'Dumbledore' 
+ 17      AND 
+ 18      TO_CHAR(C.OFYEAR, 'YYYY') = '2013'
+ 19  ORDER BY 
+ 20      UNITCODE;
+
+UNITCOD   SEMESTER C CLDAY  TO_CHAR(
+------- ---------- - ------ --------
+FIT1004          1 L Mon    02:00 PM
+FIT1004          2 L Mon    10:00 AM
+FIT1004          2 T Mon    12:00 PM
+FIT2077          1 L Tues   10:00 AM
+
+SQL> 
+SQL> 
+SQL> /* B4. Create a study statement for Mary Smith. A study statement contains 
+SQL>      unit code, unit name, semester and year study was attempted, the mark 
+SQL>      and grade. */
+SQL> 
+SQL> SELECT 
+  2      UNITCODE,
+  3      U.UNITNAME,
+  4      SEMESTER,
+  5      TO_CHAR(OFYEAR, 'YYYY') AS YEAR,
+  6      MARK,
+  7      GRADE
+  8  FROM 
+  9      UNI.ENROLMENT E
+ 10  JOIN 
+ 11      UNI.STUDENT S
+ 12  USING 
+ 13      (STUDID)
+ 14  JOIN
+ 15      UNI.OFFERING O
+ 16  USING
+ 17      (UNITCODE, SEMESTER, OFYEAR)
+ 18  JOIN
+ 19      UNI.UNIT U
+ 20  USING 
+ 21      (UNITCODE)
+ 22  WHERE
+ 23      S.STUDFNAME = 'Mary' 
+ 24  AND
+ 25      S.STUDLNAME = 'Smith'
+ 26  ORDER BY
+ 27      UNITCODE;
+
+UNITCOD UNITNAME                                                                                               SEMESTER YEAR       MARK GR
+------- ---------------------------------------------------------------------------------------------------- ---------- ---- ---------- --
+FIT1004 Introduction to Data Management                                                                               1 2013         65 C 
+FIT1040 Programming Fundamental                                                                                       1 2013         45 N 
+FIT1040 Programming Fundamental                                                                                       2 2013         74 D 
+FIT2077 Advanced Data Management                                                                                      2 2013         74 D 
+
+SQL> 
+SQL> /* Questions based on B4
+SQL>Why can't I use identifiers by default for the all the attributes in SELECT?
+SQL>eg: E.UNITCODE
+SQL>Why can't I use different JOINS, it doesnt seem to work when there is a combo
+SQL>of NATURAL, USING and ON joins
+SQL>*/
+SQL> 
+SQL> 
+SQL> /* B5. List the unit code and unit name of the pre-requisite units of 
+SQL>      'Advanced Data Management' unit */
+SQL> 
+SQL> SELECT 
+  2      --U.UNITCODE,
+  3      --U.UNITNAME,
+  4      P.HAS_PREREQ_OF AS PREREQ_UNITCODE,
+  5      U.UNITNAME AS PREREQ_UNITNAME
+  6  FROM
+  7      UNI.UNIT U
+  8  JOIN 
+  9      UNI.PREREQ P
+ 10  ON 
+ 11      U.UNITCODE = P.UNITCODE
+ 12  JOIN
+ 13      UNI.UNIT U2
+ 14  ON
+ 15      U2.UNITCODE = P.HAS_PREREQ_OF
+ 16  WHERE
+ 17      U.UNITNAME = 'Advanced Data Management'
+ 18  ORDER BY
+ 19      PREREQ_UNITCODE;
+
+PREREQ_ PREREQ_UNITNAME                                                                                     
+------- ----------------------------------------------------------------------------------------------------
+FIT1004 Advanced Data Management                                                                            
+FIT1040 Advanced Data Management                                                                            
+
+SQL> 
+SQL> 
+SQL> /* B6. Find all students (list their id, firstname and surname) who 
+SQL>       have a failed unit in the year 2013 */
+SQL> SELECT
+  2      S.STUDID,
+  3      STUDFNAME,
+  4      STUDLNAME
+  5  FROM 
+  6      UNI.STUDENT S
+  7  JOIN
+  8      UNI.ENROLMENT E
+  9  ON 
+ 10      S.STUDID = E.STUDID
+ 11  WHERE
+ 12      E.GRADE = 'N' 
+ 13  AND
+ 14      TO_CHAR(OFYEAR, 'YYYY') = '2013'
+ 15  ORDER BY 
+ 16      S.STUDID;
+
+    STUDID STUDFNAME            STUDLNAME           
+---------- -------------------- --------------------
+  11111111 Mary                 Smith               
+  11111114 Rani                 Dewa                
+  11111115 David                Dumbledore          
+
+SQL> 
+SQL> 
+SQL> 
+SQL> 
+SQL> /* B7.	List the student name, unit code, semester and year for those 
+SQL>        students who do not have marks recorded */
+SQL> 
+SQL> SELECT 
+  2      STUDFNAME || ' ' || STUDLNAME AS NAME,
+  3      UNITCODE,
+  4      SEMESTER,
+  5      --MARK,
+  6      TO_CHAR(OFYEAR, 'YYYY') AS YEAR
+  7  FROM 
+  8      UNI.STUDENT S
+  9  NATURAL JOIN
+ 10      UNI.ENROLMENT E
+ 11  WHERE 
+ 12      E.MARK IS NULL
+ 13  ORDER BY
+ 14      NAME;
+
+NAME                                      UNITCOD   SEMESTER YEAR
+----------------------------------------- ------- ---------- ----
+Gary Gupta                                FIT5131          1 2014
+Jake Ryan                                 FIT1004          2 2013
+Ruth Nguyen                               FIT5131          1 2014
+
+SQL> 
+SQL> SPOOL OFF
