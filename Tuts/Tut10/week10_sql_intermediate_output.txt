@@ -1,0 +1,227 @@
+SQL> 
+SQL> /*
+SQL>
+SQL>student id: 29262674
+SQL>student name: Aqeel Ahlam
+SQL>last modified date: 29/05/2020
+SQL>
+SQL>*/
+SQL> 
+SQL> /* 1. Find the average mark of FIT1040 in semester 2, 2013. */
+SQL> 
+SQL> SELECT
+  2      ROUND(AVG(MARK), 2) AS AVERAGE
+  3  FROM 
+  4      UNI.ENROLMENT E
+  5  WHERE
+  6      E.UNITCODE = 'FIT1040' AND
+  7      E.SEMESTER = 2 AND
+  8      TO_CHAR(E.OFYEAR, 'YYYY') = '2013';
+
+   AVERAGE
+----------
+     71.83
+
+SQL> 
+SQL> 
+SQL> /* 2. List the average mark for each offering of FIT1040. 
+SQL>In the listing, you need to include the year and semester number. 
+SQL>Sort the result according to the year..*/
+SQL> 
+SQL> SELECT 
+  2      SEMESTER, 
+  3      TO_CHAR(OFYEAR, 'YYYY') AS YEAR,
+  4      ROUND(AVG(MARK), 2) AS AVERAGE
+  5  FROM 
+  6      UNI.ENROLMENT E
+  7  WHERE
+  8      UNITCODE = 'FIT1040'
+  9  GROUP BY
+ 10      OFYEAR, 
+ 11      SEMESTER
+ 12  --    TO_CHAR(OFYEAR, 'YYYY')  This part is not necessary
+ 13  ORDER BY 
+ 14      YEAR;
+
+  SEMESTER YEAR    AVERAGE
+---------- ---- ----------
+         2 2013      71.83
+         1 2013       67.8
+
+SQL> 
+SQL> 
+SQL> /* 3. Find the number of students enrolled in the unit FIT1040 in the year 2013, under the following conditions:
+SQL>      a. Repeat students are counted each time
+SQL>      b. Repeat students are only counted once
+SQL>*/
+SQL> 
+SQL> -- a: 
+SQL> SELECT 
+  2      E.UNITCODE,
+  3      COUNT(STUDID) AS "NUMBER OF STUDENTS"
+  4  FROM
+  5      UNI.ENROLMENT E
+  6  WHERE 
+  7      E.UNITCODE = 'FIT1040' AND
+  8      TO_CHAR(E.OFYEAR, 'YYYY') = '2013'
+  9  GROUP BY 
+ 10      UNITCODE
+ 11  ORDER BY
+ 12      E.UNITCODE;
+
+UNITCOD NUMBER OF STUDENTS
+------- ------------------
+FIT1040                 11
+
+SQL> 
+SQL> --b:
+SQL> SELECT 
+  2      E.UNITCODE,
+  3      COUNT(DISTINCT STUDID) AS "NUMBER OF STUDENTS"
+  4  FROM
+  5      UNI.ENROLMENT E
+  6  WHERE 
+  7      E.UNITCODE = 'FIT1040' AND
+  8      TO_CHAR(E.OFYEAR, 'YYYY') = '2013'
+  9  GROUP BY 
+ 10      UNITCODE
+ 11  ORDER BY
+ 12      E.UNITCODE;
+
+UNITCOD NUMBER OF STUDENTS
+------- ------------------
+FIT1040                 10
+
+SQL> 
+SQL> /* 4. Find the total number of prerequisite units for FIT2077. */
+SQL> 
+SQL> SELECT 
+  2      P.UNITCODE,
+  3      COUNT(P.HAS_PREREQ_OF) AS "NUMBER OF PREREQ UNITS"
+  4  FROM 
+  5      UNI.PREREQ P
+  6  WHERE 
+  7      P.UNITCODE = 'FIT2077'
+  8  GROUP BY 
+  9      P.UNITCODE;
+
+UNITCOD NUMBER OF PREREQ UNITS
+------- ----------------------
+FIT2077                      2
+
+SQL> 
+SQL> /* 5. Find the total number of prerequisite units for each unit. 
+SQL>In the list, include the unitcode for which the count is applicable.*/
+SQL> 
+SQL> SELECT 
+  2      P.UNITCODE,
+  3      COUNT(P.HAS_PREREQ_OF) AS "NUMBER OF PREREQ UNITS"
+  4  FROM 
+  5      UNI.PREREQ P
+  6  GROUP BY 
+  7      P.UNITCODE
+  8  ORDER BY
+  9      P.UNITCODE;
+
+UNITCOD NUMBER OF PREREQ UNITS
+------- ----------------------
+FIT2077                      2
+FIT5131                      1
+FIT5136                      1
+
+SQL> 
+SQL> /* 6. For each prerequisite unit, calculate how many times it has been used as prerequisite. 
+SQL>Include the name of the prerequisite unit in the listing .*/
+SQL> 
+SQL> SELECT 
+  2      U.UNITNAME,
+  3      P.HAS_PREREQ_OF AS UNITCODE,
+  4      COUNT(U.UNITCODE) AS "PREREQ UNIT COUNT"
+  5  FROM 
+  6      UNI.PREREQ P
+  7  JOIN
+  8      UNI.UNIT U
+  9  ON 
+ 10      P.HAS_PREREQ_OF = U.UNITCODE
+ 11  GROUP BY
+ 12      U.UNITNAME,
+ 13      P.HAS_PREREQ_OF
+ 14  ORDER BY
+ 15      U.UNITNAME;
+
+UNITNAME                                                                                             UNITCOD PREREQ UNIT COUNT
+---------------------------------------------------------------------------------------------------- ------- -----------------
+Introduction to Data Management                                                                      FIT1004                 2
+Programming Foundations                                                                              FIT5131                 1
+Programming Fundamental                                                                              FIT1040                 1
+
+SQL> 
+SQL> /* 7. Find the unit with the highest number of enrolments in a given offering in the year 2013. */
+SQL> 
+SQL> SELECT
+  2      E.UNITCODE,
+  3      E.SEMESTER,
+  4  	COUNT(E.UNITCODE) AS "NUMBER OF ENROLMENTS"
+  5  FROM
+  6      UNI.ENROLMENT E
+  7  WHERE
+  8      TO_CHAR(E.OFYEAR, 'YYYY') = '2013'
+  9  GROUP BY 
+ 10  	E.UNITCODE,
+ 11      E.SEMESTER,
+ 12      E.OFYEAR
+ 13  HAVING
+ 14      COUNT(E.UNITCODE) = (SELECT MAX(COUNT(E.UNITCODE))
+ 15                          FROM
+ 16                              UNI.ENROLMENT E
+ 17                          WHERE
+ 18                              TO_CHAR(E.OFYEAR, 'YYYY') = '2013'
+ 19                          GROUP BY
+ 20                              E.UNITCODE,
+ 21                              E.SEMESTER,
+ 22                              E.OFYEAR)
+ 23  ORDER BY 
+ 24      E.UNITCODE;
+
+UNITCOD   SEMESTER NUMBER OF ENROLMENTS
+------- ---------- --------------------
+FIT1004          2                    7
+
+SQL> 
+SQL> /* 8. Find all students enrolled in FIT1004 in semester 1, 2013 
+SQL>who have scored more than the average mark of FIT1004 in the same offering? 
+SQL>Display the students' name and the mark. 
+SQL>Sort the list in the order of the mark from the highest to the lowest.*/
+SQL> SELECT 
+  2      S.STUDFNAME || ' ' || S.STUDLNAME AS NAME,
+  3      E.MARK
+  4  FROM 
+  5      UNI.STUDENT S
+  6  JOIN 
+  7      UNI.ENROLMENT E
+  8  ON
+  9      S.STUDID = E.STUDID
+ 10  WHERE 
+ 11      E.SEMESTER = 1 AND
+ 12      TO_CHAR(OFYEAR, 'YYYY') = '2013' AND
+ 13      E.UNITCODE = 'FIT1004' AND
+ 14      MARK > (SELECT 
+ 15                  AVG(E.MARK)
+ 16              FROM
+ 17                  UNI.ENROLMENT E
+ 18              -- average mark for FIT1004 for the same offering
+ 19              WHERE
+ 20                  E.UNITCODE = 'FIT1004' AND
+ 21                  E.SEMESTER = 1 AND
+ 22                  TO_CHAR(E.OFYEAR, 'YYYY') = '2013')
+ 23  ORDER BY
+ 24      E.MARK DESC;
+
+NAME                                            MARK
+----------------------------------------- ----------
+Matthew Long                                      90
+Andy Lee                                          72
+
+SQL> 
+SQL> 
+SQL> SPOOL OFF
