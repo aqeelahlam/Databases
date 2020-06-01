@@ -1,0 +1,107 @@
+--****PLEASE ENTER YOUR DETAILS BELOW****
+--Q2-tds-queries.sql
+--Student ID:
+--Student Name:
+--Tutorial No: 
+
+/* Comments for your marker:
+
+
+
+
+*/
+
+
+/*
+2(i) Query 1
+*/
+--PLEASE PLACE REQUIRED SQL STATEMENT FOR THIS PART HERE
+
+
+
+
+
+
+/*
+2(ii) Query 2
+*/
+--PLEASE PLACE REQUIRED SQL STATEMENT FOR THIS PART HERE
+
+
+
+
+
+/*
+2(iii) Query 3
+*/
+--PLEASE PLACE REQUIRED SQL STATEMENT FOR THIS PART HERE
+
+
+
+
+
+/*
+2(iv) Query 4
+*/
+--PLEASE PLACE REQUIRED SQL STATEMENT FOR THIS PART HERE
+
+
+
+
+
+/*
+2(v) Query 5
+*/
+--PLEASE PLACE REQUIRED SQL STATEMENT FOR THIS PART HERE
+
+
+
+
+
+/*
+2(vi) Query 6
+*/
+--PLEASE PLACE REQUIRED SQL STATEMENT FOR THIS PART HERE
+
+
+
+
+
+/*
+2(vii) Query 7
+*/
+--PLEASE PLACE REQUIRED SQL STATEMENT FOR THIS PART HERE
+
+
+
+
+
+/*
+2(viii) Query 8
+*/
+--PLEASE PLACE REQUIRED SQL STATEMENT FOR THIS PART HERE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
