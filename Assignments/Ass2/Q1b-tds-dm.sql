@@ -20,7 +20,20 @@ SET SERVEROUTPUT ON;
 */
 --PLEASE PLACE REQUIRED SQL STATEMENT(S) FOR THIS PART HERE
 
+DROP SEQUENCE offence_seq;
 
+CREATE SEQUENCE offence_seq START WITH 100 INCREMENT BY 1;
+
+
+/*
+INSERT INTO student VALUES (offence_seq.NEXTVAL,'Mouse','Mickey','15-Oct-1997');
+--select * from student;
+
+INSERT INTO enrolment VALUES (offence_seq.CURRVAL, 'FIT5132',2016,'2',null,null);
+--select * from enrolment;
+
+COMMIT;
+*/
 
 
 
