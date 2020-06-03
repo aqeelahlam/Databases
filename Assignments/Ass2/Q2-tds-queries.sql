@@ -88,8 +88,27 @@ ORDER BY
 --PLEASE PLACE REQUIRED SQL STATEMENT FOR THIS PART HERE
 
 
-
-
+SELECT
+    V.VEH_MANUFNAME AS "Manufacturer Name",
+    COUNT(O.OFF_NO) AS "Total No. of Offences"
+    --SUM(DEM_POINTS) 
+FROM 
+    OFFENCE O
+JOIN 
+    VEHICLE V
+USING
+    (VEH_VIN)
+JOIN 
+    DEMERIT D
+ON
+    O.DEM_CODE = D.DEM_CODE
+GROUP BY
+    VEH_MANUFNAME
+HAVING
+    SUM(DEM_POINTS) >= 2
+ORDER BY
+    "Total No. of Offences" DESC,
+    V.VEH_MANUFNAME ASC;
 
 /*
 2(vi) Query 6
