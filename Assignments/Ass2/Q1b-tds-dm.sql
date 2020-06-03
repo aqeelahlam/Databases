@@ -24,16 +24,8 @@ DROP SEQUENCE OFFENCE_SEQ;
 
 CREATE SEQUENCE OFFENCE_SEQ START WITH 100 INCREMENT BY 1;
 
-
-/*
-INSERT INTO student VALUES (offence_seq.NEXTVAL,'Mouse','Mickey','15-Oct-1997');
---select * from student;
-
-INSERT INTO enrolment VALUES (offence_seq.CURRVAL, 'FIT5132',2016,'2',null,null);
---select * from enrolment;
-
 COMMIT;
-*/
+
 
 /*
 1b(ii) Take the necessary steps in the database to record data.
@@ -68,46 +60,20 @@ INSERT INTO OFFENCE VALUES (OFFENCE_SEQ.NEXTVAL,
     10000015,
     '100389',
     'JYA3HHE05RA070562');
+    
+COMMIT;    
 
-
-
-
-DELETE FROM OFFENCE WHERE OFF_NO='100'; 
-DELETE FROM OFFENCE WHERE OFF_NO='101'; 
-
-SELECT * FROM OFFENCE 
-ORDER BY OFF_NO;
-
-SELECT * FROM VEHICLE
-WHERE VEH_VIN = 'JYA3HHE05RA070562';
-
-SELECT * FROM DRIVER
-WHERE LIC_NO='100389';
-
-SELECT * FROM DEMERIT;
 
 /*
 1b(iii) Take the necessary steps in the database to record changes. 
 */
 --PLEASE PLACE REQUIRED SQL STATEMENT(S) FOR THIS PART HERE
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+UPDATE OFFENCE
+SET DEM_CODE = (SELECT DEM_CODE FROM DEMERIT WHERE DEM_DESCRIPTION = 'Exceeding the speed limit by 10 km/h or more but less than 25 km/h')
+WHERE 
+    LIC_NO='100389' AND
+    OFF_DATETIME = TO_DATE('7-Jan-2020 7:07 AM', 'DD/MON/YYYY HH:MI AM');
+    
+COMMIT; 
 
