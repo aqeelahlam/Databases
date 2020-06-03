@@ -10,16 +10,24 @@
 
 
 */
-
+SELECT * FROM SUSPENSION;
 
 /*
 2(i) Query 1
 */
 --PLEASE PLACE REQUIRED SQL STATEMENT FOR THIS PART HERE
 
-
-
-
+SELECT 
+    DEM_POINTS AS "Demerit Points",
+    DEM_DESCRIPTION AS "Demerit Descriptions"
+FROM
+    DEMERIT
+WHERE
+    DEM_DESCRIPTION like '%Heavy%' or 
+    DEM_DESCRIPTION like '%heavy%' or
+    DEM_DESCRIPTION like 'Exceed%'
+ORDER BY 
+    DEM_POINTS, DEM_DESCRIPTION;
 
 
 /*
@@ -27,18 +35,43 @@
 */
 --PLEASE PLACE REQUIRED SQL STATEMENT FOR THIS PART HERE
 
-
-
-
+SELECT
+    VEH_MAINCOLOR AS "Main Colour",
+    VEH_VIN AS VIN,
+    TO_CHAR(VEH_YRMANUF, 'YYYY') AS "Year Manufactured"
+FROM 
+    VEHICLE
+WHERE
+    (TO_CHAR(VEH_YRMANUF, 'YYYY') >= '2012' AND TO_CHAR(VEH_YRMANUF, 'YYYY') <= '2014') AND
+    (VEH_MODNAME = 'Range Rover' OR
+    VEH_MODNAME = 'Range Rover Sport')
+ORDER BY
+    VEH_YRMANUF DESC, 
+    VEH_MAINCOLOR ASC;
 
 /*
 2(iii) Query 3
 */
 --PLEASE PLACE REQUIRED SQL STATEMENT FOR THIS PART HERE
 
-
-
-
+SELECT
+    D.LIC_NO AS "Licence No.",
+    D.LIC_FNAME || ' ' || LIC_LNAME AS "Driver Fullname",
+    D.LIC_DOB AS DOB,
+    D.LIC_STREET || ' ' || LIC_TOWN || ' ' || LIC_POSTCODE AS "Driver Address",
+    TO_CHAR(S.SUS_DATE, 'DD/MON/YY') AS "Suspended On",
+    TO_CHAR(S.SUS_ENDDATE, 'DD/MON/YY') AS "Suspended Till"
+FROM 
+    DRIVER D
+JOIN 
+    SUSPENSION S
+ON
+    D.LIC_NO = S.LIC_NO
+WHERE 
+    SUS_DATE >= ADD_MONTHS(SYSDATE, -30)
+ORDER BY
+    D.LIC_NO ASC,
+    SUS_DATE DESC;
 
 /*
 2(iv) Query 4
