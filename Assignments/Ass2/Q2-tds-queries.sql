@@ -78,6 +78,54 @@ ORDER BY
 */
 --PLEASE PLACE REQUIRED SQL STATEMENT FOR THIS PART HERE
 
+SELECT
+    D.DEM_CODE AS "Demerit Code",
+    D.DEM_DESCRIPTION AS "Demerit Descriptions",
+    COUNT(TO_CHAR(O.OFF_DATETIME, 'MON')) AS "Total Offences (All Months)",
+    EXTRACT(MONTH FROM O.OFF_DATETIME) AS JAN,
+    EXTRACT(MONTH FROM O.OFF_DATETIME) AS FEB
+FROM 
+    OFFENCE O
+JOIN 
+    DEMERIT D
+ON
+    O.DEM_CODE = D.DEM_CODE
+WHERE 
+    TO_CHAR(O.OFF_DATETIME, 'MON') = 'JAN' OR
+    TO_CHAR(O.OFF_DATETIME, 'MON') = 'FEB'
+    
+GROUP BY
+    D.DEM_CODE,
+    D.DEM_DESCRIPTION,
+    EXTRACT(MONTH FROM O.OFF_DATETIME);
+    --TO_CHAR(O.OFF_DATETIME, 'MON');
+    --COUNT(TO_CHAR(O.OFF_DATETIME, 'MON'));
+
+
+
+
+
+SELECT 
+    --OFF_LOCATION,
+    MONTH(OFF_DATETIME) [month]
+    --TO_CHAR(OFF_DATETIME, 'YYYY'),
+    --COUNT(OFF_NO)
+FROM 
+    OFFENCE
+WHERE 
+    OFF_DATETIME IS NOT NULL
+GROUP BY
+    MONTH(OFF_DATETIME)
+
+    OFF_LOCATION,
+    TO_CHAR(OFF_DATETIME, 'YYYY');
+
+
+
+
+
+
+
 
 
 
@@ -90,8 +138,8 @@ ORDER BY
 
 SELECT
     V.VEH_MANUFNAME AS "Manufacturer Name",
-    COUNT(O.OFF_NO) AS "Total No. of Offences"
-    --SUM(DEM_POINTS) 
+    COUNT(O.OFF_NO) AS "Total No. of Offences",
+    sum(DEM_POINTS) 
 FROM 
     OFFENCE O
 JOIN 
@@ -105,11 +153,39 @@ ON
 GROUP BY
     VEH_MANUFNAME
 HAVING
-    SUM(DEM_POINTS) >= 2
+    COUNT(DEM_POINTS) >= 2
 ORDER BY
     "Total No. of Offences" DESC,
     V.VEH_MANUFNAME ASC;
 
+
+
+
+
+
+
+SELECT
+    V.VEH_MANUFNAME AS "Manufacturer Name",
+    COUNT(O.OFF_NO) AS "Total No. of Offences"
+FROM 
+    OFFENCE O
+JOIN 
+    VEHICLE V
+USING
+    (VEH_VIN)
+JOIN 
+    DEMERIT D
+ON
+    O.DEM_CODE = D.DEM_CODE
+WHERE
+    D.DEM_POINTS >= 2
+GROUP BY
+    VEH_MANUFNAME
+ORDER BY
+    "Total No. of Offences" DESC,
+    V.VEH_MANUFNAME ASC;
+
+select * from offence;
 /*
 2(vi) Query 6
 */
