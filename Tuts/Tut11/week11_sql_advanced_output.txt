@@ -1,0 +1,351 @@
+SQL> /*
+SQL>Databases Week 11 Tutorial
+SQL>week11_sql_advanced.sql
+SQL>
+SQL>student id: 29262674
+SQL>student name: AQEEL AHLAM   
+SQL>last modified date: 05/06/2020
+SQL>
+SQL>*/
+SQL> 
+SQL> /* 1. Find the number of scheduled classes assigned to each staff member each year and semester. 
+SQL>If the number of classes is 2 then this should be labelled as a correct load, 
+SQL>more than 2 as an overload and less than 2 as an underload. 
+SQL>Order the list by decreasing order of scheduled class number. */
+SQL> 
+SQL> SELECT 
+  2      TO_CHAR(C.OFYEAR, 'YYYY') AS YEAR,
+  3      C.SEMESTER,
+  4      S.STAFFID,
+  5      S.STAFFFNAME,
+  6      S.STAFFLNAME,
+  7      COUNT(C.UNITCODE) AS NUMBERCLASSES,
+  8      CASE 
+  9          WHEN COUNT(C.UNITCODE) > 2 THEN
+ 10              'OVERLOAD'
+ 11          WHEN COUNT(C.UNITCODE) < 2 THEN
+ 12              'UNDERLOAD'
+ 13          WHEN COUNT(C.UNITCODE) = 2   THEN
+ 14              'CORRECT LOAD'
+ 15          END AS LOAD
+ 16  FROM
+ 17      UNI.STAFF S
+ 18  INNER JOIN 
+ 19      UNI.SCHEDCLASS C
+ 20  ON 
+ 21      S.STAFFID = C.STAFFID
+ 22  GROUP BY
+ 23      C.OFYEAR,
+ 24      C.SEMESTER,
+ 25      S.STAFFID,
+ 26      S.STAFFFNAME,
+ 27      S.STAFFLNAME
+ 28  ORDER BY
+ 29      NUMBERCLASSES DESC;
+
+YEAR   SEMESTER    STAFFID STAFFFNAME           STAFFLNAME           NUMBERCLASSES LOAD        
+---- ---------- ---------- -------------------- -------------------- ------------- ------------
+2013          1          4 Rubeus               Hagrid                           4 OVERLOAD    
+2013          2          4 Rubeus               Hagrid                           3 OVERLOAD    
+2013          1          1 Albus                Dumbledore                       2 CORRECT LOAD
+2013          2          1 Albus                Dumbledore                       2 CORRECT LOAD
+2013          1          2 Charity              Burbage                          2 CORRECT LOAD
+2013          1          5 Severus              Snape                            2 CORRECT LOAD
+2013          1          3 Filius               Flitwick                         2 CORRECT LOAD
+2013          3          7 Minerva              McGonagall                       2 CORRECT LOAD
+2013          2          3 Filius               Flitwick                         1 UNDERLOAD   
+2013          2          6 Dolores              Umbridge                         1 UNDERLOAD   
+2013          2          2 Charity              Burbage                          1 UNDERLOAD   
+
+YEAR   SEMESTER    STAFFID STAFFFNAME           STAFFLNAME           NUMBERCLASSES LOAD        
+---- ---------- ---------- -------------------- -------------------- ------------- ------------
+2013          2          5 Severus              Snape                            1 UNDERLOAD   
+2013          1          6 Dolores              Umbridge                         1 UNDERLOAD   
+
+13 rows selected. 
+
+SQL> 
+SQL> /* 2. Display unit code and unitname for units that do not have a prerequisite. 
+SQL>Order the list in increasing order of unit code.
+SQL>
+SQL>There are many approaches that you can take in writing an SQL statement to answer this query. 
+SQL>You can use the SET OPERATORS, OUTER JOIN and a SUBQUERY. 
+SQL>Write SQL statements based on all of these approaches.*/
+SQL> 
+SQL> --SET OPERATOR
+SQL> 
+SQL> --SELECT 
+SQL> --    U.UNITCODE, U.UNITNAME
+SQL> --FROM 
+SQL> --    UNI.UNIT U
+SQL> --INNER JOIN
+SQL> --    (SELECT 
+SQL> --        UNITCODE
+SQL> --    FROM 
+SQL> --        UNI.UNIT
+SQL> --    MINUS
+SQL> --        SELECT 
+SQL> --            UNITCODE
+SQL> --        FROM 
+SQL> --            UNI.PREREQ) P       
+SQL> --ON 
+SQL> --    U.UNITCODE = P.UNITCODE
+SQL> --ORDER BY 
+SQL> --    UNITCODE;
+SQL> 
+SQL> --OUTER JOIN
+SQL> 
+SQL> --SELECT
+SQL> --    U.UNITCODE, U.UNITNAME
+SQL> --FROM 
+SQL> --    UNI.UNIT U
+SQL> --FULL OUTER JOIN
+SQL> --    UNI.PREREQ P
+SQL> --ON
+SQL> --    U.UNITCODE = P.UNITCODE
+SQL> --WHERE P.HAS_PREREQ_OF IS NULL
+SQL> --ORDER BY U.UNITCODE;
+SQL> 
+SQL> --SUBQUERY
+SQL> 
+SQL> SELECT
+  2      UNITCODE,
+  3      UNITNAME
+  4  FROM
+  5      UNI.UNIT
+  6  WHERE
+  7      UNITCODE 
+  8  NOT IN 
+  9      (SELECT 
+ 10          UNITCODE
+ 11      FROM 
+ 12          UNI.PREREQ)
+ 13  ORDER BY 
+ 14      UNITCODE;
+
+UNITCOD UNITNAME                                                                                            
+------- ----------------------------------------------------------------------------------------------------
+FIT1004 Introduction to Data Management                                                                     
+FIT1040 Programming Fundamental                                                                             
+FIT5132 Introduction to Databases                                                                           
+
+SQL> 
+SQL> /* 3. List all units offered in 2013 semester 2 which do not have any scheduled class. 
+SQL>Include unit code, unit name, and chief examiner name in the list. 
+SQL>Order the list based on the unit code. */
+SQL> 
+SQL> SELECT 
+  2      O.UNITCODE,
+  3      (SELECT 
+  4          UNITNAME
+  5      FROM
+  6          UNI.UNIT
+  7      WHERE
+  8          O.UNITCODE = UNITCODE) AS UNITNAME,
+  9      (SELECT
+ 10          STAFFFNAME || ' ' || STAFFLNAME
+ 11      FROM 
+ 12          UNI.STAFF
+ 13      WHERE
+ 14          CHIEFEXAM = STAFFID) AS CE_NAME
+ 15  FROM
+ 16      (SELECT 
+ 17          * 
+ 18      FROM 
+ 19          UNI.OFFERING
+ 20      WHERE 
+ 21          SEMESTER = 2 AND 
+ 22          TO_CHAR(OFYEAR,'YYYY') = '2013') O
+ 23  
+ 24  LEFT OUTER JOIN 
+ 25  
+ 26      (SELECT 
+ 27          * 
+ 28      FROM 
+ 29          UNI.SCHEDCLASS
+ 30      WHERE 
+ 31          SEMESTER = 2 AND 
+ 32          TO_CHAR(OFYEAR,'YYYY') = '2013') S 
+ 33      ON O.UNITCODE = S.UNITCODE
+ 34  WHERE
+ 35      STAFFID is NULL
+ 36  ORDER BY
+ 37      O.UNITCODE;
+
+UNITCOD UNITNAME                                                                                             CE_NAME                                  
+------- ---------------------------------------------------------------------------------------------------- -----------------------------------------
+FIT2077 Advanced Data Management                                                                             Albus Dumbledore                         
+FIT5136 Software Enginnering                                                                                 Filius Flitwick                          
+
+SQL> 
+SQL> 
+SQL> 
+SQL> /* 4. List full names of students who are enrolled in both Introduction to Databases and Programming Foundations 
+SQL>(note: unit names are unique). Order the list by student full name.*/
+SQL> 
+SQL> SELECT DISTINCT
+  2      S.STUDFNAME || ' ' || S.STUDLNAME AS STUDENT_FULL_NAME
+  3  FROM 
+  4      UNI.STUDENT S
+  5  WHERE 
+  6      S.STUDID IN
+  7          (SELECT 
+  8              STUDID 
+  9          FROM 
+ 10              UNI.ENROLMENT 
+ 11          NATURAL JOIN 
+ 12              UNI.UNIT
+ 13          WHERE UNITNAME = 'Introduction to Databases') AND
+ 14      S.STUDID IN
+ 15          (SELECT 
+ 16              STUDID 
+ 17          FROM 
+ 18              UNI.ENROLMENT 
+ 19          NATURAL JOIN 
+ 20              UNI.UNIT
+ 21          WHERE UNITNAME = 'Programming Foundations') 
+ 22  ORDER BY 
+ 23      STUDENT_FULL_NAME;
+
+STUDENT_FULL_NAME                        
+-----------------------------------------
+Gary Gupta
+Ruth Nguyen
+
+SQL> 
+SQL> 
+SQL> /* 5. Given that payment rate for tutorial is $42.85 per hour and  payemnt rate for lecture is $75.60 per hour, 
+SQL>calculate weekly payment per type of class for each staff. 
+SQL>In the display, include staff name, type of class (lecture or tutorial), 
+SQL>number of classes, number of hours (total duration), and weekly payment (number of hours * payment rate). 
+SQL>Order the list by increasing order of staff name*/
+SQL> 
+SQL> SELECT 
+  2      STAFFFNAME || ' ' || STAFFLNAME AS STAFFNAME,
+  3      CASE CLTYPE
+  4          WHEN 'T' THEN 'Tutorial'
+  5          WHEN 'L' THEN 'Lecture'
+  6      END AS TYPE,
+  7  
+  8      COUNT(CLTYPE) AS NO_OF_CLASSES,
+  9  
+ 10      SUM(CLDURATION) AS TOTAL_HOURS,
+ 11      TO_CHAR((CASE CLTYPE
+ 12          WHEN 'T' THEN 
+ 13              SUM(CLDURATION) * 42.85
+ 14          WHEN 'L' THEN 
+ 15              SUM(CLDURATION) * 75.60
+ 16      END), '$9999.99') AS WEEKLY_PAYEMNT
+ 17  
+ 18  FROM 
+ 19      UNI.STAFF
+ 20  NATURAL JOIN 
+ 21      UNI.SCHEDCLASS
+ 22  GROUP BY
+ 23      STAFFFNAME || ' ' || STAFFLNAME,
+ 24      CLTYPE
+ 25  ORDER BY 
+ 26      STAFFFNAME || ' ' || STAFFLNAME ASC;
+
+STAFFNAME                                 TYPE     NO_OF_CLASSES TOTAL_HOURS WEEKLY_PA
+----------------------------------------- -------- ------------- ----------- ---------
+Albus Dumbledore                          Lecture              3           5   $378.00
+Albus Dumbledore                          Tutorial             1           2    $85.70
+Charity Burbage                           Tutorial             3           6   $257.10
+Dolores Umbridge                          Tutorial             2           4   $171.40
+Filius Flitwick                           Lecture              2           4   $302.40
+Filius Flitwick                           Tutorial             1           3   $128.55
+Minerva McGonagall                        Lecture              1           4   $302.40
+Minerva McGonagall                        Tutorial             1           4   $171.40
+Rubeus Hagrid                             Lecture              2           4   $302.40
+Rubeus Hagrid                             Tutorial             5          10   $428.50
+Severus Snape                             Lecture              1           2   $151.20
+
+STAFFNAME                                 TYPE     NO_OF_CLASSES TOTAL_HOURS WEEKLY_PA
+----------------------------------------- -------- ------------- ----------- ---------
+Severus Snape                             Tutorial             2           4   $171.40
+
+12 rows selected. 
+
+SQL> 
+SQL> 
+SQL> /* 6. Assume that all units worth 6 credit points each, calculate each student’s Weighted Average Mark (WAM) and GPA. 
+SQL>Please refer to these Monash websites: https://www.monash.edu/exams/results/wam and https://www.monash.edu/exams/results/gpa 
+SQL>for more information about WAM and GPA respectively. 
+SQL>
+SQL>Calculation example for student 111111111:
+SQL>WAM = (65x3 + 45x3 + 74x3 +74*6)/(3+3+3+6) = 66.4
+SQL>GPA = (2x6 + 0.3x6 + 3x6 + 3x6)/(6+6+6+6) = 2.08
+SQL>
+SQL>Include student id, student full name (in a 40 character wide column headed “Student Full Name”), WAM and GPA in the display. 
+SQL>Order the list by descending order of WAM then descending order of GPA.
+SQL>*/
+SQL> SELECT
+  2      S.STUDID,
+  3      RPAD(S.STUDFNAME || ' ' || S.STUDLNAME, 40) AS "Student Full Name",
+  4      TO_CHAR(ROUND(SUM(CASE SUBSTR(UNITCODE, 4, 1)
+  5          WHEN '1' THEN 
+  6              E.MARK * 3
+  7          ELSE  
+  8              E.MARK * 6
+  9          END) / SUM(CASE SUBSTR(UNITCODE, 4, 1) 
+ 10                      WHEN '1' THEN 
+ 11                          3
+ 12                      ELSE 
+ 13                          6
+ 14                      END),2), '990.00') AS WAM,
+ 15      TO_CHAR(round(SUM(
+ 16          CASE 
+ 17              WHEN (E.GRADE = 'HD') THEN 
+ 18                  4
+ 19              WHEN (E.GRADE = 'D') THEN 
+ 20                  3 
+ 21              WHEN (E.GRADE = 'C') THEN 
+ 22                  2 
+ 23              WHEN (E.GRADE = 'N') THEN 
+ 24                  1 
+ 25              END * 6)/(COUNT(E.UNITCODE)*6), 2), '0.00') AS GPA
+ 26  
+ 27  FROM 
+ 28      UNI.STUDENT S
+ 29  INNER JOIN
+ 30      UNI.ENROLMENT E
+ 31  ON 
+ 32      S.STUDID = E.STUDID
+ 33  GROUP BY
+ 34      S.STUDFNAME || ' ' || S.STUDLNAME,
+ 35      S.STUDID
+ 36  ORDER BY
+ 37      WAM DESC,
+ 38      GPA DESC;
+
+    STUDID Student Full Name                        WAM     GPA  
+---------- ---------------------------------------- ------- -----
+  11111127 Jake Brown                                 83.00  3.50
+  11111112 Matthew Long                               80.80  3.75
+  11111123 Tay Lee                                    78.00  3.00
+  11111126 John Tse                                   77.50  3.00
+  11111122 Andrew Short                               77.00  3.00
+  11111124 Dani Solo                                  73.50  3.00
+  11111116 John Chung                                 72.50  3.00
+  11111120 James Dowe                                 72.50  3.00
+  11111125 David Smith                                72.00  2.50
+  11111113 Andy Lee                                   70.00  2.67
+  11111119 Samuel Nguyen                              70.00  2.00
+
+    STUDID Student Full Name                        WAM     GPA  
+---------- ---------------------------------------- ------- -----
+  11111118 Theo Gupta                                 67.50  2.00
+  11111130 Blake White                                67.00  2.00
+  11111121 Mary Chan                                  67.00  2.00
+  11111111 Mary Smith                                 66.40  2.25
+  11111114 Rani Dewa                                  61.67  2.33
+  11111115 David Dumbledore                           56.67  2.50
+  11111129 Ruth Nguyen                                39.00  1.50
+  11111128 Gary Gupta                                 38.50  1.50
+  11111117 Jake Ryan                                  33.50  1.00
+
+20 rows selected. 
+
+SQL> 
+SQL> SPOOL OFF    
