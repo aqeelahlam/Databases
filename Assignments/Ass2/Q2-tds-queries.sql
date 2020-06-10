@@ -124,7 +124,7 @@ RIGHT OUTER JOIN --TO DISPLAY ALL THE DEMERITS
     DEMERIT D
 ON
     O.DEM_CODE = D.DEM_CODE
---WHERE TO_CHAR(off_datetime, 'YYYY') = '2017' -- IN CASE for a particular year
+--WHERE TO_CHAR(O.OFF_DATETIME, 'YYYY') = '2017' -- IN CASE for a particular year
 GROUP BY
     D.DEM_CODE,
     D.DEM_DESCRIPTION
