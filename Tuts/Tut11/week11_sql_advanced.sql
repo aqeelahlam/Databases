@@ -240,11 +240,11 @@ SELECT
             WHEN (E.GRADE = 'HD') THEN 
                 4
             WHEN (E.GRADE = 'D') THEN 
-                3 
+                3
             WHEN (E.GRADE = 'C') THEN 
-                2 
+                2
             WHEN (E.GRADE = 'N') THEN 
-                1 
+                1
             END * 6)/(COUNT(E.UNITCODE)*6), 2), '0.00') AS GPA
         
 FROM 
