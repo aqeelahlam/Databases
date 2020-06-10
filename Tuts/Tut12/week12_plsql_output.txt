@@ -1,0 +1,328 @@
+SQL> 
+SQL> /*
+SQL>Databases Week 12 Tutorial
+SQL>
+SQL>student id: 29262674
+SQL>student name: AQEEL AHLAM   
+SQL>last modified date: 10/06/2020
+SQL>
+SQL>*/
+SQL> 
+SQL> /* 1. Create a trigger unit_upd_cascade that updates matching rows in the ENROLMENT table whenever a unit code is updated in the UNIT table. 
+SQL>The changes in the enrolment table should be announced via dbms_output.put_line. */
+SQL> 
+SQL> --TASK 1
+SQL> 
+SQL> CREATE OR REPLACE TRIGGER unit_upd_cascade 
+  2  AFTER UPDATE OF UNIT_CODE ON UNIT
+  3  FOR EACH ROW
+  4  BEGIN 
+  5      UPDATE ENROLMENT
+  6      SET UNIT_CODE = :NEW.UNIT_CODE
+  7      WHERE UNIT_CODE = :OLD.UNIT_CODE;
+  8      DBMS_OUTPUT.PUT_LINE('PREVIOUS UNIT CODE: ' || :OLD.UNIT_CODE || ' NEW UNIT CODE: ' || :NEW.UNIT_CODE);
+  9  END;
+ 10  /
+
+Trigger UNIT_UPD_CASCADE compiled
+
+SQL> 
+SQL> ---- TEST HARNESS TASK 1 ----
+SQL> 
+SQL> --BEFORE UPDATING:
+SQL> 
+SQL> SELECT * FROM UNIT 
+  2  WHERE UNIT_NAME = 'Programming foundations';
+
+UNIT_CO UNIT_NAME                                          UNIT_CURRENT_STU_COUNT
+------- -------------------------------------------------- ----------------------
+FIT9131 Programming foundations                                                 0
+
+SQL> 
+SQL> SELECT * FROM ENROLMENT 
+  2  WHERE UNIT_CODE = (SELECT UNIT_CODE FROM UNIT WHERE UNIT_NAME = 'Programming foundations');
+
+STU_NO   UNIT_CO ENROL_SEMESTER ENROL_YEAR ENROL_MARK EN
+-------- ------- -------------- ---------- ---------- --
+11111121 FIT9131              1       2014         35 N 
+11111122 FIT9131              1       2014         62 C 
+11111123 FIT9131              1       2014         76 D 
+11111124 FIT9131              1       2014         85 HD
+11111125 FIT9131              1       2014         64 C 
+11111126 FIT9131              1       2014         58 P 
+11111127 FIT9131              1       2014         68 C 
+11111128 FIT9131              1       2014         73 D 
+11111129 FIT9131              1       2014         89 HD
+11111130 FIT9131              1       2014         74 D 
+
+10 rows selected. 
+
+SQL> 
+SQL> --UPDATING TO DEPLOY THE TRIGGER    
+SQL> 
+SQL> UPDATE 
+  2      UNIT
+  3  SET
+  4      UNIT_CODE = 'FIT9000'
+  5  WHERE
+  6      UNIT_NAME = 'Programming foundations';
+PREVIOUS UNIT CODE: FIT9131 NEW UNIT CODE: FIT9000
+
+
+1 row updated.
+
+SQL> 
+SQL> --AFTER UPDATING:
+SQL> 
+SQL> SELECT * FROM UNIT 
+  2  WHERE UNIT_NAME = 'Programming foundations';
+
+UNIT_CO UNIT_NAME                                          UNIT_CURRENT_STU_COUNT
+------- -------------------------------------------------- ----------------------
+FIT9000 Programming foundations                                                 0
+
+SQL> 
+SQL> SELECT * FROM ENROLMENT 
+  2  WHERE UNIT_CODE = (SELECT UNIT_CODE FROM UNIT WHERE UNIT_NAME = 'Programming foundations');
+
+STU_NO   UNIT_CO ENROL_SEMESTER ENROL_YEAR ENROL_MARK EN
+-------- ------- -------------- ---------- ---------- --
+11111121 FIT9000              1       2014         35 N 
+11111122 FIT9000              1       2014         62 C 
+11111123 FIT9000              1       2014         76 D 
+11111124 FIT9000              1       2014         85 HD
+11111125 FIT9000              1       2014         64 C 
+11111126 FIT9000              1       2014         58 P 
+11111127 FIT9000              1       2014         68 C 
+11111128 FIT9000              1       2014         73 D 
+11111129 FIT9000              1       2014         89 HD
+11111130 FIT9000              1       2014         74 D 
+
+10 rows selected. 
+
+SQL> 
+SQL> ROLLBACK;
+
+Rollback complete.
+
+SQL> 
+SQL> --TASK 2
+SQL> 
+SQL> CREATE OR REPLACE TRIGGER TOTAL_STUDENT_TRIGGER 
+  2  AFTER INSERT OR DELETE ON ENROLMENT
+  3  FOR EACH ROW
+  4  BEGIN 
+  5      IF INSERTING THEN 
+  6      UPDATE UNIT
+  7      SET UNIT_CURRENT_STU_COUNT = UNIT_CURRENT_STU_COUNT + 1
+  8      WHERE UNIT_CODE = :NEW.UNIT_CODE;
+  9      END IF;
+ 10  
+ 11      IF DELETING THEN 
+ 12      UPDATE UNIT
+ 13      SET UNIT_CURRENT_STU_COUNT = UNIT_CURRENT_STU_COUNT - 1 
+ 14      WHERE UNIT_CODE = :NEW.UNIT_CODE;
+ 15      INSERT INTO AUDIT_LOG VALUES (AUDIT_SEQ.NEXTVAL, SYSDATE, USER, :OLD.STU_NO, :OLD.UNIT_CODE);
+ 16      END IF;
+ 17  END;
+ 18  /
+
+Trigger TOTAL_STUDENT_TRIGGER compiled
+
+SQL> 
+SQL> ---- TEST HARNESS TASK 2 ----
+SQL> SELECT * FROM UNIT;
+
+UNIT_CO UNIT_NAME                                          UNIT_CURRENT_STU_COUNT
+------- -------------------------------------------------- ----------------------
+FIT9132 Introduction to databases                                              10
+FIT9131 Programming foundations                                                 0
+FIT9134 Computer architecture and operating systems                             0
+FIT9135 Data communications                                                     0
+FIT5057 Project management                                                      0
+
+SQL> SELECT * FROM ENROLMENT WHERE STU_NO = 11111130;
+
+STU_NO   UNIT_CO ENROL_SEMESTER ENROL_YEAR ENROL_MARK EN
+-------- ------- -------------- ---------- ---------- --
+11111130 FIT9131              1       2014         74 D 
+11111130 FIT9135              1       2014         68 C 
+11111130 FIT9135              2       2014         72 D 
+11111130 FIT5057              1       2015         67 C 
+11111130 FIT9132              2       2015              
+
+SQL> 
+SQL> -- TESTING THE TRIGGER FOR INSERTING
+SQL> INSERT INTO ENROLMENT VALUES(11111130,'FIT9131', 2, 2013, null, null);
+
+1 row inserted.
+
+SQL> 
+SQL> -- DISPLAY UPDATED TABLE
+SQL> SELECT * FROM UNIT;
+
+UNIT_CO UNIT_NAME                                          UNIT_CURRENT_STU_COUNT
+------- -------------------------------------------------- ----------------------
+FIT9132 Introduction to databases                                              10
+FIT9131 Programming foundations                                                 2
+FIT9134 Computer architecture and operating systems                             0
+FIT9135 Data communications                                                     0
+FIT5057 Project management                                                      0
+
+SQL> SELECT * FROM ENROLMENT WHERE STU_NO = 11111130;
+
+STU_NO   UNIT_CO ENROL_SEMESTER ENROL_YEAR ENROL_MARK EN
+-------- ------- -------------- ---------- ---------- --
+11111130 FIT9131              1       2014         74 D 
+11111130 FIT9135              1       2014         68 C 
+11111130 FIT9135              2       2014         72 D 
+11111130 FIT5057              1       2015         67 C 
+11111130 FIT9132              2       2015              
+11111130 FIT9131              2       2013              
+
+6 rows selected. 
+
+SQL> 
+SQL> -- TESTING THE TRIGGER FOR DELETION
+SQL> DELETE FROM ENROLMENT WHERE STU_NO = 11111130 AND UNIT_CODE = 'FIT9131' AND ENROL_YEAR =2013 AND ENROL_SEMESTER = 2;
+
+1 row deleted.
+
+SQL> 
+SQL> -- DISPLAY UPDATED TABLE
+SQL> SELECT * FROM ENROLMENT WHERE STU_NO = 11111130;
+
+STU_NO   UNIT_CO ENROL_SEMESTER ENROL_YEAR ENROL_MARK EN
+-------- ------- -------------- ---------- ---------- --
+11111130 FIT9131              1       2014         74 D 
+11111130 FIT9135              1       2014         68 C 
+11111130 FIT9135              2       2014         72 D 
+11111130 FIT5057              1       2015         67 C 
+11111130 FIT9132              2       2015              
+
+SQL> SELECT * FROM AUDIT_LOG;
+
+  AUDIT_NO AUDIT_DATE AUDIT_USER                     AUDIT_ST AUDIT_U
+---------- ---------- ------------------------------ -------- -------
+         3 10/06/2020 AAHL0002                       11111130 FIT9131
+         4 10/06/2020 AAHL0002                       11111130 FIT9131
+
+SQL> 
+SQL> ROLLBACK;
+
+Rollback complete.
+
+SQL> 
+SQL> 
+SQL> /* 3. Create a trigger called calculate_grade that calculates the student’s grade (enrolment.enrol_grade) 
+SQL>whenever a mark is updated for an enrolment or a new enrolment is added with a mark. 
+SQL>Hint: you can avoid the "mutating table" error here by directly manipulating the new value of enrol_grade in your trigger based on the new enrol_mark value. 
+SQL>● enrol_mark >= 80 is a HD grade 
+SQL>● enrol_mark >= 70 and enrol_mark < 80 is a D grade 
+SQL>● enrol_mark >= 60 and enrol_mark < 70 is a C grade 
+SQL>● enrol_mark >= 50 and enrol_mark < 60 is a P grade 
+SQL>● enrol_mark < 50 is a N grade */
+SQL> 
+SQL> 
+SQL> CREATE OR REPLACE TRIGGER CALCULATE_GRADE BEFORE
+  2      INSERT OR UPDATE OF ENROL_MARK ON ENROLMENT
+  3      FOR EACH ROW
+  4  BEGIN
+  5      IF :NEW.ENROL_MARK >= 80 THEN
+  6          :NEW.ENROL_GRADE := 'HD';
+  7      END IF;
+  8  
+  9      IF :NEW.ENROL_MARK >= 70 AND :NEW.ENROL_MARK < 80 THEN
+ 10          :NEW.ENROL_GRADE := 'D';
+ 11      END IF;
+ 12  
+ 13      IF :NEW.ENROL_MARK >= 60 AND :NEW.ENROL_MARK < 70 THEN
+ 14          :NEW.ENROL_GRADE := 'C';
+ 15      END IF;
+ 16  
+ 17      IF :NEW.ENROL_MARK >= 50 AND :NEW.ENROL_MARK < 60 THEN
+ 18          :NEW.ENROL_GRADE := 'P';
+ 19      END IF;
+ 20  
+ 21      IF :NEW.ENROL_MARK < 50 THEN
+ 22          :NEW.ENROL_GRADE := 'N';
+ 23      END IF;
+ 24  
+ 25  END;
+ 26  /
+
+Trigger CALCULATE_GRADE compiled
+
+SQL> 
+SQL> ---- TEST HARNESS TASK 3 ----
+SQL> --DISPLAY BEFORE TABLES
+SQL> SELECT * FROM ENROLMENT WHERE STU_NO = '11111130';
+
+STU_NO   UNIT_CO ENROL_SEMESTER ENROL_YEAR ENROL_MARK EN
+-------- ------- -------------- ---------- ---------- --
+11111130 FIT9131              1       2014         74 D 
+11111130 FIT9135              1       2014         68 C 
+11111130 FIT9135              2       2014         72 D 
+11111130 FIT5057              1       2015         67 C 
+11111130 FIT9132              2       2015              
+
+SQL> --ISERT NEW ENROLMENT TO TEST TRIGGER
+SQL> INSERT INTO ENROLMENT VALUES ('11111130','FIT9131',2,2014,65,NULL);
+
+1 row inserted.
+
+SQL> --DISPLAY AFTER TABLES
+SQL> SELECT * FROM ENROLMENT WHERE STU_NO = '11111130';
+
+STU_NO   UNIT_CO ENROL_SEMESTER ENROL_YEAR ENROL_MARK EN
+-------- ------- -------------- ---------- ---------- --
+11111130 FIT9131              1       2014         74 D 
+11111130 FIT9135              1       2014         68 C 
+11111130 FIT9135              2       2014         72 D 
+11111130 FIT5057              1       2015         67 C 
+11111130 FIT9132              2       2015              
+11111130 FIT9131              2       2014         65 C 
+
+6 rows selected. 
+
+SQL> 
+SQL> --DISPLAY BEFORE TABLES
+SQL> SELECT * FROM ENROLMENT WHERE STU_NO = '11111130';
+
+STU_NO   UNIT_CO ENROL_SEMESTER ENROL_YEAR ENROL_MARK EN
+-------- ------- -------------- ---------- ---------- --
+11111130 FIT9131              1       2014         74 D 
+11111130 FIT9135              1       2014         68 C 
+11111130 FIT9135              2       2014         72 D 
+11111130 FIT5057              1       2015         67 C 
+11111130 FIT9132              2       2015              
+11111130 FIT9131              2       2014         65 C 
+
+6 rows selected. 
+
+SQL> --UPDATE ENROLMENT TO TEST TRIGGER
+SQL> UPDATE ENROLMENT SET ENROL_MARK = 88 WHERE STU_NO = '11111130' and UNIT_CODE = 'FIT9135' and ENROL_SEMESTER = 2 and ENROL_YEAR = 2014;
+
+1 row updated.
+
+SQL> --DISPLAY AFTER TABLES
+SQL> SELECT * FROM ENROLMENT WHERE STU_NO = '11111130';
+
+STU_NO   UNIT_CO ENROL_SEMESTER ENROL_YEAR ENROL_MARK EN
+-------- ------- -------------- ---------- ---------- --
+11111130 FIT9131              1       2014         74 D 
+11111130 FIT9135              1       2014         68 C 
+11111130 FIT9135              2       2014         88 HD
+11111130 FIT5057              1       2015         67 C 
+11111130 FIT9132              2       2015              
+11111130 FIT9131              2       2014         65 C 
+
+6 rows selected. 
+
+SQL> 
+SQL> ROLLBACK;
+
+Rollback complete.
+
+SQL> 
+SQL> SPOOL OFF

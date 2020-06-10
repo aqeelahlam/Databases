@@ -1,0 +1,156 @@
+SET SERVEROUTPUT ON
+SET ECHO ON
+SPOOL week12_plsql_output.txt
+
+/*
+Databases Week 12 Tutorial
+
+student id: 29262674
+student name: AQEEL AHLAM   
+last modified date: 10/06/2020
+
+*/
+
+/* 1. Create a trigger unit_upd_cascade that updates matching rows in the ENROLMENT table whenever a unit code is updated in the UNIT table. 
+The changes in the enrolment table should be announced via dbms_output.put_line. */
+
+--TASK 1
+
+CREATE OR REPLACE TRIGGER unit_upd_cascade 
+AFTER UPDATE OF UNIT_CODE ON UNIT
+FOR EACH ROW
+BEGIN 
+    UPDATE ENROLMENT
+    SET UNIT_CODE = :NEW.UNIT_CODE
+    WHERE UNIT_CODE = :OLD.UNIT_CODE;
+    DBMS_OUTPUT.PUT_LINE('PREVIOUS UNIT CODE: ' || :OLD.UNIT_CODE || ' NEW UNIT CODE: ' || :NEW.UNIT_CODE);
+END;
+/
+
+---- TEST HARNESS TASK 1 ----
+
+--BEFORE UPDATING:
+
+SELECT * FROM UNIT 
+WHERE UNIT_NAME = 'Programming foundations';
+
+SELECT * FROM ENROLMENT 
+WHERE UNIT_CODE = (SELECT UNIT_CODE FROM UNIT WHERE UNIT_NAME = 'Programming foundations');
+    
+--UPDATING TO DEPLOY THE TRIGGER    
+
+UPDATE 
+    UNIT
+SET
+    UNIT_CODE = 'FIT9000'
+WHERE
+    UNIT_NAME = 'Programming foundations';
+
+--AFTER UPDATING:
+
+SELECT * FROM UNIT 
+WHERE UNIT_NAME = 'Programming foundations';
+
+SELECT * FROM ENROLMENT 
+WHERE UNIT_CODE = (SELECT UNIT_CODE FROM UNIT WHERE UNIT_NAME = 'Programming foundations');
+
+ROLLBACK;
+
+--TASK 2
+
+CREATE OR REPLACE TRIGGER TOTAL_STUDENT_TRIGGER 
+AFTER INSERT OR DELETE ON ENROLMENT
+FOR EACH ROW
+BEGIN 
+    IF INSERTING THEN 
+    UPDATE UNIT
+    SET UNIT_CURRENT_STU_COUNT = UNIT_CURRENT_STU_COUNT + 1
+    WHERE UNIT_CODE = :NEW.UNIT_CODE;
+    END IF;
+    
+    IF DELETING THEN 
+    UPDATE UNIT
+    SET UNIT_CURRENT_STU_COUNT = UNIT_CURRENT_STU_COUNT - 1 
+    WHERE UNIT_CODE = :NEW.UNIT_CODE;
+    INSERT INTO AUDIT_LOG VALUES (AUDIT_SEQ.NEXTVAL, SYSDATE, USER, :OLD.STU_NO, :OLD.UNIT_CODE);
+    END IF;
+END;
+/
+
+---- TEST HARNESS TASK 2 ----
+SELECT * FROM UNIT;
+SELECT * FROM ENROLMENT WHERE STU_NO = 11111130;
+
+-- TESTING THE TRIGGER FOR INSERTING
+INSERT INTO ENROLMENT VALUES(11111130,'FIT9131', 2, 2013, null, null);
+
+-- DISPLAY UPDATED TABLE
+SELECT * FROM UNIT;
+SELECT * FROM ENROLMENT WHERE STU_NO = 11111130;
+
+-- TESTING THE TRIGGER FOR DELETION
+DELETE FROM ENROLMENT WHERE STU_NO = 11111130 AND UNIT_CODE = 'FIT9131' AND ENROL_YEAR =2013 AND ENROL_SEMESTER = 2;
+
+-- DISPLAY UPDATED TABLE
+SELECT * FROM ENROLMENT WHERE STU_NO = 11111130;
+SELECT * FROM AUDIT_LOG;
+
+ROLLBACK;
+
+
+/* 3. Create a trigger called calculate_grade that calculates the student’s grade (enrolment.enrol_grade) 
+whenever a mark is updated for an enrolment or a new enrolment is added with a mark. 
+Hint: you can avoid the "mutating table" error here by directly manipulating the new value of enrol_grade in your trigger based on the new enrol_mark value. 
+● enrol_mark >= 80 is a HD grade 
+● enrol_mark >= 70 and enrol_mark < 80 is a D grade 
+● enrol_mark >= 60 and enrol_mark < 70 is a C grade 
+● enrol_mark >= 50 and enrol_mark < 60 is a P grade 
+● enrol_mark < 50 is a N grade */
+
+
+CREATE OR REPLACE TRIGGER CALCULATE_GRADE BEFORE
+    INSERT OR UPDATE OF ENROL_MARK ON ENROLMENT
+    FOR EACH ROW
+BEGIN
+    IF :NEW.ENROL_MARK >= 80 THEN
+        :NEW.ENROL_GRADE := 'HD';
+    END IF;
+
+    IF :NEW.ENROL_MARK >= 70 AND :NEW.ENROL_MARK < 80 THEN
+        :NEW.ENROL_GRADE := 'D';
+    END IF;
+
+    IF :NEW.ENROL_MARK >= 60 AND :NEW.ENROL_MARK < 70 THEN
+        :NEW.ENROL_GRADE := 'C';
+    END IF;
+
+    IF :NEW.ENROL_MARK >= 50 AND :NEW.ENROL_MARK < 60 THEN
+        :NEW.ENROL_GRADE := 'P';
+    END IF;
+
+    IF :NEW.ENROL_MARK < 50 THEN
+        :NEW.ENROL_GRADE := 'N';
+    END IF;
+
+END;
+/
+
+---- TEST HARNESS TASK 3 ----
+--DISPLAY BEFORE TABLES
+SELECT * FROM ENROLMENT WHERE STU_NO = '11111130';
+--ISERT NEW ENROLMENT TO TEST TRIGGER
+INSERT INTO ENROLMENT VALUES ('11111130','FIT9131',2,2014,65,NULL);
+--DISPLAY AFTER TABLES
+SELECT * FROM ENROLMENT WHERE STU_NO = '11111130';
+
+--DISPLAY BEFORE TABLES
+SELECT * FROM ENROLMENT WHERE STU_NO = '11111130';
+--UPDATE ENROLMENT TO TEST TRIGGER
+UPDATE ENROLMENT SET ENROL_MARK = 88 WHERE STU_NO = '11111130' and UNIT_CODE = 'FIT9135' and ENROL_SEMESTER = 2 and ENROL_YEAR = 2014;
+--DISPLAY AFTER TABLES
+SELECT * FROM ENROLMENT WHERE STU_NO = '11111130';
+
+ROLLBACK;
+
+SPOOL OFF
+SET ECHO OFF
