@@ -131,31 +131,8 @@ ORDER BY
 2(v) Query 5
 */
 --PLEASE PLACE REQUIRED SQL STATEMENT FOR THIS PART HERE
-
-
---SELECT
---    V.VEH_MANUFNAME AS "Manufacturer Name",
---    COUNT(O.OFF_NO) AS "Total No. of Offences",
---    SUM(DEM_POINTS) 
---FROM 
---    OFFENCE O
---JOIN 
---    VEHICLE V
---USING
---    (VEH_VIN)
---JOIN 
---    DEMERIT D
---ON
---    O.DEM_CODE = D.DEM_CODE
---GROUP BY
---    VEH_MANUFNAME
---HAVING
---    COUNT(DEM_POINTS) >= 2
---ORDER BY
---    "Total No. of Offences" DESC,
---    V.VEH_MANUFNAME ASC;
-
--- FOR MAX OFFENCE CAUSED BY MANUFACTURER
+    
+-- HIGHEST OFFENCES FOR EACH MANUFACTURER 
 
 SELECT
     V.VEH_MANUFNAME AS "Manufacturer Name",
@@ -168,54 +145,15 @@ USING
     (VEH_VIN)
 JOIN 
     DEMERIT D
-ON
-    O.DEM_CODE = D.DEM_CODE
-WHERE
-    D.DEM_POINTS >= 2
+USING
+    (DEM_CODE)
+WHERE 
+    DEM_POINTS >= 2
 GROUP BY
     VEH_MANUFNAME
-HAVING
-     COUNT(O.OFF_NO) = (SELECT MAX(COUNT(O.OFF_NO))
-                        FROM 
-                            OFFENCE O
-                        JOIN 
-                            VEHICLE V
-                        USING
-                            (VEH_VIN)
-                        JOIN 
-                            DEMERIT D
-                        ON
-                            O.DEM_CODE = D.DEM_CODE
-                        WHERE
-                            D.DEM_POINTS >= 2
-                        GROUP BY
-                            VEH_MANUFNAME)
 ORDER BY
     "Total No. of Offences" DESC,
     V.VEH_MANUFNAME ASC;
-    
--- HIGHEST OFFENCES FOR EACH MANUFACTURER - CORRECT ANSWER  
-
---SELECT
---    V.VEH_MANUFNAME AS "Manufacturer Name",
---    COUNT(O.OFF_NO) AS "Total No. of Offences"
---FROM 
---    OFFENCE O
---JOIN 
---    VEHICLE V
---USING
---    (VEH_VIN)
---JOIN 
---    DEMERIT D
---USING
---    (DEM_CODE)
---WHERE 
---    DEM_POINTS >= 2
---GROUP BY
---    VEH_MANUFNAME
---ORDER BY
---    "Total No. of Offences" DESC,
---    V.VEH_MANUFNAME ASC;
 
 /*
 2(vi) Query 6
@@ -331,11 +269,9 @@ FROM (SELECT
         GROUP BY VEH_VIN)
 GROUP BY 
     REGION
-    
 UNION SELECT 'Total', (SELECT COUNT(VEH_VIN) FROM VEHICLE), 
     (SELECT TO_CHAR(SUM(ROUND((COUNT(V_IN.VEH_VIN)/(SELECT COUNT(VEH_VIN) FROM VEHICLE))*100,2)), '990.99') || '%' FROM VEHICLE V_IN
-
-  GROUP BY
+        GROUP BY
             CASE
                 WHEN V_IN.VEH_VIN like 'A%' OR V_IN.VEH_VIN like 'B%' OR V_IN.VEH_VIN like 'C%' THEN
                     'Africa'
