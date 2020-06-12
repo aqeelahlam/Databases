@@ -1,16 +1,12 @@
 --****PLEASE ENTER YOUR DETAILS BELOW****
 --Q2-tds-queries.sql
---Student ID:
---Student Name:
---Tutorial No: 
+--Student ID: 29262674
+--Student Name: Aqeel Ahlam
+--Tutorial No: 5
 
 /* Comments for your marker:
 
-
-
-
 */
-SELECT * FROM SUSPENSION;
 
 /*
 2(i) Query 1
@@ -124,7 +120,6 @@ RIGHT OUTER JOIN --TO DISPLAY ALL THE DEMERITS
     DEMERIT D
 ON
     O.DEM_CODE = D.DEM_CODE
---WHERE TO_CHAR(O.OFF_DATETIME, 'YYYY') = '2017' -- IN CASE for a particular year
 GROUP BY
     D.DEM_CODE,
     D.DEM_DESCRIPTION
@@ -138,27 +133,27 @@ ORDER BY
 --PLEASE PLACE REQUIRED SQL STATEMENT FOR THIS PART HERE
 
 
-SELECT
-    V.VEH_MANUFNAME AS "Manufacturer Name",
-    COUNT(O.OFF_NO) AS "Total No. of Offences",
-    SUM(DEM_POINTS) 
-FROM 
-    OFFENCE O
-JOIN 
-    VEHICLE V
-USING
-    (VEH_VIN)
-JOIN 
-    DEMERIT D
-ON
-    O.DEM_CODE = D.DEM_CODE
-GROUP BY
-    VEH_MANUFNAME
-HAVING
-    COUNT(DEM_POINTS) >= 2
-ORDER BY
-    "Total No. of Offences" DESC,
-    V.VEH_MANUFNAME ASC;
+--SELECT
+--    V.VEH_MANUFNAME AS "Manufacturer Name",
+--    COUNT(O.OFF_NO) AS "Total No. of Offences",
+--    SUM(DEM_POINTS) 
+--FROM 
+--    OFFENCE O
+--JOIN 
+--    VEHICLE V
+--USING
+--    (VEH_VIN)
+--JOIN 
+--    DEMERIT D
+--ON
+--    O.DEM_CODE = D.DEM_CODE
+--GROUP BY
+--    VEH_MANUFNAME
+--HAVING
+--    COUNT(DEM_POINTS) >= 2
+--ORDER BY
+--    "Total No. of Offences" DESC,
+--    V.VEH_MANUFNAME ASC;
 
 -- FOR MAX OFFENCE CAUSED BY MANUFACTURER
 
@@ -201,26 +196,26 @@ ORDER BY
     
 -- HIGHEST OFFENCES FOR EACH MANUFACTURER - CORRECT ANSWER  
 
-SELECT
-    V.VEH_MANUFNAME AS "Manufacturer Name",
-    COUNT(O.OFF_NO) AS "Total No. of Offences"
-FROM 
-    OFFENCE O
-JOIN 
-    VEHICLE V
-USING
-    (VEH_VIN)
-JOIN 
-    DEMERIT D
-USING
-    (DEM_CODE)
-WHERE 
-    DEM_POINTS >= 2
-GROUP BY
-    VEH_MANUFNAME
-ORDER BY
-    "Total No. of Offences" DESC,
-    V.VEH_MANUFNAME ASC;
+--SELECT
+--    V.VEH_MANUFNAME AS "Manufacturer Name",
+--    COUNT(O.OFF_NO) AS "Total No. of Offences"
+--FROM 
+--    OFFENCE O
+--JOIN 
+--    VEHICLE V
+--USING
+--    (VEH_VIN)
+--JOIN 
+--    DEMERIT D
+--USING
+--    (DEM_CODE)
+--WHERE 
+--    DEM_POINTS >= 2
+--GROUP BY
+--    VEH_MANUFNAME
+--ORDER BY
+--    "Total No. of Offences" DESC,
+--    V.VEH_MANUFNAME ASC;
 
 /*
 2(vi) Query 6
@@ -248,7 +243,7 @@ USING
     (DEM_CODE)
 WHERE                             
     D.LIC_LNAME  = P.OFFICER_LNAME
-GROUP BY 
+GROUP BY
     LIC_NO,
     LIC_FNAME || ' ' || LIC_LNAME,
     OFFICER_ID,
@@ -267,7 +262,7 @@ SELECT
     D.DEM_DESCRIPTION AS "Demerit Descriptions",
     O.LIC_NO AS "License No.",
     P.LIC_FNAME || ' ' || P.LIC_LNAME AS "Driver Fullname",
-    COUNT(*)
+    COUNT(O.OFF_NO) AS "Total Times Booked"
 FROM
     DEMERIT D
 JOIN
@@ -283,104 +278,79 @@ GROUP BY
     D.DEM_DESCRIPTION,
     O.LIC_NO,
     P.LIC_FNAME || ' ' || P.LIC_LNAME
---HAVING
---    COUNT(*) = MAX(SELECT
---                    o.lic_no,
---                    D.DEM_CODE,
---                    COUNT(*)
---                FROM
---                    DEMERIT D
---                JOIN
---                    OFFENCE O 
---                ON 
---                    D.DEM_CODE = O.DEM_CODE
-----                WHERE 
-----                    COUNT(*) = MAX(COUNT(*))
---                GROUP BY
---                    o.lic_no,
---                    D.DEM_CODE)
-----                    o.lic_no)
-
+HAVING
+   COUNT(O.OFF_NO) = (SELECT
+                        MAX(TOTAL_OFFENCES)
+                    FROM
+                        (SELECT
+                            COUNT(O.OFF_NO) AS TOTAL_OFFENCES
+                        FROM
+                            DEMERIT D1
+                        JOIN
+                            OFFENCE O 
+                        ON 
+                            D.DEM_CODE = O.DEM_CODE
+                        WHERE 
+                            D.DEM_CODE = D1.DEM_CODE
+                        GROUP BY
+                            D1.DEM_CODE,
+                            O.LIC_NO))
 ORDER BY 
     D.DEM_CODE ASC,
     O.LIC_NO ASC;
-
-SELECT 
-    D.DEM_CODE AS "Demerit Code",
-    D.DEM_DESCRIPTION AS "Demerit Descriptions",
-    O.LIC_NO AS "License No.",
-    P.LIC_FNAME || ' ' || P.LIC_LNAME AS "Driver Fullname"
-FROM
-    DEMERIT D
-JOIN
-    OFFENCE O 
-ON 
-    D.DEM_CODE = O.DEM_CODE
-JOIN
-    DRIVER P
-ON
-    O.LIC_NO = P.LIC_NO   
-ORDER BY 
-    D.DEM_CODE ASC,
-    O.LIC_NO ASC;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /*
 2(viii) Query 8
 */
---PLEASE PLACE REQUIRED SQL STATEMENT FOR THIS PART HERE
-
-
+--PLEASE PLACE REQUIRED SQL STATEMENT FOR THIS PART HERE      
+    
 SELECT 
-    V.veh_vin
-    (CASE SUBSTR(TO_CHAR(V.veh_vin)), 0, 1)
-        WHEN 'A' THEN "Africa"
-    ELSE  
-        "BLAH"
-    END) AS TEST
-FROM VEHICLE V;
+    REGION,
+    SUM(TOTAL) AS "Total Vehicles Manufactured",
+    CONCAT(TO_CHAR(ROUND((SUM(TOTAL)/(SELECT COUNT(V1.VEH_VIN) FROM VEHICLE V1)*100),2), '990.00'), '%') AS "Percentage of Vehicles Manufactured"
+FROM (SELECT
+            CASE 
+                WHEN V_IN.VEH_VIN like 'A%' OR V_IN.VEH_VIN like 'B%' OR V_IN.VEH_VIN like 'C%' THEN
+                    'Africa'
+                WHEN V_IN.VEH_VIN like 'J%' OR V_IN.VEH_VIN like 'K%' OR V_IN.VEH_VIN like 'L%' OR V_IN.VEH_VIN like 'M%' 
+                    OR V_IN.VEH_VIN like 'N%' OR V_IN.VEH_VIN like 'O%' OR V_IN.VEH_VIN like 'P%' OR V_IN.VEH_VIN like 'Q%' 
+                    OR V_IN.VEH_VIN like 'R%' THEN 'Asia'
+                WHEN V_IN.VEH_VIN like 'S%' OR V_IN.VEH_VIN like 'T%' OR V_IN.VEH_VIN like 'U%' OR V_IN.VEH_VIN like 'V%' 
+                    OR V_IN.VEH_VIN like 'W%' OR V_IN.VEH_VIN like 'X%' OR V_IN.VEH_VIN like 'Y%' OR V_IN.VEH_VIN like 'Z%' 
+                    THEN 'Europe'
+                WHEN V_IN.VEH_VIN like '1%' OR V_IN.VEH_VIN like '2%' OR V_IN.VEH_VIN like '3%' OR V_IN.VEH_VIN like '4%' 
+                    OR V_IN.VEH_VIN like '5%' THEN 'North America'
+                WHEN V_IN.VEH_VIN like '6%' OR V_IN.VEH_VIN like '7%' THEN 'Oceania'
+                WHEN V_IN.VEH_VIN like '9%' OR V_IN.VEH_VIN like '9%' THEN 'South America'
+                ELSE 'Unknown'
+            END AS REGION,
+            COUNT(VEH_VIN) as TOTAL
+        FROM 
+            VEHICLE V_IN
+        GROUP BY VEH_VIN)
+GROUP BY 
+    REGION
+    
+UNION SELECT 'Total', (SELECT COUNT(VEH_VIN) FROM VEHICLE), 
+    (SELECT TO_CHAR(SUM(ROUND((COUNT(V_IN.VEH_VIN)/(SELECT COUNT(VEH_VIN) FROM VEHICLE))*100,2)), '990.99') || '%' FROM VEHICLE V_IN
 
-
-
-
-select 
-    veh_vin
-from vehicle;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  GROUP BY
+            CASE
+                WHEN V_IN.VEH_VIN like 'A%' OR V_IN.VEH_VIN like 'B%' OR V_IN.VEH_VIN like 'C%' THEN
+                    'Africa'
+                WHEN V_IN.VEH_VIN like 'J%' OR V_IN.VEH_VIN like 'K%' OR V_IN.VEH_VIN like 'L%' OR V_IN.VEH_VIN like 'M%' 
+                    OR V_IN.VEH_VIN like 'N%' OR V_IN.VEH_VIN like 'O%' OR V_IN.VEH_VIN like 'P%' OR V_IN.VEH_VIN like 'Q%' 
+                    OR V_IN.VEH_VIN like 'R%' THEN 'Asia'
+                WHEN V_IN.VEH_VIN like 'S%' OR V_IN.VEH_VIN like 'T%' OR V_IN.VEH_VIN like 'U%' OR V_IN.VEH_VIN like 'V%' 
+                    OR V_IN.VEH_VIN like 'W%' OR V_IN.VEH_VIN like 'X%' OR V_IN.VEH_VIN like 'Y%' OR V_IN.VEH_VIN like 'Z%' 
+                    THEN 'Europe'
+                WHEN V_IN.VEH_VIN like '1%' OR V_IN.VEH_VIN like '2%' OR V_IN.VEH_VIN like '3%' OR V_IN.VEH_VIN like '4%' 
+                    OR V_IN.VEH_VIN like '5%' THEN 'North America'
+                WHEN V_IN.VEH_VIN like '6%' OR V_IN.VEH_VIN like '7%' THEN 'Oceania'
+                WHEN V_IN.VEH_VIN like '9%' OR V_IN.VEH_VIN like '9%' THEN 'South America'
+                ELSE 'Unknown'
+            END) FROM VEHICLE V_OUTER 
+ORDER BY 
+    "Total Vehicles Manufactured" ASC,
+    REGION ASC;

@@ -1,8 +1,8 @@
 --****PLEASE ENTER YOUR DETAILS BELOW****
 --Q1b-tds-dm.sql
---Student ID:
---Student Name:
---Tutorial No: 
+--Student ID: 29262674
+--Student Name: Aqeel Ahlam
+--Tutorial No: 5
 
 SET SERVEROUTPUT ON;
 
